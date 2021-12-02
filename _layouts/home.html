@@ -1,0 +1,43 @@
+---
+
+layout: default
+---
+{% if page.mathjax  %}
+<script type="text/javascript" async src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+{% endif %}
+<div class="home">
+  {%- if page.title -%}
+    <h5 class="page-heading">{{ page.title }}</h5>
+  {%- endif -%}
+
+  {{ content }}
+
+
+
+  <div id="archives">
+    {% for category in site.categories %}
+      <div class="archive-group">
+        {% capture category_name %}{{ category | first }}{% endcapture %}
+        <div id="#{{ category_name | slugize }}"></div>
+        
+    
+        <h3 class="category-head">{{ category_name }}</h3>
+        <a name="{{ category_name | slugize }}"></a>
+        {% for post in site.categories[category_name] %}
+        <article class="archive-item">
+          {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+          <div class="table">
+            <div class="tr">
+                <div class="d1">{{ post.date | date: date_format }}&nbsp;</div>
+                <div class="d2"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></div>
+            </div>
+          </div>
+          
+        </article>
+        {% endfor %}
+      </div>
+      <p></p>
+    {% endfor %}
+    </div>
+
+</div>
