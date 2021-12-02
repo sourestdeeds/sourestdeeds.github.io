@@ -24,7 +24,7 @@ for multi-telescope datasets and its application to WASP-127 b, WASP-91 b, and W
 
 ### Certificates
 
-{% include image-gallery.html folder="certificates" %}
+{% include image-gallery-rect.html folder="certificates" %}
 
 ### Instagram
 
