@@ -57,6 +57,7 @@ from sklearn.model_selection import cross_val_score
 df = pd.read_csv("../input/fe-course-data/concrete.csv")
 df.head()
 ```
+<div class="table-wrapper" markdown="block">
 
 |   | Cement | BlastFurnaceSlag | FlyAsh | Water | Superplasticizer | CoarseAggregate | FineAggregate | Age | CompressiveStrength |
 |---|--------|------------------|--------|-------|------------------|-----------------|---------------|-----|---------------------|
@@ -65,6 +66,8 @@ df.head()
 | 2 | 332.5  | 142.5            | 0.0    | 228.0 | 0.0              | 932.0           | 594.0         | 270 | 40.27               |
 | 3 | 332.5  | 142.5            | 0.0    | 228.0 | 0.0              | 932.0           | 594.0         | 365 | 41.05               |
 | 4 | 198.6  | 132.4            | 0.0    | 192.0 | 0.0              | 978.4           | 825.5         | 360 | 44.30               |
+
+</div>
 
 You can see here the various ingredients going into each variety of concrete. We'll see in a moment how adding some additional synthetic features derived from these can help a model to learn important relationships among them.
 

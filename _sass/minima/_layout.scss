@@ -270,6 +270,10 @@ img[src*='#center'] {
   margin: auto;
 }
 
+.table-wrapper {
+  overflow-x: scroll;
+}
+
 /**
  * Posts
  */
