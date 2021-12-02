@@ -33,13 +33,13 @@ For a feature to be useful, it must have a relationship to the target that your 
 
 The key idea here is that a transformation you apply to a feature becomes in essence a part of the model itself. Say you were trying to predict the **Price** of square plots of land from the **Length** of one side. Fitting a linear model directly to Length gives poor results: the relationship is not linear.
     
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-02-feature-engineering/1.png)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-02-feature-engineering/1.png)
+<center>[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-02-feature-engineering/1.png)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-02-feature-engineering/1.png)</center>
 <center><b>Figure 1:</b> A linear model fits poorly with only Length as feature.</center>   
     
 If we square the **Length** feature to get **'Area'**, however, we create a linear relationship. Adding **Area** to the feature set means this linear model can now fit a parabola. Squaring a feature, in other words, gave the linear model the ability to fit squared features.
 
 [![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-02-feature-engineering/2.png)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-02-feature-engineering/2.png)
-<center><b>Figure 2:</b><b>Left:</b> The fit to Area is much better. <b>Right:</b> Which makes the fit to Length better as well.</center>   
+<center><b>Figure 2:</b><b> Left:</b> The fit to Area is much better. <b>Right:</b> Which makes the fit to Length better as well.</center>   
 
 This should show you why there can be such a high return on time invested in feature engineering. Whatever relationships your model can't learn, you can provide yourself through transformations. As you develop your feature set, think about what information your model could use to achieve its best performance.
 
