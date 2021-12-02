@@ -16,7 +16,7 @@ accordion:
     content: Classified. 
 ---
 
-> “Not everything that can be counted counts. Not everything that counts can be counted.”
+> “If it ain't broke, fix it until it is.”
 
 {% include accordion.html %}
 {% include search-lunr.html %}
