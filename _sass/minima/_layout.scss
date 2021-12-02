@@ -265,6 +265,11 @@ input[type=text]:focus {
 }
 
 
+img[src*='#center'] { 
+  display: block;
+  margin: auto;
+}
+
 /**
  * Posts
  */
