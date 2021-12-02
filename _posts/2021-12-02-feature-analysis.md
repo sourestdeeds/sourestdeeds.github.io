@@ -39,7 +39,7 @@ The key idea here is that a transformation you apply to a feature becomes in ess
 If we square the **Length** feature to get **'Area'**, however, we create a linear relationship. Adding **Area** to the feature set means this linear model can now fit a parabola. Squaring a feature, in other words, gave the linear model the ability to fit squared features.
 
 [![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-02-feature-engineering/2.png)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-02-feature-engineering/2.png)
-<center><b>Figure 2:</b>Left: The fit to Area is much better. Right: Which makes the fit to Length better as well.</center>   
+<center><b>Figure 2:</b><b>Left:</b> The fit to Area is much better. <b>Right:</b> Which makes the fit to Length better as well.</center>   
 
 This should show you why there can be such a high return on time invested in feature engineering. Whatever relationships your model can't learn, you can provide yourself through transformations. As you develop your feature set, think about what information your model could use to achieve its best performance.
 
