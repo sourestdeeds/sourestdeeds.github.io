@@ -114,8 +114,176 @@ def process_text(filename):
     return df
 
 df = process_text('car_reviews.csv')
+df
 ```
 
+
+<div class="table-wrapper" markdown="block">
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Sentiment</th>
+      <th>Review</th>
+      <th>remove_punc_and_digits</th>
+      <th>word_tokens</th>
+      <th>remove_stopwords</th>
+      <th>remove_stopwords_count</th>
+      <th>stemmed</th>
+      <th>stemmed_count</th>
+      <th>stemmed_sentence</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Neg</td>
+      <td>In 1992 we bought a new Taurus and we really ...</td>
+      <td>bought new taurus and really loved decided try...</td>
+      <td>[bought, new, taurus, and, really, loved, deci...</td>
+      <td>[bought, new, taurus, really, loved, decided, ...</td>
+      <td>{'bought': 2, 'new': 3, 'taurus': 3, 'really':...</td>
+      <td>[bought, new, tauru, realli, love, decid, tri,...</td>
+      <td>{'bought': 2, 'new': 3, 'tauru': 3, 'realli': ...</td>
+      <td>bought new tauru realli love decid tri new tau...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Neg</td>
+      <td>The last business trip  I drove to San Franci...</td>
+      <td>the last business trip drove san francisco wen...</td>
+      <td>[the, last, business, trip, drove, san, franci...</td>
+      <td>[last, business, trip, drove, san, francisco, ...</td>
+      <td>{'last': 1, 'business': 2, 'trip': 7, 'drove':...</td>
+      <td>[last, busi, trip, drove, san, francisco, went...</td>
+      <td>{'last': 1, 'busi': 2, 'trip': 7, 'drove': 1, ...</td>
+      <td>last busi trip drove san francisco went hertz ...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Neg</td>
+      <td>My husband and I purchased a 1990 Ford F250 a...</td>
+      <td>husband and purchased ford and had nothing but...</td>
+      <td>[husband, and, purchased, ford, and, had, noth...</td>
+      <td>[husband, purchased, ford, nothing, problems, ...</td>
+      <td>{'husband': 1, 'purchased': 1, 'ford': 2, 'not...</td>
+      <td>[husband, purchas, ford, noth, problem, own, v...</td>
+      <td>{'husband': 1, 'purchas': 1, 'ford': 2, 'noth'...</td>
+      <td>husband purchas ford noth problem own vehicl a...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Neg</td>
+      <td>I feel I have a thorough opinion of this truc...</td>
+      <td>feel have thorough opinion this truck compared...</td>
+      <td>[feel, have, thorough, opinion, this, truck, c...</td>
+      <td>[feel, thorough, opinion, truck, compared, pos...</td>
+      <td>{'feel': 1, 'thorough': 1, 'opinion': 1, 'truc...</td>
+      <td>[feel, thorough, opinion, truck, compar, post,...</td>
+      <td>{'feel': 1, 'thorough': 1, 'opinion': 1, 'truc...</td>
+      <td>feel thorough opinion truck compar post evalu ...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Neg</td>
+      <td>AS a mother of 3  all of whom are still in ca...</td>
+      <td>mother all whom are still carseats the only lo...</td>
+      <td>[mother, all, whom, are, still, carseats, the,...</td>
+      <td>[mother, still, carseats, logical, thing, trad...</td>
+      <td>{'mother': 1, 'still': 1, 'carseats': 1, 'logi...</td>
+      <td>[mother, still, carseat, logic, thing, trade, ...</td>
+      <td>{'mother': 1, 'still': 1, 'carseat': 1, 'logic...</td>
+      <td>mother still carseat logic thing trade minivan...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1377</th>
+      <td>Pos</td>
+      <td>In June we bought the Sony Limited Edition Fo...</td>
+      <td>june bought the sony limited edition focus sed...</td>
+      <td>[june, bought, the, sony, limited, edition, fo...</td>
+      <td>[june, bought, sony, limited, edition, focus, ...</td>
+      <td>{'june': 1, 'bought': 2, 'sony': 6, 'limited':...</td>
+      <td>[june, bought, soni, limit, edit, focu, sedan,...</td>
+      <td>{'june': 1, 'bought': 2, 'soni': 6, 'limit': 4...</td>
+      <td>june bought soni limit edit focu sedan simpli ...</td>
+    </tr>
+    <tr>
+      <th>1378</th>
+      <td>Pos</td>
+      <td>After 140 000 miles  we decided to replace my...</td>
+      <td>after miles decided replace wife toyota camry ...</td>
+      <td>[after, miles, decided, replace, wife, toyota,...</td>
+      <td>[miles, decided, replace, wife, toyota, camry,...</td>
+      <td>{'miles': 1, 'decided': 1, 'replace': 1, 'wife...</td>
+      <td>[mile, decid, replac, wife, toyota, camri, fou...</td>
+      <td>{'mile': 1, 'decid': 1, 'replac': 2, 'wife': 2...</td>
+      <td>mile decid replac wife toyota camri found new ...</td>
+    </tr>
+    <tr>
+      <th>1379</th>
+      <td>Pos</td>
+      <td>The Ford Focus is a great little record setti...</td>
+      <td>the ford focus great little record setting car...</td>
+      <td>[the, ford, focus, great, little, record, sett...</td>
+      <td>[ford, focus, great, little, record, setting, ...</td>
+      <td>{'ford': 4, 'focus': 4, 'great': 4, 'little': ...</td>
+      <td>[ford, focu, great, littl, record, set, car, f...</td>
+      <td>{'ford': 4, 'focu': 4, 'great': 4, 'littl': 2,...</td>
+      <td>ford focu great littl record set car first car...</td>
+    </tr>
+    <tr>
+      <th>1380</th>
+      <td>Pos</td>
+      <td>I needed a new car because my hyundai excel 9...</td>
+      <td>needed new car because hyundai excel had decid...</td>
+      <td>[needed, new, car, because, hyundai, excel, ha...</td>
+      <td>[needed, new, car, hyundai, excel, decided, sh...</td>
+      <td>{'needed': 1, 'new': 1, 'car': 14, 'hyundai': ...</td>
+      <td>[need, new, car, hyundai, excel, decid, shop, ...</td>
+      <td>{'need': 2, 'new': 1, 'car': 15, 'hyundai': 1,...</td>
+      <td>need new car hyundai excel decid shop around n...</td>
+    </tr>
+    <tr>
+      <th>1381</th>
+      <td>Pos</td>
+      <td>The 2000 Ford Focus SE 4 door sedan has a spa...</td>
+      <td>the ford focus door sedan has spacious interio...</td>
+      <td>[the, ford, focus, door, sedan, has, spacious,...</td>
+      <td>[ford, focus, door, sedan, spacious, interior,...</td>
+      <td>{'ford': 2, 'focus': 10, 'door': 2, 'sedan': 1...</td>
+      <td>[ford, focu, door, sedan, spaciou, interior, s...</td>
+      <td>{'ford': 2, 'focu': 10, 'door': 2, 'sedan': 1,...</td>
+      <td>ford focu door sedan spaciou interior solid fe...</td>
+    </tr>
+  </tbody>
+</table>
+<p>1382 rows × 9 columns</p>
+</div>
 
 
 
