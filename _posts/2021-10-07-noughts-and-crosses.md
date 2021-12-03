@@ -80,9 +80,9 @@ which will be immediately followed by `x`{:.python} taking the only move it has 
 This pattern repeats. Going right back to the start of the game `x`{:.python} will consider every possible game that can be played, all the way to the end. And by assuming that it always takes the best move, and the opposition always takes the best move avaliable to it (worst move for `x`{:.python} because it's a zero sum game), it can calculate the score for every state as the minimum or maximum of the next move, depending on whose turn it is. The name of the algorithm, minimax, comes from this repeating pattern of selecting the minimum and maximum score.
 
 Here are some further explanations:
- * https://en.wikipedia.org/wiki/Minimax - Terrible explanation. Included in this list so I can tell you not to read it.
- * https://brilliant.org/wiki/minimax/ - Clear but theoretical.
- * https://www.tastehit.com/blog/google-deepmind-alphago-how-it-works/ - An article on how AlphaGo works. It's well written, but dives into subjects we won't get to (in the Data Science MSc) until the next semester.
+ * [Terrible explanation. Included in this list so I can tell you not to read it](https://en.wikipedia.org/wiki/Minimax).
+ * [Clear but theoretical](https://brilliant.org/wiki/minimax/).
+ * [An article on how AlphaGo works](https://www.tastehit.com/blog/google-deepmind-alphago-how-it-works/).
 
 ### Board State
 
