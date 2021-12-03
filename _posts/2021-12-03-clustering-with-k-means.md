@@ -43,7 +43,7 @@ The motivating idea for adding cluster labels is that the clusters will break up
 
 
 [![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-03-clustering-with-k-means/2.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-03-clustering-with-k-means/2.png)
-<center><b>Figure 2:</b>Clustering the YearBuilt feature helps this linear model learn its relationship to SalePrice.</center><br>   
+<center><b>Figure 2:</b> Clustering the YearBuilt feature helps this linear model learn its relationship to SalePrice.</center><br>   
 
 The figure shows how clustering can improve a simple linear model. The curved relationship between the *YearBuilt* and *SalePrice* is too complicated for this kind of model -- it *underfits*. On smaller chunks however the relationship is almost linear, and that the model can learn easily.
 
@@ -59,7 +59,7 @@ The clustering on the Ames dataset above is a *k-means clustering*. Here is the 
 
 
 [![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-03-clustering-with-k-means/3.jpeg#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-03-clustering-with-k-means/3.jpeg)
-<center><b>Figure 3:</b>K-means clustering creates a Voronoi tessallation of the feature space.</center><br>   
+<center><b>Figure 3:</b> K-means clustering creates a Voronoi tessallation of the feature space.</center><br>   
 
 Let's review how the k-means algorithm learns the clusters and what that means for feature engineering. We'll focus on three parameters from scikit-learn's implementation: n_clusters, max_iter, and n_init.
 
@@ -75,7 +75,7 @@ It often happens that the initial random position of the centroids ends in a poo
 The animation below shows the algorithm in action. It illustrates the dependence of the result on the initial centroids and the importance of iterating until convergence.
 
 [![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-03-clustering-with-k-means/4.gif#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-03-clustering-with-k-means/4.gif)
-<center><b>Figure 4:</b>The K-means clustering algorithm on Airbnb rentals in NYC.</center><br>   
+<center><b>Figure 4:</b> The K-means clustering algorithm on Airbnb rentals in NYC.</center><br>   
 
 You may need to increase the max_iter for a large number of clusters or n_init for a complex dataset. Ordinarily though the only parameter you'll need to choose yourself is n_clusters (k, that is). The best partitioning for a set of features depends on the model you're using and what you're trying to predict, so it's best to tune it like any hyperparameter (through cross-validation, say).
 
@@ -151,7 +151,7 @@ sns.relplot(
 ```
 
 [![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-03-clustering-with-k-means/5.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-03-clustering-with-k-means/5.png)
-<center><b>Figure 5:</b>The geographic distribution of the clusters.</center><br> 
+<center><b>Figure 5:</b> The geographic distribution of the clusters.</center><br> 
 
 The target in this dataset is *MedHouseVal* (median house value). These box-plots show the distribution of the target within each cluster. If the clustering is informative, these distributions should, for the most part, separate across *MedHouseVal*, which is indeed what we see.
 
@@ -161,4 +161,4 @@ sns.catplot(x="MedHouseVal", y="Cluster", data=X, kind="boxen", height=6);
 ```
 
 [![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-03-clustering-with-k-means/6.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-03-clustering-with-k-means/6.png)
-<center><b>Figure 5:</b>The geographic distribution of the clusters.</center><br> 
+<center><b>Figure 6:</b> The geographic distribution of the clusters.</center><br> 
