@@ -396,11 +396,11 @@ Now to implement the minimax algorithm; finish the below function such that:
 
 Input:
  * A game state.
- * Whose turn it is, either `x`{:.python} or `o`{:.python}.
+ * Whose turn it is, either \\( x \\) or \\( o \\).
 
 Output:
  * The estimated score of the game.
- * `None`{:.python} if the game has ended, or a tuple of `(row, column)`{:.python}, the move the player is to take. 
+ * **None** if the game has ended, or a tuple of **(row, column)**, the move the player is to take. 
 
 
 
