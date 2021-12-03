@@ -749,7 +749,3 @@ result
 
 
 
-
-```python
-
-```
