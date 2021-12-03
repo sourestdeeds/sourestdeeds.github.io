@@ -39,7 +39,6 @@ Here is an example game (rendered using ascii art, with only the vertical lines!
 
 ## Minimax explanation
 
-(This Jupyter cell is irrelevant, as you don't need to understand the algorithm. Great algorithm however!)
 
 Minimax is best understood by starting at the end of a game. Imagine the board looks like this:
 
