@@ -25,7 +25,7 @@ The minimax algorithm is solving the _Nash equilibrium_ (Its discovery is the su
 
 ### Noughts and crosses
 
-You should know this game, as everybody plays it as a kid until they master it and it becomes boring. But in case your childhood is a little fuzzy around the edges, here is a reminder. Two players take turns to place symbols on a 3x3 grid. First one to make a line (horizontal, vertical, or diagonal) of three of their symbol wins. Tradition is that the crosses (`x`{:.python}) go first, the noughts (`o`{:.python}) second.
+You should know this game, as everybody plays it as a kid until they master it and it becomes boring. But in case your childhood is a little fuzzy around the edges, here is a reminder. Two players take turns to place symbols on a 3x3 grid. First one to make a line (horizontal, vertical, or diagonal) of three of their symbol wins. Tradition is that the crosses (\\( x \\)) go first, the noughts (\\( o \\)) second.
 
 Here is an example game (rendered using ascii art, with only the vertical lines!):
 
@@ -35,7 +35,7 @@ Here is an example game (rendered using ascii art, with only the vertical lines!
  | |       | |      | |     o| |     o| |     o| |     o|x|
 ```
 
-`x`{:.python} ultimately wins with a vertical line. As for when `o`{:.python} lost, they did so with their very first move, even though it took `x`{:.python} a few moves to force the win.
+\\( x \\) ultimately wins with a vertical line. As for when \\( o \\) lost, they did so with their very first move, even though it took \\( x \\) a few moves to force the win.
 
 ## Minimax explanation
 
@@ -48,9 +48,9 @@ o|x|x
 o|x|
 ```
 
-The game has ended, and `x`{:.python} has won. Lets say that the value is `+1`{:.python} when `x`{:.python} wins, `-1`{:.python} when `y`{:.python} wins, and `0`{:.python} for a draw. So this state (of the board) has a score of `+1`{:.python}.
+The game has ended, and \\( x \\) has won. Lets say that the value is \\( +1 \\) when \\( x \\) wins, \\( -1 \\) when \\( o \\) wins, and \\( 0 \\) for a draw. So this state (of the board) has a score of \\( +1 \\).
 
-Key to minimax is the realisation that if we can assign a score to the end states then we can assign a score to any other state by assuming the players always play the best move available. For `x`{:.python} that means the move that maximises the score, for `o`{:.python} that means the move that minimises the score.
+Key to minimax is the realisation that if we can assign a score to the end states then we can assign a score to any other state by assuming the players always play the best move available. For \\( x \\) that means the move that maximises the score, for \\( o \\) that means the move that minimises the score.
 
 Lets go back a move:
 ```
@@ -58,26 +58,26 @@ o|x|x
  |x|o
 o| |
 ```
-How do we assign a score? It is the turn of `x`{:.python} and they have three choices:
+How do we assign a score? It is the turn of \\( x \\) and they have three choices:
 ```
 o|x|x    o|x|x    o|x|x
 x|x|o     |x|o     |x|o
 o| |     o|x|     o| |x
 ```
-If we assume the score is defined for each of these states then naturally `x`{:.python} will play the move associated with ending in the highest scoring state.
+If we assume the score is defined for each of these states then naturally \\( x \\) will play the move associated with ending in the highest scoring state.
 
-We know the score for the middle state is `+1`{:.python}, as it is a winning state. What about the other two?
-The score of the left and right states can be calculated in the exact same way as for this state, the one difference being it will then be the turn of `o`{:.python}, who will want to minimise the score.
+We know the score for the middle state is \\( +1 \\), as it is a winning state. What about the other two?
+The score of the left and right states can be calculated in the exact same way as for this state, the one difference being it will then be the turn of \\( o \\), who will want to minimise the score.
 
-The left state has two choices for `o`{:.python}:
+The left state has two choices for \\( o \\):
 ```
 o|x|x    o|x|x
 x|x|o    x|x|o
 o|o|     o| |o
 ```
-which will be immediately followed by `x`{:.python} taking the only move it has left and ending the game. On the left this is a draw (score=`0`{:.python}), and on the right a win for `x`{:.python} (score=`+1`{:.python}). `o`{:.python} wants to minimise so it will choose the left choice - a draw is preferable to a loss. So the left state scores `0`{:.python} when `x`{:.python} looks at it, because `x`{:.python} assumes `o`{:.python} will do the best they can. The same argument holds for the right choice. So when `x`{:.python} is taking its move it will always choose the middle option, because it has the highest score, corresponding to victory.
+which will be immediately followed by \\( x \\) taking the only move it has left and ending the game. On the left this is a draw (score=\\( 0 \\)), and on the right a win for \\( x \\) (score=\\( +1 \\)). \\( o \\) wants to minimise so it will choose the left choice - a draw is preferable to a loss. So the left state scores \\( 0 \\) when \\( x \\) looks at it, because \\( x \\) assumes \\( o \\) will do the best they can. The same argument holds for the right choice. So when \\( x \\) is taking its move it will always choose the middle option, because it has the highest score, corresponding to victory.
 
-This pattern repeats. Going right back to the start of the game `x`{:.python} will consider every possible game that can be played, all the way to the end. And by assuming that it always takes the best move, and the opposition always takes the best move avaliable to it (worst move for `x`{:.python} because it's a zero sum game), it can calculate the score for every state as the minimum or maximum of the next move, depending on whose turn it is. The name of the algorithm, minimax, comes from this repeating pattern of selecting the minimum and maximum score.
+This pattern repeats. Going right back to the start of the game \\( x \\) will consider every possible game that can be played, all the way to the end. And by assuming that it always takes the best move, and the opposition always takes the best move avaliable to it (worst move for \\( x \\) because it's a zero sum game), it can calculate the score for every state as the minimum or maximum of the next move, depending on whose turn it is. The name of the algorithm, minimax, comes from this repeating pattern of selecting the minimum and maximum score.
 
 Here are some further explanations:
  * [Terrible explanation. Included in this list so I can tell you not to read it](https://en.wikipedia.org/wiki/Minimax).
@@ -87,7 +87,7 @@ Here are some further explanations:
 ### Board State
 
 
-To represent board states we're going to use a tuple of tuples, so that you may index them with `[row][column]`{:.python}, where `[0][0]`{:.python} is the top left and `[2][2]`{:.python} the bottom right. A space (`' '`{:.python}) indicates an unused slot, a cross (`'x'`{:.python}) somewhere the first player played, a circle (`'o'`{:.python}) somewhere the second player played.
+To represent board states we're going to use a tuple of tuples, so that you may index them with \\( [row][column] \\), where \\( [0][0] \\) is the top left and \\( [2][2] \\) the bottom right. A space (' ') indicates an unused slot, a cross (\\( 'x' \\)) somewhere the first player played, a circle (\\( 'o' \\)) somewhere the second player played.
 
 
 
@@ -144,10 +144,10 @@ print_state((("o", "o", "o"), ("x", "x", "x"), (" ", " ", " ")))
 
 We need to be able to detect when a winning move has been played, and assign a score to it. 
 
- * If `x`{:.python} has won `return 1`{:.python}
- * If `y`{:.python} has won `return -1`{:.python}
- * If it is a draw `return 0`{:.python}
- * If nobody has won, and moves can still be played, `return None`{:.python}
+ * If \\( x \\) has won return 1
+ * If \\( o \\) has won return -1
+ * If it is a draw return 0
+ * If nobody has won, and moves can still be played, return None
 
 
 
@@ -251,13 +251,13 @@ print(
 
 ### Playing a Move
 
-Given a state, as described above, and a move, e.g. 'place a `'x'` at row 2, column 1' we need a function that will return a __new__ state, with the move having been played.
+Given a state, as described above, and a move, e.g. 'place a \\( x \\) at row 2, column 1' we need a function that will return a __new__ state, with the move having been played.
 
 Input:
  * State before the move.
  * Row to modify.
  * Column to modify.
- * What to place, `'x'`{:.python} or `'o'`{:.python}.
+ * What to place, \\( x \\) or \\( o \\).
 
 
 
