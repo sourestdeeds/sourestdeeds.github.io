@@ -87,7 +87,7 @@ Here are some further explanations:
 ### Board State
 
 
-To represent board states we're going to use a tuple of tuples, so that you may index them with \\( [row][column] \\), where \\( [0][0] \\) is the top left and \\( [2][2] \\) the bottom right. A space (' ') indicates an unused slot, a cross '(\\( x \\))' somewhere the first player played, a circle '(\\( o \\))' somewhere the second player played.
+To represent board states we're going to use a tuple of tuples, so that you may index them with \\( [row][column] \\), where \\( [0][0] \\) is the top left and \\( [2][2] \\) the bottom right. 
 
 
 
