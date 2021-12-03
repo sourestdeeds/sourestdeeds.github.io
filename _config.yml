@@ -3,7 +3,7 @@ author:
   name: Stephen Charles
   # email: stevemindoza@gmail.com
 description: > # this means to ignore newlines until "show_excerpts:"
-  Hi! I'm a Data Scientist with an interest in applying solutions to Astrophysics problems. My main projects can be found here, along with the journey to create them, documented in my Blog.
+  Hi! I'm a Data Scientist with an interest in applying models to Astrophysics problems. My main projects can be found here, along with the journey to create them, documented in my Blog.
 permalink: /:title/
 show_excerpts: false # set to true to show excerpts on the homepage
 
