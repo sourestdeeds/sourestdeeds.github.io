@@ -119,6 +119,7 @@ df
 
 
 <div class="table-wrapper" markdown="block">
+
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -283,6 +284,7 @@ df
   </tbody>
 </table>
 <p>1382 rows × 9 columns</p>
+
 </div>
 
 
