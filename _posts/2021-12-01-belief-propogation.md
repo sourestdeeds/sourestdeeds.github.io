@@ -206,7 +206,7 @@ rvs = [(P_he, 'P(he)', [nti['he']], 'F'),
 
 ### Learning Conditional Probability Distributions
 
-Above a set of variables representing conditional probability distributions has been defined. They are to represent a Bernoulli trial for each combination of conditional variables, given as \\( P(\texttt{False}\mid ...) \\) in `rv[0,...]`{:.language-python .highlight} and \\( P(\texttt{True}\mid ...) \\) in `rv[1,...]`{:.language-python .highlight}. Obviously these two values should sum to 1; giving the probability of both True and False is redundant, but makes all of the code much cleaner.
+Above, a set of variables representing conditional probability distributions has been defined. They are to represent a Bernoulli trial for each combination of conditional variables, given as \\( P(\texttt{False}\mid ...) \\) in `rv[0,...]`{:.language-python .highlight} and \\( P(\texttt{True}\mid ...) \\) in `rv[1,...]`{:.language-python .highlight}. Obviously these two values should sum to 1; giving the probability of both \\( \texttt{True} \\) and \\( \texttt{False} \\) is redundant, but makes all of the code much cleaner.
 
 The next task is to fill in the distributions with a maximum a posteriori probability (MAP) estimate given the data. The prior to be used for all RVs is a Beta distribution,
 
@@ -447,7 +447,7 @@ The messages that factors send are more complicated, because they _factor_ in (s
 
 $$M_{s \rightarrow d}(x_d) = \sum_{\forall x_m \cdot m \neq d} P[s,d,\ldots] \prod_{\forall n \cdot n \neq d} M_{n \rightarrow s}(x_n)$$
 
-where \\( P[s,d,\ldots] \\) is the conditional probability distribution, which will naturally be indexed by the source, destination, and any other neighbours (\\( n \\)). The switch to \\( [] \\) is to indicate that you should stop thinking of it as a probability distribution when passing messages, as some of the messages make no sense when interpreted as such (but the final beliefs always make sense; it's just the intermediate messages that get weird). The key detail is that this is no longer simple multiplication: Each message is over a different RV (the RV of its source) and hence needs to be multiplied in the correct way. A typical recipe for this is:
+where \\( P[s,d,\ldots] \\) is the conditional probability distribution, which will naturally be indexed by the source, destination, and any other neighbours (\\( n \\)). The switch to \\( [\enspace] \\) is to indicate that you should stop thinking of it as a probability distribution when passing messages, as some of the messages make no sense when interpreted as such (but the final beliefs always make sense; it's just the intermediate messages that get weird). The key detail is that this is no longer simple multiplication: Each message is over a different RV (the RV of its source) and hence needs to be multiplied in the correct way. A typical recipe for this is:
 1. Copy the factor (\\(P[s,d,\cdot]\\)) so it can be used as working storage
 2. Multiply in each message to the source (unless from destination), using broadcasting to align it with the correct dimension
 3. Marginalise out all but the RV of the destination node
