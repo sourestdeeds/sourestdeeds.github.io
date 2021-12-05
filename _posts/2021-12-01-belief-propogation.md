@@ -677,7 +677,3 @@ for i in ['A', 'B', 'C', 'D', 'E']:
     {14: True, 13: True, 11: True}
 
 
-
-```python
-
-```
