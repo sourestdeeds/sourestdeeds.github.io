@@ -231,13 +231,13 @@ such that \\( x \\) is the probability of getting a \\( \texttt{False} \\) from 
 Writing out the relevant parts of the Bayes rule update for observing a RV, \\( v = 0 \\) (False), you get
 
 $$\begin{aligned}
-\operatorname{Beta}(x | \alpha_1, \beta_1) &\propto \operatorname{Bernoulli}(v = 0 | x)\operatorname{Beta}(x | s\alpha_0,\beta_0)
+\operatorname{Beta}(x | \alpha_1, \beta_1) &\propto \operatorname{Bernoulli}(v = 0 | x)\operatorname{Beta}(x | s\alpha_0,\beta_0)\\
 
-x^{\alpha_1-1}(1-x)^{\beta_1-1} &\propto \left(x^{(1-v)} (1-x)^v\right) \left(x^{\alpha_0-1}(1-x)^{\beta_0-1}\right)
+x^{\alpha_1-1}(1-x)^{\beta_1-1} &\propto \left(x^{(1-v)} (1-x)^v\right) \left(x^{\alpha_0-1}(1-x)^{\beta_0-1}\right)\\
 
-x^{\alpha_1-1}(1-x)^{\beta_1-1} &\propto x^1 (1-x)^0 x^{\alpha_0-1}(1-x)^{\beta_0-1}
+x^{\alpha_1-1}(1-x)^{\beta_1-1} &\propto x^1 (1-x)^0 x^{\alpha_0-1}(1-x)^{\beta_0-1}\\
 
-x^{\alpha_1-1}(1-x)^{\beta_1-1} &\propto x^{\alpha_0+1-1}(1-x)^{\beta_0-1}
+x^{\alpha_1-1}(1-x)^{\beta_1-1} &\propto x^{\alpha_0+1-1}(1-x)^{\beta_0-1}\\
 
 \operatorname{Beta}(x | \alpha_1, \beta_1) &= \operatorname{Beta}(x | \alpha_0+1,\beta_0)
 \end{aligned}$$
