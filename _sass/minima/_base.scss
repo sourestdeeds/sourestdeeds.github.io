@@ -193,8 +193,10 @@ pre {
 }
 
 mjx-container[display="block"] {
+  display: inline-grid;
   overflow-x: scroll;
   overflow-y: hidden;
+  max-width: 100%;
 }
 
 /**
