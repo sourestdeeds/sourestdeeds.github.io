@@ -10,28 +10,28 @@ categories: [Data Science]
 Each row of the data contains a fully observed coffee machine, with the state of every random variable. The random variables are all binary, with \\( \texttt{False} \\) represented by 0 and \\( \texttt{True} \\) represented by 1. The variables are:
 
 Failures _(we're trying to detect these)_:
-* 0. he - No electricity
-* 1. fp - Fried power supply unit
-* 2. fc - Fried circuit board  
-* 3. wr - Water reservoir empty
-* 4. gs - Group head gasket forms seal  
-* 5. dp - Dead pump  
-* 6. fh - Fried heating element  
+0. he - No electricity
+1. fp - Fried power supply unit
+2. fc - Fried circuit board  
+3. wr - Water reservoir empty
+4. gs - Group head gasket forms seal  
+5. dp - Dead pump  
+6. fh - Fried heating element  
 
 
 Mechanism _(these are unobservable)_:
-* 7. pw - Power supply unit works  
-* 8. cb - Circuit board works  
-* 9. gw - Get water out of group head   
+7. pw - Power supply unit works  
+8. cb - Circuit board works  
+9. gw - Get water out of group head   
 
 Diagnostic _(these are the tests a mechanic can run - observable)_:
-* 10. ls - Room lights switch on
-* 11. vp - A voltage is measured across power supply unit
-* 12. lo - Power light switches on
-* 13. wv - Water visible in reservoir
-* 14. hp - Can hear pump
-* 15. me - Makes espresso
-* 16. ta - Makes a hot, tasty espresso
+10. ls - Room lights switch on
+11. vp - A voltage is measured across power supply unit
+12. lo - Power light switches on
+13. wv - Water visible in reservoir
+14. hp - Can hear pump
+15. me - Makes espresso
+16. ta - Makes a hot, tasty espresso
 
 Above the number is the column number of the provided data (*dm*, an abbreviation of _data matrix_) and the two letter code is a suggested variable name.
 
