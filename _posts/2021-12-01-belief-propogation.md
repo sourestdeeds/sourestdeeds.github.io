@@ -361,10 +361,8 @@ def calc_edges(rvs):
     edges = []
 
     for rv in rvs:
-
         if len(rv[2]) == 1:
             edges.append((rv[2][0], rv2fac(rv[2][0])))
-
         else:
             node = list(rv)[2][0]
             edges.append((node, rv2fac(node)))
@@ -372,7 +370,6 @@ def calc_edges(rvs):
                 edges.append((rv2fac(node), connection))
 
     return edges
-
 
 edges = calc_edges(rvs)
 print('Generated {} edges'.format(len(edges)))
@@ -398,7 +395,6 @@ def calc_msg_order(edges):
     the returned list contains tuples of (source node, destination node)."""
     
     msgs = []
-    
     current_state = defaultdict(dict)
     for i, j in edges:
         current_state[i][j] = 0   
@@ -411,26 +407,19 @@ def calc_msg_order(edges):
     
     complete = 0
     while not complete:
-
         complete = 1
-
         for j in all_messages:
-
              for i in current_state[j]:
                 if current_state[j][i] != 0:
                     continue
-
                 else:
                     if all(v for k, v in current_state[i].items() if k != j):
                         current_state[j][i] = 1
                         msgs.append((i, j))
-
                     else:
                         complete = 0
     
     return msgs
-
-
 
 msg_order = calc_msg_order(edges)
 print('Generated {} messages'.format(len(msg_order)))
@@ -564,7 +553,6 @@ belief = marginals({})
 for i in range(belief.shape[0]):
     print('  P({}) = {}'.format(itn[i], belief[i,:]))
 print()
-
 
 print('Marginals if 𝚠𝚊𝚝𝚎𝚛 𝚛𝚎𝚜𝚎𝚛𝚟𝚘𝚒𝚛 𝚎𝚖𝚙𝚝𝚢:') # P(ta = True) = 0.05732075
 belief = marginals({nti['wr'] : True})
