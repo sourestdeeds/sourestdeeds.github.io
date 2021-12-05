@@ -41,7 +41,7 @@ The least possible mutual information between quantities is 0.0. When MI is zero
 The next figure will give you an idea of how MI values correspond to the kind and degree of association a feature has with the target.
 
 [![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-01-mutual-information/1.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-01-mutual-information/1.png)
-<center><b>Figure 2:</b> <b>Left</b>: Mutual information increases as the dependence between feature and target becomes tighter. <b>Right</b>: Mutual information can capture any kind of association (not just linear, like correlation).</center><br> 
+<center><b>Figure 2:</b><br> <b>Left</b>: Mutual information increases as the dependence between feature and target becomes tighter. <b>Right</b>: Mutual information can capture any kind of association (not just linear, like correlation).</center><br> 
 
 Here are some things to remember when applying mutual information:
 
