@@ -168,8 +168,8 @@ concrete[components + ["Components"]].head(10)
 
 Often you'll have complex strings that can usefully be broken into simpler pieces. Some common examples:
 
-- ID numbers: `'123-45-6789'`{:.python .highlight}
-- Phone numbers: `'(999) 555-0123'`{:.python .highlight}
+- ID numbers: '123-45-6789'
+- Phone numbers: '(999) 555-0123'
 - Street addresses: '8241 Kaggle Ln., Goose City, NV'
 - Internet addresses: 'http://www.kaggle.com
 - Product codes: '0 36000 29145 2'
