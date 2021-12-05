@@ -1,5 +1,5 @@
 ---
-title: 'Principle Component Analysis'
+title: 'Principal Component Analysis'
 tags: [kaggle, feature engineering, pca, principle component analysis]
 layout: post
 mathjax: true
@@ -19,7 +19,7 @@ You could imagine that within this data are "axes of variation" that describe th
 
 
     
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-05-principle-component-analysis/1.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-05-principle-component-analysis/1.png)
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-05-principal-component-analysis/1.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-05-principal-component-analysis/1.png)
 <center><b>Figure 1:</b> The axes of variation.</center><br>     
     
 
@@ -27,7 +27,7 @@ Often, we can give names to these axes of variation. The longer axis we might ca
 
 Notice that instead of describing abalones by their 'Height' and 'Diameter', we could just as well describe them by their 'Size' and 'Shape'. This, in fact, is the whole idea of PCA: instead of describing the data with the original features, we describe it with its axes of variation. The axes of variation become the new features.
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-05-principle-component-analysis/2.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-05-principle-component-analysis/2.png)
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-05-principal-component-analysis/2.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-05-principal-component-analysis/2.png)
 <center><b>Figure 2:</b> The principal components become the new features by a rotation of the dataset in the feature space.</center><br>     
 
 The new features PCA constructs are actually just linear combinations (weighted sums) of the original features:
@@ -53,7 +53,7 @@ This table of loadings is telling us that in the *Size* component, *Height* and 
 PCA also tells us the *amount* of variation in each component. We can see from the figures that there is more variation in the data along the *Size* component than along the Shape component. PCA makes this precise through each component's **percent of explained variance**.
 
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-05-principle-component-analysis/3.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-05-principle-component-analysis/3.png)
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-05-principal-component-analysis/3.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-05-principal-component-analysis/3.png)
 <center><b>Figure 3:</b> Size accounts for about 96% and the Shape for about 4% of the variance between Height and Diameter.</center><br>    
 
 
@@ -206,7 +206,7 @@ Recall that the signs and magnitudes of a component's loadings tell us what kind
 plot_variance(pca);
 ```
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-05-principle-component-analysis/4.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-05-principle-component-analysis/4.png)
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-05-principal-component-analysis/4.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-05-principal-component-analysis/4.png)
 <center><b>Figure 4:</b> The four chosen features mostly vary along the Luxury/Economy axis.</center><br>   
 
 Let's also look at the MI scores of the components. Not surprisingly, PC1 is highly informative, though the remaining components, despite their small variance, still have a significant relationship with price. Examining those components could be worthwhile to find relationships not captured by the main Luxury/Economy axis.
@@ -254,5 +254,5 @@ df["sports_or_wagon"] = X.curb_weight / X.horsepower
 sns.regplot(x="sports_or_wagon", y='price', data=df, order=2);
 ```
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-05-principle-component-analysis/5.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-05-principle-component-analysis/5.png)
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-05-principal-component-analysis/5.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-05-principal-component-analysis/5.png)
 <center><b>Figure 5:</b> The third component shows a contrast between sports cars or wagons.</center><br>   
