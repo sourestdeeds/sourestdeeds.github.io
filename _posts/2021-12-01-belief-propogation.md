@@ -248,11 +248,6 @@ $$P(v=\textrm{False}|\ldots) = \frac{\alpha}{\alpha + \beta}$$
 
 It's typical to do all of the above within the conditional probability distribution arrays, using them to represent \\( \alpha \\) and \\( \beta \\) then treating step 3 as converting from hyperparameters to expected values.
 
-Hints:
-* The use of `0 = False`{:.language-python .highlight} and `1 = True`{:.language-python .highlight} both in the *dm* array and in the conditional probability distributions is very deliberate.
-* Do not write unique code for each variable - that will be hundreds of lines of code and very tedious/error prone. It's possible to get all of the marks in 7 lines of code, or less, if you're particularly sneaky.
-* Remember that you can index a *numpy* array with a tuple; for instance using a tuple comprehension such as `tuple(dm[row,c] for c in columns)`{:.language-python .highlight} you could index an array with the values of the given *columns* indices, as extracted from the current *row* of the data matrix.
-* The provided *rvs* array exists to support the above two hints.
 
 
 ```python
@@ -465,7 +460,7 @@ print(msg_order)
     [(17, 0), (18, 1), (19, 2), (20, 3), (21, 4), (22, 5), (23, 6), (1, 24), (2, 25), (10, 27), (11, 28), (12, 29), (13, 30), (14, 31), (4, 32), (6, 33), (16, 33), (33, 15), (29, 8), (28, 7), (31, 5), (30, 3), (27, 0), (0, 24), (3, 26), (5, 26), (15, 32), (32, 9), (24, 7), (7, 25), (9, 26), (25, 8), (26, 8), (8, 25), (8, 26), (8, 29), (29, 12), (26, 9), (25, 7), (26, 5), (26, 3), (25, 2), (7, 24), (7, 28), (3, 30), (5, 31), (9, 32), (2, 19), (3, 20), (5, 22), (32, 15), (31, 14), (30, 13), (28, 11), (32, 4), (24, 1), (24, 0), (0, 27), (15, 33), (0, 17), (1, 18), (4, 21), (33, 16), (27, 10), (33, 6), (6, 23)]
 
 
-## Message Passing
+### Message Passing
 
 There are two kinds of node: RVs and factors. The message sent by a random variable is simply all incoming messages multiplied together, except for the message from the direction it is sending a message, i.e.
 
