@@ -7,63 +7,63 @@ categories: [Data Science]
 ---
 
 
-Each row of the data contains a fully observed coffee machine, with the state of every random variable. The random variables are all binary, with `False` represented by `0` and `True` represented by `1`. The variables are:
+Each row of the data contains a fully observed coffee machine, with the state of every random variable. The random variables are all binary, with False represented by 0 and True represented by 1. The variables are:
 
 Failures _(you're trying to detect these)_:
-* 0. `he` - No electricity
-* 1. `fp` - Fried power supply unit
-* 2. `fc` - Fried circuit board  
-* 3. `wr` - Water reservoir empty
-* 4. `gs` - Group head gasket forms seal  
-* 5. `dp` - Dead pump  
-* 6. `fh` - Fried heating element  
+* 0. he - No electricity
+* 1. fp - Fried power supply unit
+* 2. fc - Fried circuit board  
+* 3. wr - Water reservoir empty
+* 4. gs - Group head gasket forms seal  
+* 5. dp - Dead pump  
+* 6. fh - Fried heating element  
 
 
 Mechanism _(these are unobservable)_:
-* 7. `pw` - Power supply unit works  
-* 8. `cb` - Circuit board works  
-* 9. `gw` - Get water out of group head   
+* 7. pw - Power supply unit works  
+* 8. cb - Circuit board works  
+* 9. gw - Get water out of group head   
 
 Diagnostic _(these are the tests a mechanic can run - observable)_:
-* 10. `ls` - Room lights switch on
-* 11. `vp` - A voltage is measured across power supply unit
-* 12. `lo` - Power light switches on
-* 13. `wv` - Water visible in reservoir
-* 14. `hp` - Can hear pump
-* 15. `me` - Makes espresso
-* 16. `ta` - Makes a hot, tasty espresso
+* 10. ls - Room lights switch on
+* 11. vp - A voltage is measured across power supply unit
+* 12. lo - Power light switches on
+* 13. wv - Water visible in reservoir
+* 14. hp - Can hear pump
+* 15. me - Makes espresso
+* 16. ta - Makes a hot, tasty espresso
 
-Above the number is the column number of the provided data (`dm`, an abbreviation of _data matrix_) and the two letter code is a suggested variable name.
+Above the number is the column number of the provided data (*dm*, an abbreviation of _data matrix_) and the two letter code is a suggested variable name.
 
 ### Coffee Machine Model
 
 If you are unfamiliar with an espresso coffee machine here is a brief description of how one works (you can ignore this):
 > The user puts ground coffee into a portafilter (round container with a handle and two spouts at the bottom), tamps it (compacts the coffee down), and clamps the portafilter into the group head at the front of the machine. A gasket (rubber ring) forms a seal between the portafilter and group head. A button is pressed. Water is drawn from a reservoir by a pump into a boiler. In the boiler a heating element raises the waters temperature, before the pump pushes it through the group head and into the portafilter at high pressure. The water is forced through the coffee grinds and makes a tasty espresso.
 
-The graphical model (Bayes net) showing how the variables are related is also provided, as `coffee machine.pdf`; here it is given as conditional probabilities:
+The graphical model (Bayes net) showing how the variables are related is also provided, as **coffee machine.pdf**; here it is given as conditional probabilities:
 
 Failures:
- * `P_he:` \\( P(\texttt{no electricity}) \\)
- * `P_fp:` \\( P(\texttt{fried psu}) \\)
- * `P_fc:` \\( P(\texttt{fried circuit board}) \\)
- * `P_wr:` \\( P(\texttt{water reservoir empty}) \\)
- * `P_gs:` \\( P(\texttt{group head gasket seal broken}) \\)
- * `P_dp:` \\( P(\texttt{dead pump}) \\)
- * `P_fh:` \\( P(\texttt{fried heating element}) \\)
+ * P_he: \\( P(\texttt{no electricity}) \\)
+ * P_fp: \\( P(\texttt{fried psu}) \\)
+ * P_fc: \\( P(\texttt{fried circuit board}) \\)
+ * P_wr: \\( P(\texttt{water reservoir empty}) \\)
+ * P_gs: \\( P(\texttt{group head gasket seal broken}) \\)
+ * P_dp: \\( P(\texttt{dead pump}) \\)
+ * P_fh: \\( P(\texttt{fried heating element}) \\)
 
 Mechanism:
- * `P_pw_he_fp:` \\( P(\texttt{psu works}\enspace|\enspace\texttt{no electricity},\enspace\texttt{fried psu}) \\)
- * `P_cb_pw_fc:` \\( P(\texttt{circuit board works}\enspace|\enspace\texttt{psu works},\enspace\texttt{fried circuit board}) \\)
- * `P_gw_cb_wr_dp:` \\( P(\texttt{get water}\enspace|\enspace\texttt{circuit board works},\enspace\texttt{water reservoir empty},\enspace\texttt{dead pump}) \\)
+ * P_pw_he_fp: \\( P(\texttt{psu works}\enspace|\enspace\texttt{no electricity},\enspace\texttt{fried psu}) \\)
+ * P_cb_pw_fc: \\( P(\texttt{circuit board works}\enspace|\enspace\texttt{psu works},\enspace\texttt{fried circuit board}) \\)
+ * P_gw_cb_wr_dp: \\( P(\texttt{get water}\enspace|\enspace\texttt{circuit board works},\enspace\texttt{water reservoir empty},\enspace\texttt{dead pump}) \\)
 
 Diagnostic:
- * `P_ls_he:` \\( P(\texttt{lights switch on}\enspace|\enspace\texttt{no electricity}) \\)
- * `P_vp_pw:` \\( P(\texttt{voltage across psu}\enspace|\enspace\texttt{psu works}) \\)
- * `P_lo_cb:` \\( P(\texttt{power light on}\enspace|\enspace\texttt{circuit board works}) \\)
- * `P_wv_wr:` \\( P(\texttt{water visible}\enspace|\enspace\texttt{water reservoir empty}) \\)
- * `P_hp_dp:` \\( P(\texttt{can hear pump}\enspace|\enspace\texttt{dead pump}) \\)
- * `P_me_gw_gs:` \\( P(\texttt{makes espresso}\enspace|\enspace\texttt{get water},\enspace\texttt{group head gasket seal broken}) \\)
- * `P_ta_me_fh:` \\( P(\texttt{tasty}\enspace|\enspace\texttt{makes espresso},\enspace\texttt{fried heating element}) \\)
+ * P_ls_he: \\( P(\texttt{lights switch on}\enspace|\enspace\texttt{no electricity}) \\)
+ * P_vp_pw: \\( P(\texttt{voltage across psu}\enspace|\enspace\texttt{psu works}) \\)
+ * P_lo_cb: \\( P(\texttt{power light on}\enspace|\enspace\texttt{circuit board works}) \\)
+ * P_wv_wr: \\( P(\texttt{water visible}\enspace|\enspace\texttt{water reservoir empty}) \\)
+ * P_hp_dp: \\( P(\texttt{can hear pump}\enspace|\enspace\texttt{dead pump}) \\)
+ * P_me_gw_gs: \\( P(\texttt{makes espresso}\enspace|\enspace\texttt{get water},\enspace\texttt{group head gasket seal broken}) \\)
+ * P_ta_me_fh: \\( P(\texttt{tasty}\enspace|\enspace\texttt{makes espresso},\enspace\texttt{fried heating element}) \\)
 
 Note that while the model is close to what you may guess the probabilities are not absolute, to account for mistakes and unknown failures. For instance, the mechanic may make a mistake while brewing an espresso and erroneously conclude that the machine is broken when it is in fact awesome. The probabilities associated with each failure are not uniform. The data set is roughly \\( 50:50 \\) between failed/working machines, which is hardly realistic for a real product, but makes this exercise simpler as it avoids the problem of extremely rare failure modes.
 
