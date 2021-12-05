@@ -9,7 +9,7 @@ categories: [Data Science]
 
 Each row of the data contains a fully observed coffee machine, with the state of every random variable. The random variables are all binary, with \\( \texttt{False} \\) represented by 0 and \\( \texttt{True} \\) represented by 1. The variables are:
 
-Failures _(you're trying to detect these)_:
+Failures _(we're trying to detect these)_:
 * 0. he - No electricity
 * 1. fp - Fried power supply unit
 * 2. fc - Fried circuit board  
@@ -230,8 +230,7 @@ such that \\( x \\) is the probability of getting a \\( \texttt{False} \\) from 
 
 Writing out the relevant parts of the Bayes rule update for observing a RV, \\( v = 0 \\) (False), you get
 
-$$
-\begin{aligned}
+$$\begin{aligned}
 \operatorname{Beta}(x | \alpha_1, \beta_1) &\propto \operatorname{Bernoulli}(v = 0 | x)\operatorname{Beta}(x | s\alpha_0,\beta_0)
 
 x^{\alpha_1-1}(1-x)^{\beta_1-1} &\propto \left(x^{(1-v)} (1-x)^v\right) \left(x^{\alpha_0-1}(1-x)^{\beta_0-1}\right)
@@ -241,8 +240,7 @@ x^{\alpha_1-1}(1-x)^{\beta_1-1} &\propto x^1 (1-x)^0 x^{\alpha_0-1}(1-x)^{\beta_
 x^{\alpha_1-1}(1-x)^{\beta_1-1} &\propto x^{\alpha_0+1-1}(1-x)^{\beta_0-1}
 
 \operatorname{Beta}(x | \alpha_1, \beta_1) &= \operatorname{Beta}(x | \alpha_0+1,\beta_0)
-\end{aligned}
-$$
+\end{aligned}$$
 
 Subscripts of the hyperparameters are used to indicate how many data points have been seen; True works similarly. Put simply, the result is that you count how many instances exist of each combination, and add 1 for the hyperparameters. The maximum likelihood is then the expected value, which is
 
