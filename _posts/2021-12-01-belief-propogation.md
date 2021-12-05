@@ -464,10 +464,8 @@ def send_rv(src, dest, msgs):
     # **************************************************************** 1 mark
     send_message_rv = numpy.ones(2)
     for k, v in msgs[src].items():
-
         if k == dest:
             continue
-
         else:
             send_message_rv *= v
 
@@ -482,25 +480,18 @@ def send_factor(src, dest, msgs, rvs):
     and the names of the dimensions"""
     
     send_message_factor = rvs[fac2rv(src)][0].copy()
-
     _ = []
-    
     for k, v in msgs[src].items():
-
         if k == dest:
             continue
-
         else:
             idx_no = rvs[fac2rv(src)][2].index(k)
-
             dimensions = []
             for i in range(len(send_message_factor.shape)):
-
                 if i == idx_no:
                     dimensions.append(2)
                 else:
                     dimensions.append(1)
-
             _.append(idx_no)
             send_message_factor *= v.reshape(dimensions)
     send_message_factor = send_message_factor.sum(axis = tuple(_))
@@ -528,10 +519,8 @@ def marginals(known):
             # Random variable...
             if src not in known:
                 msgs[dest][src] = send_rv(src, dest, msgs)
-            
             else:
                 msgs[dest][src] = numpy.array([0,1] if known[src] else [1,0])
-        
         else:
             # Factor...
             msgs[dest][src] = send_factor(src, dest, msgs, rvs)
