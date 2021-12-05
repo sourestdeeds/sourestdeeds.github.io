@@ -463,7 +463,7 @@ There are two kinds of node: RVs and factors. The message sent by a random varia
 
 $$M_{s \rightarrow d}(x) = \prod_{\forall n \cdot n \neq d} M_{n \rightarrow s}(x)$$
 
-where \\( s \\) (source) is a RV and \\( d \\) (destination) is a factor and \\( n \\) covers the neighbours of \\( s \\) (they must each have sent a message to \\( s \\), and will be factors). \\( x \\) is 0 or 1, corresponding to False or True; messages are functions, conveniently discrete and hence represented as arrays in this case. This equation is exactly what you need to evaluate in *send_rv()*. An almost identical equation is the _belief_, that is the marginal distribution of a RV and the final output of the algorithm:
+where \\( s \\) (source) is a RV and \\( d \\) (destination) is a factor and \\( n \\) covers the neighbours of \\( s \\) (they must each have sent a message to \\( s \\), and will be factors). \\( x \\) is 0 or 1, corresponding to \\( \texttt{False} \\) or \\( \texttt{True} \\); messages are functions, conveniently discrete and hence represented as arrays in this case. This equation is exactly what you need to evaluate in *send_rv()*. An almost identical equation is the _belief_, that is the marginal distribution of a RV and the final output of the algorithm:
 
 $$B_s(x) = \prod_{\forall n} M_{n \rightarrow s}(x)$$
 
