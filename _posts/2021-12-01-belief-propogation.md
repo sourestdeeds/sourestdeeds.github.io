@@ -223,22 +223,26 @@ Your task is to fill in the distributions with a maximum a posteriori probabilit
 
 $$P(x) \propto x^{\alpha-1}(1-x)^{\beta-1}$$
 
-such that \\( x \\) is the probability of getting a False from the Bernoulli draw (note that this is backwards from what you might suspect, because it keeps the arrays in the same order). The hyperparameters for the priors are to be set as \\( \alpha = \beta = 1 \\). The Beta distribution is _conjugate_, that is when you observe a Bernoulli draw and update using Bayes rule the posterior is also a Beta distribution. This makes the procedure particularly simple:
+such that \\( x \\) is the probability of getting a \\( \texttt{False} \\) from the Bernoulli draw (note that this is backwards from what you might suspect, because it keeps the arrays in the same order). The hyperparameters for the priors are to be set as \\( \alpha = \beta = 1 \\). The Beta distribution is _conjugate_, that is when you observe a Bernoulli draw and update using Bayes rule the posterior is also a Beta distribution. This makes the procedure particularly simple:
 1. Initialise every conditional probability with the hyperparameters \\( \alpha \\) and \\( \beta \\)
 2. Update them for every coffee machine in the data set
 3. Extract the maximum likelihood parameters from the posterior \\( \alpha \\) and \\( \beta \\) parameters
 
 Writing out the relevant parts of the Bayes rule update for observing a RV, \\( v = 0 \\) (False), you get
 
-$$\operatorname{Beta}(x | \alpha_1, \beta_1) \propto \operatorname{Bernoulli}(v = 0 | x)\operatorname{Beta}(x | s\alpha_0,\beta_0)$$
+$$
+\begin{aligned}
+\operatorname{Beta}(x | \alpha_1, \beta_1) &\propto \operatorname{Bernoulli}(v = 0 | x)\operatorname{Beta}(x | s\alpha_0,\beta_0)
 
-$$x^{\alpha_1-1}(1-x)^{\beta_1-1} \propto \left(x^{(1-v)} (1-x)^v\right) \left(x^{\alpha_0-1}(1-x)^{\beta_0-1}\right)$$
+x^{\alpha_1-1}(1-x)^{\beta_1-1} &\propto \left(x^{(1-v)} (1-x)^v\right) \left(x^{\alpha_0-1}(1-x)^{\beta_0-1}\right)
 
-$$x^{\alpha_1-1}(1-x)^{\beta_1-1} \propto x^1 (1-x)^0 x^{\alpha_0-1}(1-x)^{\beta_0-1}$$
+x^{\alpha_1-1}(1-x)^{\beta_1-1} &\propto x^1 (1-x)^0 x^{\alpha_0-1}(1-x)^{\beta_0-1}
 
-$$x^{\alpha_1-1}(1-x)^{\beta_1-1} \propto x^{\alpha_0+1-1}(1-x)^{\beta_0-1}$$
+x^{\alpha_1-1}(1-x)^{\beta_1-1} &\propto x^{\alpha_0+1-1}(1-x)^{\beta_0-1}
 
-$$\operatorname{Beta}(x | \alpha_1, \beta_1) = \operatorname{Beta}(x | \alpha_0+1,\beta_0)$$
+\operatorname{Beta}(x | \alpha_1, \beta_1) &= \operatorname{Beta}(x | \alpha_0+1,\beta_0)
+\end{aligned}
+$$
 
 Subscripts of the hyperparameters are used to indicate how many data points have been seen; True works similarly. Put simply, the result is that you count how many instances exist of each combination, and add 1 for the hyperparameters. The maximum likelihood is then the expected value, which is
 
