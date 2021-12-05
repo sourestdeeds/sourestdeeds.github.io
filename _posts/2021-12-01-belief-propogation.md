@@ -82,8 +82,6 @@ import itertools
 import numpy
 import matplotlib.pyplot as plt
 
-
-
 # Helper used below for some pretty printing, to loop all conditional variable combinations...
 # (feel free to ignore)
 def loop_conditionals(count):
