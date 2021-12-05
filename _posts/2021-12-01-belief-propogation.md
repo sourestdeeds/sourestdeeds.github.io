@@ -229,7 +229,7 @@ such that \\( x \\) is the probability of getting a \\( \texttt{False} \\) from 
 2. Update them for every coffee machine in the data set
 3. Extract the maximum likelihood parameters from the posterior \\( \alpha \\) and \\( \beta \\) parameters
 
-Writing out the relevant parts of the Bayes rule update for observing a RV, \\( v = 0 \\) (False), you get
+Writing out the relevant parts of the Bayes rule update for observing a RV, \\( v = 0 \\) (\\( \texttt{False} \\)), you get
 
 $$\begin{aligned}
 \operatorname{Beta}(x | \alpha_1, \beta_1) &\propto \operatorname{Bernoulli}(v = 0 | x)\operatorname{Beta}(x | s\alpha_0,\beta_0)\\
