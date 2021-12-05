@@ -174,7 +174,7 @@ code {
 pre {
   padding: 8px 12px;
   overflow-x: scroll;
-
+  white-space:nowrap;
   > code {
     border: 0;
     padding-right: 0;
