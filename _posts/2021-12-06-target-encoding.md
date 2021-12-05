@@ -4,7 +4,7 @@ tags: [kaggle, feature engineering, target encoding, encoding]
 layout: post
 mathjax: true
 categories: [Kaggle Notes]
-published: false
+published: true
 ---
 
 Most of the techniques we've seen in this course have been for numerical features. The technique we'll look at in this lesson, target encoding, is instead meant for categorical features. It's a method of encoding categories as numbers, like one-hot or label encoding, with the difference that it also uses the target to create the encoding. This makes it what we call a supervised feature engineering technique.
@@ -25,19 +25,19 @@ autos[["make", "price", "make_encoded"]].head(10)
 
 <div class="table-wrapper" markdown="block">
 
-|     | make        | price | make_encoded | horsepower |
-|-----|-------------|-------|--------------|------------|
-| 0   | alfa-romero | 13495 | 15498.333333 | 2756       |
-| 1   | alfa-romero | 16500 | 15498.333333 | 2756       |
-| 2   | alfa-romero | 16500 | 15498.333333 | 2800       |
-| 3   | audi        | 13950 | 17859.166667 | 3950       |
-| 4   | audi        | 17450 | 17859.166667 | 3139       |
-| 5   | audi        | 15250 | 17859.166667 | ...        |
-| 6   | audi        | 17710 | 17859.166667 | 3750       |
-| 7   | audi        | 18920 | 17859.166667 | 3770       |
-| 8   | audi        | 23875 | 17859.166667 | 3430       |
-| 9   | bmw         | 16430 | 26118.750000 | 3485       |
-| 143 | toyota      | wagon | 62           | 3110       |
+|     | make        | price | make_encoded | 
+|-----|-------------|-------|--------------|
+| 0   | alfa-romero | 13495 | 15498.333333 | 
+| 1   | alfa-romero | 16500 | 15498.333333 | 
+| 2   | alfa-romero | 16500 | 15498.333333 | 
+| 3   | audi        | 13950 | 17859.166667 | 
+| 4   | audi        | 17450 | 17859.166667 | 
+| 5   | audi        | 15250 | 17859.166667 | 
+| 6   | audi        | 17710 | 17859.166667 |
+| 7   | audi        | 18920 | 17859.166667 | 
+| 8   | audi        | 23875 | 17859.166667 | 
+| 9   | bmw         | 16430 | 26118.750000 | 
+
 
 </div>
 
