@@ -125,14 +125,10 @@ nti['hp'] = 14
 nti['me'] = 15
 nti['ta'] = 16
 
-
-
 # Opposite to the above - index to name...
 itn = ['he', 'fp', 'fc', 'wr', 'gs', 'dp', 'fh',
        'pw', 'cb', 'gw',
        'ls', 'vp', 'lo', 'wv', 'hp', 'me', 'ta'] # 'index to name'
-
-
 
 # For conveniance this code loads the data from the zip file,
 # so you don't have to decompress it (takes a few seconds to run)...
@@ -145,8 +141,6 @@ with zipfile.ZipFile('coffee_machines.zip') as zf:
         for row in reader:
             dm.append([int(v) for v in row])
         dm = numpy.array(dm, dtype=numpy.int8)
-
-
 
 # Basic information...
 print('Data: {} exemplars, {} features'.format(dm.shape[0], dm.shape[1]))
@@ -189,8 +183,6 @@ P_hp_dp       = numpy.zeros((2,2))
 P_me_gw_gs    = numpy.zeros((2,2,2))
 P_ta_me_fh    = numpy.zeros((2,2,2))
 
-
-
 # This list describes the above in a computer readable form,
 # as the tuple (numpy array, human readable name, list of RVs, kind);
 # the list of RVs is aligned with the dimensions of the numpy array
@@ -212,8 +204,6 @@ rvs = [(P_he, 'P(he)', [nti['he']], 'F'),
        (P_hp_dp, 'P(hp|dp)', [nti['hp'], nti['dp']], 'D'),
        (P_me_gw_gs, 'P(me|gw,gs)', [nti['me'], nti['gw'], nti['gs']], 'D'),
        (P_ta_me_fh, 'P(ta|me,fh)', [nti['ta'], nti['me'], nti['fh']], 'D')]
-
-
 ```
 
 ### Learning Conditional Probability Distributions
@@ -362,13 +352,10 @@ def rv2fac(i):
     the corresponding factor node."""
     return i + 17
 
-
 def fac2rv(i):
     """Given the index of a factor node this returns the index of
     the corresponding random variable node."""
     return i - 17
-
-
 
 def calc_edges(rvs):
     """Uses the rvs array to calculate and return a list of edges,
@@ -392,7 +379,6 @@ def calc_edges(rvs):
 edges = calc_edges(rvs)
 print('Generated {} edges'.format(len(edges)))
 print(edges)
-
 ```
 
     Generated 33 edges
@@ -500,9 +486,6 @@ def send_rv(src, dest, msgs):
 
     return send_message_rv
 
-
-
-
 def send_factor(src, dest, msgs, rvs):
     """Returns the message to send from src (source, always a factor) to dest
     (destination, always a RV). msgs is dictionaries within a dictionary such
@@ -535,7 +518,6 @@ def send_factor(src, dest, msgs, rvs):
             send_message_factor *= v.reshape(dimensions)
     send_message_factor = send_message_factor.sum(axis = tuple(_))
     return send_message_factor
-
 ```
 
 ### Belief Propagation
@@ -578,8 +560,6 @@ def marginals(known):
             ret[r,:] = numpy.array([0,1] if known[r] else [1,0])
 
     return ret
-
-
 
 print('Marginals with no observations:') # P(ta = True) = 0.53288705
 belief = marginals({})
@@ -651,7 +631,6 @@ repair['E'] = {nti['hp'] : True, nti['wv'] : True, nti['vp']: True}
 # **************************************************************** 0 marks
 for i in ['A', 'B', 'C', 'D', 'E']:
     print(repair[i])
-
 ```
 
     {15: True}
