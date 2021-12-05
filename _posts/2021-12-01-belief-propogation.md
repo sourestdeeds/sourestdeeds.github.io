@@ -406,10 +406,6 @@ There are many ways to solve this problem and you're welcome to choose any (the 
 
 Implemented badly the above is both horrifically slow and fiddly to code. One technique to make it faster is to _bounce_ — instead of going through the list of messages to send in the same order each time you go forwards and then backwards and then forwards etc. This avoids the scenario where the to send list contains the messages in reverse sending order, such that with each loop you only find one more message that you can send, meaning you have to loop as many times as there are messages. A second technique also makes the code much simpler. Figuring out if you can send a message when the lists are represented as lists is slow — you have to loop both. Instead, convert the lists into a pair of nested dictionaries indexed `[message destination][message source]`{:.language-python .highlight} (order is important!) that contains \\( \texttt{True} \\) if the message has been sent (in second list), \\( \texttt{False} \\) if it has not (in first list). It's now simple to check if a message can be sent or not; you will still need to generate the list of messages to send as you flip values from \\( \texttt{False} \\) to \\( \texttt{True} \\) (make sure you get the order right — the dictionaries are indexed backwards).
 
-Hint:
-* When converting from edges to dictionaries of flags `defaultdict(dict)`{:.language-python .highlight} may simplify.
-* `all(v for v in thing if <condition>)`{:.language-python .highlight} is valid Python, that returns True only if \\( v \\) is True for every instance that passes the condition.
-
 
 ```python
 def calc_msg_order(edges):
@@ -481,12 +477,6 @@ where \\( P[s,d,\ldots] \\) is the conditional probability distribution, which w
 1. Copy the factor (\\(P[s,d,\cdot]\\)) so it can be used as working storage
 2. Multiply in each message to the source (unless from destination), using broadcasting to align it with the correct dimension
 3. Marginalise out all but the RV of the destination node
-
-Hints:
-* Messages are always length 2 vectors, at least in this scenario where everything is a binary RV.
-* Remember that the factor index in *send_factor* is offset by 17 from the index of the actual factor it needs to use in *rvs*.
-* [einsum()](https://docs.scipy.org/doc/numpy/reference/generated/numpy.einsum.html) makes *send_factor* very elegant, if you dare (can all be done in one, horrifying, line).
-* Alternatively, [reshape()](https://docs.scipy.org/doc/numpy/reference/generated/numpy.reshape.html) is easier to understand for multiplication and then [sum()](https://docs.scipy.org/doc/numpy/reference/generated/numpy.sum.html) lets you sum out (marginalise) many axes at the same time, by giving them as a tuple to the *axes* keyword parameter.
 
 
 
