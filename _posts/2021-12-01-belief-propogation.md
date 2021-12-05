@@ -52,7 +52,7 @@ Failures:
  * P_fh: \\( P(\texttt{fried heating element}) \\)
 
 Mechanism:
- * P_pw_he_fp: \\( P(\texttt{psu works}\enspace|\enspace\texttt{no electricity},\enspace\texttt{fried psu}) \\)
+ * P_pw_he_fp: \\( P(\texttt{psu works}\mid\texttt{no electricity},\enspace\texttt{fried psu}) \\)
  * P_cb_pw_fc: \\( P(\texttt{circuit board works}\enspace|\enspace\texttt{psu works},\enspace\texttt{fried circuit board}) \\)
  * P_gw_cb_wr_dp: \\( P(\texttt{get water}\enspace|\enspace\texttt{circuit board works},\enspace\texttt{water reservoir empty},\enspace\texttt{dead pump}) \\)
 
