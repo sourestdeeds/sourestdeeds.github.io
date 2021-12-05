@@ -217,7 +217,7 @@ rvs = [(P_he, 'P(he)', [nti['he']], 'F'),
 
 ### Learning Conditional Probability Distributions
 
-Above a set of variables representing conditional probability distributions has been defined. They are to represent a Bernoulli trial for each combination of conditional variables, given as \\( P(\texttt{False}\mid ...) \\) in `rv[0,...]`{:.language-python .highlight} and \\( P(\texttt{True}|...) \\) in `rv[1,...]`{:.language-python .highlight}. Obviously these two values should sum to 1; giving the probability of both True and False is redundant, but makes all of the code much cleaner.
+Above a set of variables representing conditional probability distributions has been defined. They are to represent a Bernoulli trial for each combination of conditional variables, given as \\( P(\texttt{False}\mid ...) \\) in `rv[0,...]`{:.language-python .highlight} and \\( P(\texttt{True}\mid ...) \\) in `rv[1,...]`{:.language-python .highlight}. Obviously these two values should sum to 1; giving the probability of both True and False is redundant, but makes all of the code much cleaner.
 
 Your task is to fill in the distributions with a maximum a posteriori probability (MAP) estimate given the data. The prior to be used for all RVs is a Beta distribution,
 
