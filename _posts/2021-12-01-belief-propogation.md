@@ -213,9 +213,9 @@ The next task is to fill in the distributions with a maximum a posteriori probab
 $$P(x) \propto x^{\alpha-1}(1-x)^{\beta-1}$$
 
 such that \\( x \\) is the probability of getting a \\( \texttt{False} \\) from the Bernoulli draw (note that this is backwards from what you might suspect, because it keeps the arrays in the same order). The hyperparameters for the priors are to be set as \\( \alpha = \beta = 1 \\). The Beta distribution is _conjugate_, that is when you observe a Bernoulli draw and update using Bayes rule the posterior is also a Beta distribution. This makes the procedure particularly simple:
-1. Initialise every conditional probability with the hyperparameters \\( \alpha \\) and \\( \beta \\)
-2. Update them for every coffee machine in the data set
-3. Extract the maximum likelihood parameters from the posterior \\( \alpha \\) and \\( \beta \\) parameters
+- Initialise every conditional probability with the hyperparameters \\( \alpha \\) and \\( \beta \\)
+- Update them for every coffee machine in the data set
+- Extract the maximum likelihood parameters from the posterior \\( \alpha \\) and \\( \beta \\) parameters
 
 Writing out the relevant parts of the Bayes rule update for observing a RV, \\( v = 0 \\) (\\( \texttt{False} \\)), you get
 
