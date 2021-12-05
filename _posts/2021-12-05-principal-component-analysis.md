@@ -73,7 +73,7 @@ The second way is to use the components themselves as features. Because the comp
 
 PCA basically gives you direct access to the correlational structure of your data. You'll no doubt come up with applications of your own!
 
-> PCA Best Practices
+> ### PCA Best Practices
 > There are a few things to keep in mind when applying PCA:
 > - PCA only works with numeric features, like continuous quantities or counts.
 > - PCA is sensitive to scale. It's good practice to standardize your data before applying PCA, unless you know you have good reason not to.

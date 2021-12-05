@@ -7,21 +7,72 @@ categories: [Kaggle Notes]
 published: false
 ---
 
-In the previous lesson we looked at our first model-based method for feature engineering: clustering. In this lesson we look at our next: principal component analysis (PCA). Just like clustering is a partitioning of the dataset based on proximity, you could think of PCA as a partitioning of the variation in the data. PCA is a great tool to help you discover important relationships in the data and can also be used to create more informative features.
+Most of the techniques we've seen in this course have been for numerical features. The technique we'll look at in this lesson, target encoding, is instead meant for categorical features. It's a method of encoding categories as numbers, like one-hot or label encoding, with the difference that it also uses the target to create the encoding. This makes it what we call a supervised feature engineering technique.
 
-(Technical note: PCA is typically applied to standardized data. With standardized data "variation" means "correlation". With unstandardized data "variation" means "covariance". All data in this course will be standardized before applying PCA.)
 
-### Principal Component Analysis
+A **target encoding** is any kind of encoding that replaces a feature's categories with some number derived from the target.
 
-In the [Abalone](https://www.kaggle.com/rodolfomendes/abalone-dataset) dataset are physical measurements taken from several thousand Tasmanian abalone. (An abalone is a sea creature much like a clam or an oyster.) We'll just look at a couple features for now: the 'Height' and 'Diameter' of their shells.
+A simple and effective version is to apply a group aggregation from Lesson 3, like the mean. Using the Automobiles dataset, this computes the average price of each vehicle's make:
 
-You could imagine that within this data are "axes of variation" that describe the ways the abalone tend to differ from one another. Pictorially, these axes appear as perpendicular lines running along the natural dimensions of the data, one axis for each original feature.
+```python
+import pandas as pd
 
+autos = pd.read_csv("../input/fe-course-data/autos.csv")
+autos["make_encoded"] = autos.groupby("make")["price"].transform("mean")
+
+autos[["make", "price", "make_encoded"]].head(10)
+```
+
+<div class="table-wrapper" markdown="block">
+
+|     | make        | price | make_encoded | horsepower |
+|-----|-------------|-------|--------------|------------|
+| 0   | alfa-romero | 13495 | 15498.333333 | 2756       |
+| 1   | alfa-romero | 16500 | 15498.333333 | 2756       |
+| 2   | alfa-romero | 16500 | 15498.333333 | 2800       |
+| 3   | audi        | 13950 | 17859.166667 | 3950       |
+| 4   | audi        | 17450 | 17859.166667 | 3139       |
+| 5   | audi        | 15250 | 17859.166667 | ...        |
+| 6   | audi        | 17710 | 17859.166667 | 3750       |
+| 7   | audi        | 18920 | 17859.166667 | 3770       |
+| 8   | audi        | 23875 | 17859.166667 | 3430       |
+| 9   | bmw         | 16430 | 26118.750000 | 3485       |
+| 143 | toyota      | wagon | 62           | 3110       |
+
+</div>
+
+This kind of target encoding is sometimes called a **mean encoding**. Applied to a binary target, it's also called **bin counting**. (Other names you might come across include: likelihood encoding, impact encoding, and leave-one-out encoding.)
+
+### Smoothing
+
+An encoding like this presents a couple of problems, however. First are unknown categories. Target encodings create a special risk of overfitting, which means they need to be trained on an independent "encoding" split. When you join the encoding to future splits, Pandas will fill in missing values for any categories not present in the encoding split. These missing values you would have to impute somehow.
+
+Second are rare categories. When a category only occurs a few times in the dataset, any statistics calculated on its group are unlikely to be very accurate. In the Automobiles dataset, the mercurcy make only occurs once. The "mean" price we calculated is just the price of that one vehicle, which might not be very representative of any Mercuries we might see in the future. Target encoding rare categories can make overfitting more likely.
+
+A solution to these problems is to add smoothing. The idea is to blend the in-category average with the overall average. Rare categories get less weight on their category average, while missing categories just get the overall average.
+
+In pseudocode:
+
+    encoding = weight * in_category + (1 - weight) * overall
+
+where *weight* is a value between 0 and 1 calculated from the category frequency.
+
+An easy way to determine the value for weight is to compute an **m-estimate**:
+
+    weight = n / (n + m)
+
+where *n* is the total number of times that category occurs in the data. The parameter m determines the "smoothing factor". Larger values of *m* put more weight on the overall estimate.
 
     
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-05-principle-component-analysis/1.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-05-principle-component-analysis/1.png)
-<center><b>Figure 1:</b> The axes of variation.</center><br>     
-    
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-06-target-encoding/1.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-06-target-encoding/1.png)
+<center><b>Figure 1:</b> M-Estimates comapred.</center><br>     
+
+In the *Automobiles* dataset there are three cars with the make chevrolet. If you chose \\( m=2.0 \\), then the chevrolet category would be encoded with 60% of the average Chevrolet price plus 40% of the overall average price.    
+
+    chevrolet = 0.6 * 6000.00 + 0.4 * 13285.03
+
+When choosing a value for *m*, consider how noisy you expect the categories to be. Does the price of a vehicle vary a great deal within each make? Would you need a lot of data to get good estimates? If so, it could be better to choose a larger value for *m*; if the average price for each make were relatively stable, a smaller value could be okay.
+
 
 Often, we can give names to these axes of variation. The longer axis we might call the "Size" component: small height and small diameter (lower left) contrasted with large height and large diameter (upper right). The shorter axis we might call the "Shape" component: small height and large diameter (flat shape) contrasted with large height and small diameter (round shape).
 
@@ -39,14 +90,6 @@ These new features are called the principal components of the data. The weights 
 
 A component's loadings tell us what variation it expresses through signs and magnitudes:
 
-<div class="table-wrapper" markdown="block">
-
-| Features \ Components | Size (PC1) | Shape (PC2) |
-|-----------------------|------------|-------------|
-| Height                | 0.707      | 0.707       |
-| Diameter              | 0.707      | -0.707      |
-
-</div>
 
 This table of loadings is telling us that in the *Size* component, *Height* and *Diameter* vary in the same direction (same sign), but in the Shape component they vary in opposite directions (opposite sign). In each component, the loadings are all of the same magnitude and so the features contribute equally in both.
 
