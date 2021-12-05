@@ -169,11 +169,11 @@ concrete[components + ["Components"]].head(10)
 Often you'll have complex strings that can usefully be broken into simpler pieces. Some common examples:
 
 - ID numbers: `'123-45-6789'`{:.language-python .highlight}
-- Phone numbers: '(999) 555-0123'
-- Street addresses: '8241 Kaggle Ln., Goose City, NV'
-- Internet addresses: 'http://www.kaggle.com
-- Product codes: '0 36000 29145 2'
-- Dates and times: 'Mon Sep 30 07:06:05 2013'
+- Phone numbers: `'(999) 555-0123'`{:.language-python .highlight}
+- Street addresses: `'8241 Kaggle Ln., Goose City, NV'`{:.language-python .highlight}
+- Internet addresses: `'http://www.kaggle.com'`{:.language-python .highlight}
+- Product codes: `'0 36000 29145 2'`{:.language-python .highlight}
+- Dates and times: `'Mon Sep 30 07:06:05 2013'`{:.language-python .highlight}
 
 Features like these will often have some kind of structure that you can make use of. US phone numbers, for instance, have an area code (the '(999)' part) that tells you the location of the caller. As always, some research can pay off here.
 
