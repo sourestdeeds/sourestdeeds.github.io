@@ -33,7 +33,6 @@ Added to a dataframe, a feature of cluster labels might look like this:
 | -93.619   | 42.053   | 3       |
 | -93.638   | 42.060   | 1       |
 | -93.602   | 41.988   | 0       |
-| 4         | 198.6    | 132.4   |
 
 </div>
 
