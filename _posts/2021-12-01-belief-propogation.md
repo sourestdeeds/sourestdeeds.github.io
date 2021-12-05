@@ -53,17 +53,17 @@ Failures:
 
 Mechanism:
  * P_pw_he_fp: \\( P(\texttt{psu works}\mid\texttt{no electricity},\enspace\texttt{fried psu}) \\)
- * P_cb_pw_fc: \\( P(\texttt{circuit board works}\enspace|\enspace\texttt{psu works},\enspace\texttt{fried circuit board}) \\)
- * P_gw_cb_wr_dp: \\( P(\texttt{get water}\enspace|\enspace\texttt{circuit board works},\enspace\texttt{water reservoir empty},\enspace\texttt{dead pump}) \\)
+ * P_cb_pw_fc: \\( P(\texttt{circuit board works}\mid\texttt{psu works},\enspace\texttt{fried circuit board}) \\)
+ * P_gw_cb_wr_dp: \\( P(\texttt{get water}\mid\texttt{circuit board works},\enspace\texttt{water reservoir empty},\enspace\texttt{dead pump}) \\)
 
 Diagnostic:
- * P_ls_he: \\( P(\texttt{lights switch on}\enspace|\enspace\texttt{no electricity}) \\)
- * P_vp_pw: \\( P(\texttt{voltage across psu}\enspace|\enspace\texttt{psu works}) \\)
- * P_lo_cb: \\( P(\texttt{power light on}\enspace|\enspace\texttt{circuit board works}) \\)
- * P_wv_wr: \\( P(\texttt{water visible}\enspace|\enspace\texttt{water reservoir empty}) \\)
- * P_hp_dp: \\( P(\texttt{can hear pump}\enspace|\enspace\texttt{dead pump}) \\)
- * P_me_gw_gs: \\( P(\texttt{makes espresso}\enspace|\enspace\texttt{get water},\enspace\texttt{group head gasket seal broken}) \\)
- * P_ta_me_fh: \\( P(\texttt{tasty}\enspace|\enspace\texttt{makes espresso},\enspace\texttt{fried heating element}) \\)
+ * P_ls_he: \\( P(\texttt{lights switch on}\mid\texttt{no electricity}) \\)
+ * P_vp_pw: \\( P(\texttt{voltage across psu}\mid\texttt{psu works}) \\)
+ * P_lo_cb: \\( P(\texttt{power light on}\mid\texttt{circuit board works}) \\)
+ * P_wv_wr: \\( P(\texttt{water visible}\mid\texttt{water reservoir empty}) \\)
+ * P_hp_dp: \\( P(\texttt{can hear pump}\mid\texttt{dead pump}) \\)
+ * P_me_gw_gs: \\( P(\texttt{makes espresso}\mid\texttt{get water},\enspace\texttt{group head gasket seal broken}) \\)
+ * P_ta_me_fh: \\( P(\texttt{tasty}\mid\texttt{makes espresso},\enspace\texttt{fried heating element}) \\)
 
 Note that while the model is close to what you may guess the probabilities are not absolute, to account for mistakes and unknown failures. For instance, the mechanic may make a mistake while brewing an espresso and erroneously conclude that the machine is broken when it is in fact awesome. The probabilities associated with each failure are not uniform. The data set is roughly \\( 50:50 \\) between failed/working machines, which is hardly realistic for a real product, but makes this exercise simpler as it avoids the problem of extremely rare failure modes.
 
