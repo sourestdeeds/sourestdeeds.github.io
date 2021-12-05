@@ -117,6 +117,13 @@
 }
 
 
+#togglemenu {display: none; cursor: pointer;}
+@media (max-width: 1000px) {
+    #togglemenu {display: block;}
+    #menu ul {display: none;}
+    .menuopen #menu ul {display: block;}
+}
+
 
 /**
  * Site footer
