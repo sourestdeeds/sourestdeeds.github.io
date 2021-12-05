@@ -174,7 +174,7 @@ code {
 pre {
   padding: 8px 12px;
   overflow-x: scroll;
-  
+
   > code {
     border: 0;
     padding-right: 0;
@@ -194,6 +194,8 @@ pre {
 
 .MathJax_Display, .MJXc-display, .MathJax_SVG_Display {
   overflow-x: scroll;
+  overflow-y: hidden;
+  width: 75%;
 }
 
 /**
