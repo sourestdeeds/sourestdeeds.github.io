@@ -192,7 +192,7 @@ pre {
   }
 }
 
-.MathJax_Display, .MJXc-display, .MathJax_SVG_Display {
+mjx-container[display="true"] {
   overflow-x: scroll;
   overflow-y: hidden;
   width: 75%;
