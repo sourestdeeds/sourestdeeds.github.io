@@ -256,7 +256,3 @@ sns.regplot(x="sports_or_wagon", y='price', data=df, order=2);
 
 [![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-05-principal-component-analysis/5.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-05-principal-component-analysis/5.png)
 <center><b>Figure 5:</b> The third component shows a contrast between sports cars or wagons.</center><br>   
-
-```
-output test
-```
