@@ -165,6 +165,7 @@ code {
   border: 1px solid $border-color-01;
   border-radius: 3px;
   background-color: $code-background-color;
+  white-space: pre;
 }
 
 code {
@@ -174,7 +175,6 @@ code {
 pre {
   padding: 8px 12px;
   overflow-x: scroll;
-  white-space: pre;
 
   > code {
     border: 0;
