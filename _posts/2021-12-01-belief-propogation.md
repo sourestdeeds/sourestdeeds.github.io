@@ -40,7 +40,8 @@ Above the number is the column number of the provided data (*dm*, an abbreviatio
 If you are unfamiliar with an espresso coffee machine here is a brief description of how one works (you can ignore this):
 > The user puts ground coffee into a portafilter (round container with a handle and two spouts at the bottom), tamps it (compacts the coffee down), and clamps the portafilter into the group head at the front of the machine. A gasket (rubber ring) forms a seal between the portafilter and group head. A button is pressed. Water is drawn from a reservoir by a pump into a boiler. In the boiler a heating element raises the waters temperature, before the pump pushes it through the group head and into the portafilter at high pressure. The water is forced through the coffee grinds and makes a tasty espresso.
 
-The graphical model (Bayes net) showing how the variables are related is also provided, as **coffee machine.pdf**; here it is given as conditional probabilities:
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-01-belief-propogation/1.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-01-belief-propogation/1.png)
+<center><b>Figure 1:</b> The Bayes net showing how the variables are related.</center><br>   
 
 Failures:
  * P_he: \\( P(\texttt{no electricity}) \\)
