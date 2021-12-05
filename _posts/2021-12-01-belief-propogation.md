@@ -7,7 +7,7 @@ categories: [Data Science]
 ---
 
 
-Each row of the data contains a fully observed coffee machine, with the state of every random variable. The random variables are all binary, with False represented by 0 and True represented by 1. The variables are:
+Each row of the data contains a fully observed coffee machine, with the state of every random variable. The random variables are all binary, with \\( \texttt{False} \\) represented by 0 and \\( \texttt{True} \\) represented by 1. The variables are:
 
 Failures _(you're trying to detect these)_:
 * 0. he - No electricity
@@ -219,7 +219,7 @@ rvs = [(P_he, 'P(he)', [nti['he']], 'F'),
 
 Above a set of variables representing conditional probability distributions has been defined. They are to represent a Bernoulli trial for each combination of conditional variables, given as \\( P(\texttt{False}\mid ...) \\) in `rv[0,...]`{:.language-python .highlight} and \\( P(\texttt{True}\mid ...) \\) in `rv[1,...]`{:.language-python .highlight}. Obviously these two values should sum to 1; giving the probability of both True and False is redundant, but makes all of the code much cleaner.
 
-Your task is to fill in the distributions with a maximum a posteriori probability (MAP) estimate given the data. The prior to be used for all RVs is a Beta distribution,
+The next task is to fill in the distributions with a maximum a posteriori probability (MAP) estimate given the data. The prior to be used for all RVs is a Beta distribution,
 
 $$P(x) \propto x^{\alpha-1}(1-x)^{\beta-1}$$
 
@@ -251,7 +251,7 @@ $$P(v=\textrm{False}|\ldots) = \frac{\alpha}{\alpha + \beta}$$
 It's typical to do all of the above within the conditional probability distribution arrays, using them to represent \\( \alpha \\) and \\( \beta \\) then treating step 3 as converting from hyperparameters to expected values.
 
 Hints:
-* The use of `0=False`{:.language-python .highlight} and `1=True`{:.language-python .highlight} both in the *dm* array and in the conditional probability distributions is very deliberate.
+* The use of `0 = False`{:.language-python .highlight} and `1 = True`{:.language-python .highlight} both in the *dm* array and in the conditional probability distributions is very deliberate.
 * Do not write unique code for each variable - that will be hundreds of lines of code and very tedious/error prone. It's possible to get all of the marks in 7 lines of code, or less, if you're particularly sneaky.
 * Remember that you can index a *numpy* array with a tuple; for instance using a tuple comprehension such as `tuple(dm[row,c] for c in columns)`{:.language-python .highlight} you could index an array with the values of the given *columns* indices, as extracted from the current *row* of the data matrix.
 * The provided *rvs* array exists to support the above two hints.
@@ -411,7 +411,7 @@ Belief propagation works by passing messages over the edges of the factor graph,
 
 There are many ways to solve this problem and you're welcome to choose any (the below is not the best), but here is a description of an approach that works by simulating message passing where constraints are checked: Generate a list of messages to send (the edges plus the edges with the tuples reversed, to cover both directions) and an empty list, which will ultimately contain the messages in the order they were sent. The algorithm then proceeds by identifying messages in the first list for which the constraint has been satisfied and then moving them to the end of the second list, indicating the message has been sent. This is repeated until the first list is empty and the second full; the second will be in a valid message sending order.
 
-Implemented badly the above is both horrifically slow and fiddly to code. One technique to make it faster is to _bounce_ — instead of going through the list of messages to send in the same order each time you go forwards and then backwards and then forwards etc. This avoids the scenario where the to send list contains the messages in reverse sending order, such that with each loop you only find one more message that you can send, meaning you have to loop as many times as there are messages. A second technique also makes the code much simpler. Figuring out if you can send a message when the lists are represented as lists is slow — you have to loop both. Instead, convert the lists into a pair of nested dictionaries indexed `[message destination][message source]`{:.language-python .highlight} (order is important!) that contains True if the message has been sent (in second list), `False` if it has not (in first list). It's now simple to check if a message can be sent or not; you will still need to generate the list of messages to send as you flip values from False to True (make sure you get the order right — the dictionaries are indexed backwards).
+Implemented badly the above is both horrifically slow and fiddly to code. One technique to make it faster is to _bounce_ — instead of going through the list of messages to send in the same order each time you go forwards and then backwards and then forwards etc. This avoids the scenario where the to send list contains the messages in reverse sending order, such that with each loop you only find one more message that you can send, meaning you have to loop as many times as there are messages. A second technique also makes the code much simpler. Figuring out if you can send a message when the lists are represented as lists is slow — you have to loop both. Instead, convert the lists into a pair of nested dictionaries indexed `[message destination][message source]`{:.language-python .highlight} (order is important!) that contains \\( \texttt{True} \\) if the message has been sent (in second list), \\( \texttt{False} \\) if it has not (in first list). It's now simple to check if a message can be sent or not; you will still need to generate the list of messages to send as you flip values from \\( \texttt{False} \\) to \\( \texttt{True} \\) (make sure you get the order right — the dictionaries are indexed backwards).
 
 Hint:
 * When converting from edges to dictionaries of flags `defaultdict(dict)`{:.language-python .highlight} may simplify.
@@ -556,7 +556,7 @@ def send_factor(src, dest, msgs, rvs):
 
 ### Belief Propagation
 
-Once you have the ability to send messages and an order in which to send the messages the rest of the algorithm is a cake walk. The only trick is that if a RV is known (observed) then instead of using *send_rv* whenever a message is sent from it you send the distribution it is known to be instead (\\( [1,0] \\) for False, \\( [0,1] \\) for True). The below code implements this.
+Once you have the ability to send messages and an order in which to send the messages the rest of the algorithm is a cake walk. The only trick is that if a RV is known (observed) then instead of using *send_rv* whenever a message is sent from it you send the distribution it is known to be instead (\\( [1,0] \\) for \\( \texttt{False} \\), \\( [0,1] \\) for \\( \texttt{True} \\)). The below code implements this.
 
 
 ```python
