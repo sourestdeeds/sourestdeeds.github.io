@@ -90,7 +90,6 @@ Here are some further explanations:
 To represent board states we're going to use a tuple of tuples, so that you may index them with \\( [row][column] \\), where \\( [0][0] \\) is the top left and \\( [2][2] \\) the bottom right. 
 
 
-
 ```python
 def print_state(state):
     """Prints the state."""
@@ -99,7 +98,6 @@ def print_state(state):
         print(state[i][0] + "|" + state[i][1] + "|" + state[i][2])
     print()
     # **************************************************************** (1 mark)
-
 
 # Code to test the above; output should be:
 #  | |
@@ -123,7 +121,6 @@ print()
 print_state((("o", "o", "o"), ("x", "x", "x"), (" ", " ", " ")))
 
 ```
-
      | | 
      | | 
      | | 
@@ -202,7 +199,6 @@ def score_end(state):
 
     # **************************************************************** (3 marks)
 
-
 # Code to test the above function...
 print(
     "Expected: None; Obtained:",
@@ -236,7 +232,6 @@ print(
     "Expected: 0;    Obtained:",
     score_end((("o", "x", "o"), ("x", "x", "o"), ("o", "o", "x"))),
 )
-
 ```
 
     Expected: None; Obtained: None
@@ -273,7 +268,6 @@ def play(state, row, col, mark):
     # **************************************************************** (2 marks)
     return state
 
-
 # Code to test the above function - it should play the game given in the 'noughts and crosses' section above...
 start = ((" ", " ", " "), (" ", " ", " "), (" ", " ", " "))
 move1 = play(start, 1, 1, "x")
@@ -300,7 +294,6 @@ print_state(move6)
 print("")
 print_state(move7)
 
-
 # The assert statement throws an error if what it is testing is not true.
 # The below assert statements confirm that the output of play is nested tuples.
 # 'is' when applied to core types (such as tuple) ensures exact equivalence.
@@ -308,9 +301,7 @@ assert type(move7) is tuple
 assert type(move7[0]) is tuple
 assert type(move7[1]) is tuple
 assert type(move7[2]) is tuple
-
 ```
-
      | | 
      | | 
      | | 
@@ -361,7 +352,6 @@ Given a state we need to know all of the possible moves that the current player 
 ```python
 import numpy as np
 
-
 def moves(state):
     """Returns the list of moves that are avaliable from the current state."""
 
@@ -387,7 +377,6 @@ assert set(moves2) == set([(0, 1), (2, 0), (2, 1), (2, 2)])
 
 moves3 = moves((("o", "x", "o"), ("x", "x", "o"), ("o", "o", "x")))
 assert moves3 == []
-
 ```
 
 ### Minimax
@@ -443,7 +432,6 @@ def score(state, player):
             return best_score
 
     """Simulate the games."""
-
     if player == "x":
         best_score = -10
         best_move = None
@@ -486,9 +474,7 @@ print(
     "Expected = -1; Obtained:",
     score((("o", " ", " "), ("x", " ", " "), ("o", " ", " ")), "o")[0],
 )
-
 ```
-
     Expected =  0; Obtained: 0
     Expected =  1; Obtained: 1
     Expected =  1; Obtained: 1
@@ -518,15 +504,11 @@ def perfect_game(state, player):
 
     return score_end(state)
 
-
 state = ((" ", " ", " "), (" ", " ", " "), (" ", " ", " "))
 player = "o"
 result = perfect_game(state, player)
 result
-# **************************************************************** (2 marks)
-
 ```
-
     o| | 
      | | 
      | | 
@@ -563,11 +545,6 @@ result
     x|x|o
     o|x|o
     
-
-
-
-
-
     0
 
     8.43 s ± 95.1 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
@@ -626,7 +603,6 @@ def score_alpha_beta(state, player):
             return best_score
 
     """Simulate the games."""
-
     if player == "x":
         best_score = -10
         best_move = None
@@ -652,7 +628,6 @@ def score_alpha_beta(state, player):
 
     return best_score, best_move
 
-
 print(
     "Expected =  0; Obtained:",
     score_alpha_beta(((" ", " ", " "), (" ", " ", " "), (" ", " ", " ")), "x")[0],
@@ -669,16 +644,11 @@ print(
     "Expected = -1; Obtained:",
     score_alpha_beta((("o", " ", " "), ("x", " ", " "), ("o", " ", " ")), "o")[0],
 )
-
 ```
-
     Expected =  0; Obtained: 0
     Expected =  1; Obtained: 1
     Expected =  1; Obtained: 1
     Expected = -1; Obtained: -1
-
-
-
 ```python
 %%timeit
 def perfect_game(state, player):
@@ -697,15 +667,11 @@ def perfect_game(state, player):
 
     return score_end(state)
 
-
 state = ((" ", " ", " "), (" ", " ", " "), (" ", " ", " "))
 player = "o"
 result = perfect_game(state, player)
 result
-# **************************************************************** (2 marks)
-
 ```
-
     o| | 
      | | 
      | | 
@@ -742,11 +708,6 @@ result
     x|x|o
     o|x|o
     
-
-
-
-
-
     0
 
     166 ms ± 414 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
