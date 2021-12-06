@@ -648,10 +648,12 @@ print(
     score_alpha_beta((("o", " ", " "), ("x", " ", " "), ("o", " ", " ")), "o")[0],
 )
 ```
+
     Expected =  0; Obtained: 0
     Expected =  1; Obtained: 1
     Expected =  1; Obtained: 1
     Expected = -1; Obtained: -1
+
 ```python
 %%timeit
 def perfect_game(state, player):
