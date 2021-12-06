@@ -500,6 +500,7 @@ print(
 
 
 ```python
+%%timeit
 def perfect_game(state, player):
     def switch_player(player):
         """Switches the players for before and after the simulation."""
@@ -569,7 +570,7 @@ result
 
     0
 
-
+    8.43 s ± 95.1 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 
 ### Alpha-Beta Pruning
 
@@ -679,6 +680,7 @@ print(
 
 
 ```python
+%%timeit
 def perfect_game(state, player):
     def switch_player(player):
         """Switches the players for before and after the simulation."""
@@ -747,5 +749,5 @@ result
 
     0
 
-
+    166 ms ± 414 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
 
