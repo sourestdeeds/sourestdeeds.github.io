@@ -3,7 +3,7 @@ title: 'Feature Engineering'
 tags: [kaggle, feature engineering]
 layout: post
 mathjax: true
-categories: [Kaggle Notes]
+categories: [Feature Engineering]
 published: true
 ---
 

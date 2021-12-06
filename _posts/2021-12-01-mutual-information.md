@@ -3,7 +3,7 @@ title: 'Mutual Information'
 tags: [kaggle, feature engineering, mutual information]
 layout: post
 mathjax: true
-categories: [Kaggle Notes]
+categories: [Feature Engineering]
 published: true
 ---
 

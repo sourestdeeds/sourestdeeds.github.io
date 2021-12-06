@@ -3,7 +3,7 @@ title: 'Principal Component Analysis'
 tags: [kaggle, feature engineering, pca, principle component analysis]
 layout: post
 mathjax: true
-categories: [Kaggle Notes]
+categories: [Feature Engineering]
 published: true
 ---
 

@@ -3,7 +3,7 @@ title: 'Target Encoding'
 tags: [kaggle, feature engineering, target encoding, encoding]
 layout: post
 mathjax: true
-categories: [Kaggle Notes]
+categories: [Feature Engineering]
 published: true
 ---
 

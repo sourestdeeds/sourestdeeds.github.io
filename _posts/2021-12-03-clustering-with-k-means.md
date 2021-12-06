@@ -3,7 +3,7 @@ title: 'Clustering with K-Means'
 tags: [kaggle, feature engineering, clustering, k means]
 layout: post
 mathjax: true
-categories: [Kaggle Notes]
+categories: [Feature Engineering]
 published: true
 ---
 
