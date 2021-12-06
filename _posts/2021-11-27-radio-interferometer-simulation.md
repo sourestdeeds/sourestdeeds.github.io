@@ -320,15 +320,15 @@ def import_file_VLA(file):
 ```
 
 |Variable      |        Name                                                |
-| ---          | :-                                                         |
+| ---          | ---                                                         |
   | \\( xyz \\)        |       Station Coordinates                              |
- | \\( XYZ \\)           |    Baseline Coordinate Differences: \\(V(X,Y)\\)                             |
- |        \\( uvw \\)          |    UV Coordinates \\( V(u,v)\\)                                |
-|\\( DEC \\)            |        Declination                                          |
-|\\( H\\)         |        Hour Angle Sample Array                              |        |
-| \\( T\\)            |        True Image: \\(T(u,v)\\)                                 |       
-|\\( S\\)             |        Sample Grid: \\(S(u,v)\\)                                |        
-|\\(s\\)             |        Fourier Transformed Sample Grid: \\(s(l,m)\\)            |     
+ | \\( XYZ \\)           |    Baseline Coordinate Differences: \\(V(X,Y)\\)        |
+ |        \\( uvw \\)          |    UV Coordinates \\( V(u,v)\\)               |
+|\\( DEC \\)            |        Declination                             |
+|\\( H\\)         |        Hour Angle Sample Array                     |       
+| \\( T\\)            |        True Image: \\(T(u,v)\\)                     |       
+|\\( S\\)             |        Sample Grid: \\(S(u,v)\\)                        |        
+|\\(s\\)             |        Fourier Transformed Sample Grid: \\(s(l,m)\\)          |     
 |\\(sT\\)           |        True Image Convolved with Sample Grid: \\(T^{D}(l,m)\\)  |         
 
 
