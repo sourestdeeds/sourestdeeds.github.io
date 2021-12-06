@@ -151,3 +151,5 @@ ax.legend(labels=['Zipcode', 'Rating']);
 
 [![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-06-target-encoding/2.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-06-target-encoding/2.png)
 <center><b>Figure 2:</b> Movie-watchers differed enough in their ratings from zipcode to zipcode that our target encoding was able to capture useful information.</center><br>  
+
+The distribution of the encoded Zipcode feature roughly follows the distribution of the actual ratings, meaning that movie-watchers differed enough in their ratings from zipcode to zipcode that our target encoding was able to capture useful information.
