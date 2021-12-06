@@ -121,6 +121,7 @@ print()
 print_state((("o", "o", "o"), ("x", "x", "x"), (" ", " ", " ")))
 
 ```
+
      | | 
      | | 
      | | 
@@ -302,6 +303,7 @@ assert type(move7[0]) is tuple
 assert type(move7[1]) is tuple
 assert type(move7[2]) is tuple
 ```
+
      | | 
      | | 
      | | 
@@ -509,6 +511,7 @@ player = "o"
 result = perfect_game(state, player)
 result
 ```
+
     o| | 
      | | 
      | | 
@@ -672,6 +675,7 @@ player = "o"
 result = perfect_game(state, player)
 result
 ```
+
     o| | 
      | | 
      | | 
