@@ -16,13 +16,13 @@ Many people say machine learning models are "black boxes", in the sense that the
 
 ### Why Are These Insights Valuable?
 
-These insights have many uses, including
+These insights have many uses, including:
 
-- Debugging
-- Informing feature engineering
-- Directing future data collection
-- Informing human decision-making
-- Building Trust
+- Debugging.
+- Informing feature engineering.
+- Directing future data collection.
+- Informing human decision-making.
+- Building trust.
 
 ### Debugging
 The world has a lot of unreliable, disorganized and generally dirty data. You add a potential source of errors as you write preprocessing code. Add in the potential for target leakage, and it is the norm rather than the exception to have errors at some point in a real data science project.
