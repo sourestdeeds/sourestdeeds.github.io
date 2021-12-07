@@ -22,91 +22,71 @@ In the last lesson we talked about how overfitting is caused by the network lear
 
 This is the idea behind dropout. To break up these conspiracies, we randomly drop out some fraction of a layer's input units every step of training, making it much harder for the network to learn those spurious patterns in the training data. Instead, it has to search for broad, general patterns, whose weight patterns tend to be more robust.
 
-[![gif](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-15-Dropout and Batch Normalization/1.gif#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-15-Dropout and Batch Normalization/1.gif)<center><b>Figure 1:</b> Here, 50% dropout has been added between the two hidden layers.</center><br> 
+[![gif](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-15-dropout-and-batch-normalization/1.gif#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-15-dropout-and-batch-normalization/1.gif)<center><b>Figure 1:</b> Here, 50% dropout has been added between the two hidden layers.</center><br> 
 
+You could also think about dropout as creating a kind of ensemble of networks. The predictions will no longer be made by one big network, but instead by a committee of smaller networks. Individuals in the committee tend to make different kinds of mistakes, but be right at the same time, making the committee as a whole better than any individual. (If you're familiar with random forests as an ensemble of decision trees, it's the same idea.)
 
+### Adding Dropout
 
-
-
-
-
-
-
-
-
-
-
-
-Besides MAE, other loss functions you might see for regression problems are the mean-squared error (MSE) or the Huber loss (both available in Keras).
-
-During training, the model will use the loss function as a guide for finding the correct values of its weights (lower loss is better). In other words, the loss function tells the network its objective.
-
-### The Optimizer - Stochastic Gradient Descent
-
-We've described the problem we want the network to solve, but now we need to say how to solve it. This is the job of the **optimizer**. The optimizer is an algorithm that adjusts the weights to minimize the loss.
-
-Virtually all of the optimization algorithms used in deep learning belong to a family called **stochastic gradient descent**. They are iterative algorithms that train a network in steps. One **step** of training goes like this:
-
-- Sample some training data and run it through the network to make predictions.
-- Measure the loss between the predictions and the true values.
-- Finally, adjust the weights in a direction that makes the loss smaller.
-
-Then just do this over and over until the loss is as small as you like (or until it won't decrease any further.)
-
-[![gif](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-13-stochastic-gradient-descent/2.gif#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-13-stochastic-gradient-descent/2.gif)<center><b>Figure 2:</b> Training a neural network with Stochastic Gradient Descent.</center><br> 
-
-Each iteration's sample of training data is called a **minibatch** (or often just "batch"), while a complete round of the training data is called an **epoch**. The number of epochs you train for is how many times the network will see each training example.
-
-The animation shows the linear model from Lesson 1 being trained with SGD. The pale red dots depict the entire training set, while the solid red dots are the minibatches. Every time SGD sees a new minibatch, it will shift the weights (\\( w \\) the slope and \\( b \\) the \\( y \\)-intercept) toward their correct values on that batch. Batch after batch, the line eventually converges to its best fit. You can see that the loss gets smaller as the weights get closer to their true values.
-
-### Learning Rate and Batch Size
-
-Notice that the line only makes a small shift in the direction of each batch (instead of moving all the way). The size of these shifts is determined by the **learning rate**. A smaller learning rate means the network needs to see more minibatches before its weights converge to their best values.
-
-The learning rate and the size of the minibatches are the two parameters that have the largest effect on how the SGD training proceeds. Their interaction is often subtle and the right choice for these parameters isn't always obvious. (We'll explore these effects in the exercise.)
-
-Fortunately, for most work it won't be necessary to do an extensive hyperparameter search to get satisfactory results. **Adam** is an SGD algorithm that has an adaptive learning rate that makes it suitable for most problems without any parameter tuning (it is "self tuning", in a sense). Adam is a great general-purpose optimizer.
-
-### Adding the Loss and Optimizer
-
-After defining a model, you can add a loss function and optimizer with the model's *compile* method:
+In Keras, the dropout rate argument rate defines what percentage of the input units to shut off. Put the Dropout layer just before the layer you want the dropout applied to:
 
 ```python
-model.compile(
-    optimizer="adam",
-    loss="mae",
-)
+keras.Sequential([
+    # ...
+    layers.Dropout(rate=0.3), # apply 30% dropout to the next layer
+    layers.Dense(16),
+    # ...
+])
 ```
 
-Notice that we are able to specify the loss and optimizer with just a string. You can also access these directly through the Keras API -- if you wanted to tune parameters, for instance -- but for us, the defaults will work fine.
+### Batch Normalization
 
-> ### What's In a Name?
-> The gradient is a vector that tells us in what direction the weights need to go. More precisely, it tells us how to change the weights to make the loss change fastest. We call our process gradient descent because it uses the gradient to descend the loss curve towards a minimum. Stochastic means "determined by chance." Our training is stochastic because the minibatches are random samples from the dataset. And that's why it's called SGD!
+The next special layer we'll look at performs "batch normalization" (or "batchnorm"), which can help correct training that is slow or unstable.
 
-### Example - Red Wine Quality
+With neural networks, it's generally a good idea to put all of your data on a common scale, perhaps with something like scikit-learn's [StandardScaler](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html) or [MinMaxScaler](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html). The reason is that SGD will shift the network weights in proportion to how large an activation the data produces. Features that tend to produce activations of very different sizes can make for unstable training behavior.
 
-Now we know everything we need to start training deep learning models. So let's see it in action! We'll use the *Red Wine Quality* dataset.
+Now, if it's good to normalize the data before it goes into the network, maybe also normalizing inside the network would be better! In fact, we have a special kind of layer that can do this, the batch normalization layer. A **batch normalization layer** looks at each batch as it comes in, first normalizing the batch with its own mean and standard deviation, and then also putting the data on a new scale with two trainable rescaling parameters. Batchnorm, in effect, performs a kind of coordinated rescaling of its inputs.
 
-This dataset consists of physiochemical measurements from about 1600 Portuguese red wines. Also included is a quality rating for each wine from blind taste-tests. How well can we predict a wine's perceived quality from these measurements?
+Most often, batchnorm is added as an aid to the optimization process (though it can sometimes also help prediction performance). Models with batchnorm tend to need fewer epochs to complete training. Moreover, batchnorm can also fix various problems that can cause the training to get "stuck". Consider adding batch normalization to your models, especially if you're having trouble during training.
 
-We've put all of the data preparation into this next hidden cell. It's not essential to what follows so feel free to skip it. One thing you might note for now though is that we've rescaled each feature to lie in the interval \\( [0,1] \\). As we'll discuss more in Lesson 5, neural networks tend to perform best when their inputs are on a common scale.
+### Adding Batch Normalization
+
+It seems that batch normalization can be used at almost any point in a network. You can put it after a layer...
 
 ```python
-import pandas as pd
-from IPython.display import display
+layers.Dense(16, activation='relu'),
+layers.BatchNormalization(),
+```
 
+... or between a layer and its activation function:
+
+```python
+layers.Dense(16),
+layers.BatchNormalization(),
+layers.Activation('relu'),
+```
+
+### Example - Using Dropout and Batch Normalization
+
+Let's continue developing the *Red Wine* model. Now we'll increase the capacity even more, but add dropout to control overfitting and batch normalization to speed up optimization. This time, we'll also leave off standardizing the data, to demonstrate how batch normalization can stabalize the training.
+
+```python
+# Setup plotting
+import matplotlib.pyplot as plt
+
+plt.style.use('seaborn-whitegrid')
+# Set Matplotlib defaults
+plt.rc('figure', autolayout=True)
+plt.rc('axes', labelweight='bold', labelsize='large',
+       titleweight='bold', titlesize=18, titlepad=10)
+
+
+import pandas as pd
 red_wine = pd.read_csv('../input/dl-course-data/red-wine.csv')
 
 # Create training and validation splits
 df_train = red_wine.sample(frac=0.7, random_state=0)
 df_valid = red_wine.drop(df_train.index)
-display(df_train.head(4))
-
-# Scale to [0, 1]
-max_ = df_train.max(axis=0)
-min_ = df_train.min(axis=0)
-df_train = (df_train - min_) / (max_ - min_)
-df_valid = (df_valid - min_) / (max_ - min_)
 
 # Split features and target
 X_train = df_train.drop('quality', axis=1)
@@ -115,101 +95,244 @@ y_train = df_train['quality']
 y_valid = df_valid['quality']
 ```
 
-<div class="table-wrapper" markdown="block">
-
-|      | fixed acidity | volatile acidity | citric acid | residual sugar | chlorides | free sulfur dioxide | total sulfur dioxide | density | pH   | sulphates | alcohol | quality |
-|------|---------------|------------------|-------------|----------------|-----------|---------------------|----------------------|---------|------|-----------|---------|---------|
-| 1109 | 10.8          | 0.470            | 0.43        | 2.10           | 0.171     | 27.0                | 66.0                 | 0.99820 | 3.17 | 0.76      | 10.8    | 6       |
-| 1032 | 8.1           | 0.820            | 0.00        | 4.10           | 0.095     | 5.0                 | 14.0                 | 0.99854 | 3.36 | 0.53      | 9.6     | 5       |
-| 1002 | 9.1           | 0.290            | 0.33        | 2.05           | 0.063     | 13.0                | 27.0                 | 0.99516 | 3.26 | 0.84      | 11.7    | 7       |
-| 487  | 10.2          | 0.645            | 0.36        | 1.80           | 0.053     | 5.0                 | 14.0                 | 0.99820 | 3.17 | 0.42      | 10.0    | 6       |
-
-</div>
-
-How many inputs should this network have? We can discover this by looking at the number of columns in the data matrix. Be sure not to include the target ('quality') here -- only the input features.
-
-```python
-print(X_train.shape)
-```
-
-    (1119, 11)
-
-Eleven columns means eleven inputs.
-
-We've chosen a three-layer network with over 1500 neurons. This network should be capable of learning fairly complex relationships in the data.
+When adding dropout, you may need to increase the number of units in your Dense layers.
 
 ```python
 from tensorflow import keras
 from tensorflow.keras import layers
 
 model = keras.Sequential([
-    layers.Dense(512, activation='relu', input_shape=[11]),
-    layers.Dense(512, activation='relu'),
-    layers.Dense(512, activation='relu'),
+    layers.Dense(1024, activation='relu', input_shape=[11]),
+    layers.Dropout(0.3),
+    layers.BatchNormalization(),
+    layers.Dense(1024, activation='relu'),
+    layers.Dropout(0.3),
+    layers.BatchNormalization(),
+    layers.Dense(1024, activation='relu'),
+    layers.Dropout(0.3),
+    layers.BatchNormalization(),
     layers.Dense(1),
 ])
 ```
 
-Deciding the architecture of your model should be part of a process. Start simple and use the validation loss as your guide. You'll learn more about model development in the exercises.
-
-After defining the model, we compile in the optimizer and loss function.
+There's nothing to change this time in how we set up the training.
 
 ```python
 model.compile(
     optimizer='adam',
     loss='mae',
 )
-```
 
-Now we're ready to start the training! We've told Keras to feed the optimizer 256 rows of the training data at a time (the *batch_size*) and to do that 10 times all the way through the dataset (the *epochs*).
-
-```python
 history = model.fit(
     X_train, y_train,
     validation_data=(X_valid, y_valid),
     batch_size=256,
-    epochs=10,
+    epochs=100,
+    verbose=0,
 )
+
+
+# Show the learning curves
+history_df = pd.DataFrame(history.history)
+history_df.loc[:, ['loss', 'val_loss']].plot();
 ```
 
-    2021-11-09 00:11:00.305065: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:185] None of the MLIR Optimization Passes are enabled (registered 2)
-    Epoch 1/10
-    5/5 [==============================] - 1s 65ms/step - loss: 0.3078 - val_loss: 0.1418
-    Epoch 2/10
-    5/5 [==============================] - 0s 22ms/step - loss: 0.1468 - val_loss: 0.1338
-    Epoch 3/10
-    5/5 [==============================] - 0s 21ms/step - loss: 0.1309 - val_loss: 0.1231
-    Epoch 4/10
-    5/5 [==============================] - 0s 22ms/step - loss: 0.1175 - val_loss: 0.1243
-    Epoch 5/10
-    5/5 [==============================] - 0s 21ms/step - loss: 0.1145 - val_loss: 0.1083
-    Epoch 6/10
-    5/5 [==============================] - 0s 21ms/step - loss: 0.1111 - val_loss: 0.1078
-    Epoch 7/10
-    5/5 [==============================] - 0s 22ms/step - loss: 0.1081 - val_loss: 0.1036
-    Epoch 8/10
-    5/5 [==============================] - 0s 22ms/step - loss: 0.1042 - val_loss: 0.1025
-    Epoch 9/10
-    5/5 [==============================] - 0s 22ms/step - loss: 0.1038 - val_loss: 0.1038
-    Epoch 10/10
-    5/5 [==============================] - 0s 21ms/step - loss: 0.1015 - val_loss: 0.1008
+[![gif](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-15-dropout-and-batch-normalization/2.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-15-dropout-and-batch-normalization/2.png)
+
+You'll typically get better performance if you standardize your data before using it for training. That we were able to use the raw data at all, however, shows how effective batch normalization can be on more difficult datasets.
 
 
-You can see that Keras will keep you updated on the loss as the model trains.
+### Spotify Example 
 
-Often, a better way to view the loss though is to plot it. The *fit* method in fact keeps a record of the loss produced during training in a *History* object. We'll convert the data to a Pandas dataframe, which makes the plotting easy.
+```python
+# Setup plotting
+import matplotlib.pyplot as plt
+plt.style.use('seaborn-whitegrid')
+# Set Matplotlib defaults
+plt.rc('figure', autolayout=True)
+plt.rc('axes', labelweight='bold', labelsize='large',
+       titleweight='bold', titlesize=18, titlepad=10)
+plt.rc('animation', html='html5')
+```
+
+First load the Spotify dataset.
+
+```python
+import pandas as pd
+from sklearn.preprocessing import StandardScaler, OneHotEncoder
+from sklearn.compose import make_column_transformer
+from sklearn.model_selection import GroupShuffleSplit
+
+from tensorflow import keras
+from tensorflow.keras import layers
+from tensorflow.keras import callbacks
+
+spotify = pd.read_csv('../input/dl-course-data/spotify.csv')
+
+X = spotify.copy().dropna()
+y = X.pop('track_popularity')
+artists = X['track_artist']
+
+features_num = ['danceability', 'energy', 'key', 'loudness', 'mode',
+                'speechiness', 'acousticness', 'instrumentalness',
+                'liveness', 'valence', 'tempo', 'duration_ms']
+features_cat = ['playlist_genre']
+
+preprocessor = make_column_transformer(
+    (StandardScaler(), features_num),
+    (OneHotEncoder(), features_cat),
+)
+
+def group_split(X, y, group, train_size=0.75):
+    splitter = GroupShuffleSplit(train_size=train_size)
+    train, test = next(splitter.split(X, y, groups=group))
+    return (X.iloc[train], X.iloc[test], y.iloc[train], y.iloc[test])
+
+X_train, X_valid, y_train, y_valid = group_split(X, y, artists)
+
+X_train = preprocessor.fit_transform(X_train)
+X_valid = preprocessor.transform(X_valid)
+y_train = y_train / 100
+y_valid = y_valid / 100
+
+input_shape = [X_train.shape[1]]
+print("Input shape: {}".format(input_shape))
+```
+
+Add two dropout layers, one after the Dense layer with 128 units, and one after the Dense layer with 64 units. Set the dropout rate on both to 0.3.
+
+```python
+model = keras.Sequential([
+    layers.Dense(128, activation='relu', input_shape=input_shape),
+    layers.Dropout(0.3),
+    layers.Dense(64, activation='relu'),
+    layers.Dropout(0.3),
+    layers.Dense(1)
+])
+```
+
+Now train the model see the effect of adding dropout.
+
+```python
+model.compile(
+    optimizer='adam',
+    loss='mae',
+)
+history = model.fit(
+    X_train, y_train,
+    validation_data=(X_valid, y_valid),
+    batch_size=512,
+    epochs=50,
+    verbose=0,
+)
+history_df = pd.DataFrame(history.history)
+history_df.loc[:, ['loss', 'val_loss']].plot()
+print("Minimum Validation Loss: {:0.4f}".format(history_df['val_loss'].min()))
+```
+
+    Minimum Validation Loss: 0.1985
+
+[![gif](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-15-dropout-and-batch-normalization/3.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-15-dropout-and-batch-normalization/3.png)
+
+From the learning curves, you can see that the validation loss remains near a constant minimum even though the training loss continues to decrease. So we can see that adding dropout did prevent overfitting this time. Moreover, by making it harder for the network to fit spurious patterns, dropout may have encouraged the network to seek out more of the true patterns, possibly improving the validation loss some as well).
+
+### Fixing Problems In Training
+
+Now, we'll switch topics to explore how batch normalization can fix problems in training.
+
+Load the Concrete dataset. We won't do any standardization this time. This will make the effect of batch normalization much more apparent.
 
 ```python
 import pandas as pd
 
-# convert the training history to a dataframe
-history_df = pd.DataFrame(history.history)
-# use Pandas native plot method
-history_df['loss'].plot();
+concrete = pd.read_csv('../input/dl-course-data/concrete.csv')
+df = concrete.copy()
+
+df_train = df.sample(frac=0.7, random_state=0)
+df_valid = df.drop(df_train.index)
+
+X_train = df_train.drop('CompressiveStrength', axis=1)
+X_valid = df_valid.drop('CompressiveStrength', axis=1)
+y_train = df_train['CompressiveStrength']
+y_valid = df_valid['CompressiveStrength']
+
+input_shape = [X_train.shape[1]]
 ```
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-13-stochastic-gradient-descent/3.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-13-stochastic-gradient-descent/3.png)
+Now train the network on the unstandardized Concrete data.
 
-Notice how the loss levels off as the epochs go by. When the loss curve becomes horizontal like that, it means the model has learned all it can and there would be no reason continue for additional epochs.
+```python
+model = keras.Sequential([
+    layers.Dense(512, activation='relu', input_shape=input_shape),
+    layers.Dense(512, activation='relu'),    
+    layers.Dense(512, activation='relu'),
+    layers.Dense(1),
+])
+model.compile(
+    optimizer='sgd', # SGD is more sensitive to differences of scale
+    loss='mae',
+    metrics=['mae'],
+)
+history = model.fit(
+    X_train, y_train,
+    validation_data=(X_valid, y_valid),
+    batch_size=64,
+    epochs=100,
+    verbose=0,
+)
+
+history_df = pd.DataFrame(history.history)
+history_df.loc[0:, ['loss', 'val_loss']].plot()
+print(("Minimum Validation Loss: {:0.4f}").format(history_df['val_loss'].min()))
+```
+
+    Minimum Validation Loss: nan
 
 
+Trying to train this network on this dataset will usually fail. Even when it does converge (due to a lucky weight initialization), it tends to converge to a very large number.
+
+[![gif](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-15-dropout-and-batch-normalization/4.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-15-dropout-and-batch-normalization/4.png)
+
+Batch normalization can help correct problems like this.
+
+Add four *BatchNormalization* layers, one before each of the dense layers. (Remember to move the input_shape argument to the new first layer.)
+
+```python
+model = keras.Sequential([
+    layers.BatchNormalization(input_shape=input_shape),
+    layers.Dense(512, activation='relu'),
+    layers.BatchNormalization(),
+    layers.Dense(512, activation='relu'),
+    layers.BatchNormalization(),
+    layers.Dense(512, activation='relu'),
+    layers.BatchNormalization(),
+    layers.Dense(1),
+])
+```
+
+```python
+model.compile(
+    optimizer='sgd',
+    loss='mae',
+    metrics=['mae'],
+)
+EPOCHS = 100
+history = model.fit(
+    X_train, y_train,
+    validation_data=(X_valid, y_valid),
+    batch_size=64,
+    epochs=EPOCHS,
+    verbose=0,
+)
+
+history_df = pd.DataFrame(history.history)
+history_df.loc[0:, ['loss', 'val_loss']].plot()
+print(("Minimum Validation Loss: {:0.4f}").format(history_df['val_loss'].min()))
+```
+
+    Minimum Validation Loss: 4.1072
+
+
+[![gif](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-15-dropout-and-batch-normalization/5.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-15-dropout-and-batch-normalization/5.png)
+
+You can see that adding batch normalization was a big improvement on the first attempt! By adaptively scaling the data as it passes through the network, batch normalization can let you train models on difficult datasets.
