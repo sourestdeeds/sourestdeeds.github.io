@@ -39,7 +39,8 @@ $table-border-color:    $border-color-01 !default;
   border-radius: 3px;
   color: #FFFFFF;
   white-space: pre;
-  word-wrap: normal
+  word-wrap: normal;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
 .gist pre {
