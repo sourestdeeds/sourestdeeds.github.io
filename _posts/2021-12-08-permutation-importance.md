@@ -262,3 +262,139 @@ You'll occasionally see negative values for permutation importances. In those ca
 
 In our example, the most important feature was *Goals scored*. That seems sensible. Soccer fans may have some intuition about whether the orderings of other variables are surprising or not.
 
+### Example
+
+Calculate permutation importance with a sample of data from the [Taxi Fare Prediction](https://www.kaggle.com/c/new-york-city-taxi-fare-prediction) competition.
+
+```python
+# Loading data, dividing, modeling and EDA below
+import pandas as pd
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
+
+data = pd.read_csv('../input/new-york-city-taxi-fare-prediction/train.csv', nrows=50000)
+
+# Remove data with extreme outlier coordinates or negative fares
+data = data.query('pickup_latitude > 40.7 and pickup_latitude < 40.8 and ' +
+                  'dropoff_latitude > 40.7 and dropoff_latitude < 40.8 and ' +
+                  'pickup_longitude > -74 and pickup_longitude < -73.9 and ' +
+                  'dropoff_longitude > -74 and dropoff_longitude < -73.9 and ' +
+                  'fare_amount > 0'
+                  )
+
+y = data.fare_amount
+
+base_features = ['pickup_longitude',
+                 'pickup_latitude',
+                 'dropoff_longitude',
+                 'dropoff_latitude',
+                 'passenger_count']
+
+X = data[base_features]
+
+
+train_X, val_X, train_y, val_y = train_test_split(X, y, random_state=1)
+first_model = RandomForestRegressor(n_estimators=50, random_state=1).fit(train_X, train_y)
+
+
+# show data
+print("Data sample:")
+data.head()
+```
+
+```python
+train_X.describe()
+```
+
+<div class="table-wrapper" markdown="block">
+
+|   |                           key | fare_amount |         pickup_datetime | pickup_longitude | pickup_latitude | dropoff_longitude | dropoff_latitude | passenger_count |
+|--:|------------------------------:|------------:|------------------------:|-----------------:|----------------:|------------------:|-----------------:|----------------:|
+| 2 |  2011-08-18 00:35:00.00000049 |         5.7 | 2011-08-18 00:35:00 UTC |       -73.982738 |       40.761270 |        -73.991242 |        40.750562 |               2 |
+| 3 |   2012-04-21 04:30:42.0000001 |         7.7 | 2012-04-21 04:30:42 UTC |       -73.987130 |       40.733143 |        -73.991567 |        40.758092 |               1 |
+| 4 | 2010-03-09 07:51:00.000000135 |         5.3 | 2010-03-09 07:51:00 UTC |       -73.968095 |       40.768008 |        -73.956655 |        40.783762 |               1 |
+| 6 |   2012-11-20 20:35:00.0000001 |         7.5 | 2012-11-20 20:35:00 UTC |       -73.980002 |       40.751662 |        -73.973802 |        40.764842 |               1 |
+| 7 |  2012-01-04 17:22:00.00000081 |        16.5 | 2012-01-04 17:22:00 UTC |       -73.951300 |       40.774138 |        -73.990095 |        40.751048 |               1 |
+
+</div>
+
+```python
+train_y.describe()
+```
+
+    count    23466.000000
+    mean         8.472539
+    std          4.609747
+    min          0.010000
+    25%          5.500000
+    50%          7.500000
+    75%         10.100000
+    max        165.000000
+    Name: fare_amount, dtype: float64
+
+```python
+import eli5
+from eli5.sklearn import PermutationImportance
+
+# Make a small change to the code below to use in this problem. 
+perm = PermutationImportance(first_model, random_state=1).fit(val_X, val_y)
+```
+
+<div class="table-wrapper" markdown="block">
+
+|           Weight | Feature           |
+|-----------------:|-------------------|
+|  0.8426 ± 0.0168 | dropoff_latitude  |
+|  0.8269 ± 0.0211 | pickup_latitude   |
+|  0.5943 ± 0.0436 | pickup_longitude  |
+|  0.5387 ± 0.0273 | dropoff_longitude |
+| -0.0020 ± 0.0013 | passenger_count   |
+
+</div>
+
+Without detailed knowledge of New York City, it's difficult to rule out most hypotheses about why latitude features matter more than longitude.
+
+A good next step is to disentangle the effect of being in certain parts of the city from the effect of total distance traveled.
+
+The code below creates new features for longitudinal and latitudinal distance. It then builds a model that adds these new features to those you already had.
+
+
+```python
+# create new features
+data['abs_lon_change'] = abs(data.dropoff_longitude - data.pickup_longitude)
+data['abs_lat_change'] = abs(data.dropoff_latitude - data.pickup_latitude)
+
+features_2  = ['pickup_longitude',
+               'pickup_latitude',
+               'dropoff_longitude',
+               'dropoff_latitude',
+               'abs_lat_change',
+               'abs_lon_change']
+
+X = data[features_2]
+new_train_X, new_val_X, new_train_y, new_val_y = train_test_split(X, y, random_state=1)
+second_model = RandomForestRegressor(n_estimators=30, random_state=1).fit(new_train_X, new_train_y)
+
+# Create a PermutationImportance object on second_model and fit it to new_val_X and new_val_y
+# Use a random_state of 1 for reproducible results that match the expected solution.
+perm2 = PermutationImportance(second_model, random_state=1).fit(new_val_X, new_val_y)
+eli5.show_weights(perm2, feature_names = new_val_X.columns.tolist())
+# show the weights for the permutation importance you just calculated
+```
+
+How would you interpret these importance scores? Distance traveled seems far more important than any location effects.
+
+But the location still affects model predictions, and dropoff location now matters slightly more than pickup location. Do you have any hypotheses for why this might be?
+
+A colleague observes that the values for abs_lon_change and abs_lat_change are pretty small (all values are between -0.1 and 0.1), whereas other variables have larger values. Do you think this could explain why those coordinates had larger permutation importance values in this case?
+
+Consider an alternative where you created and used a feature that was 100X as large for these features, and used that larger feature for training and importance calculations. Would this change the outputted permutaiton importance values?
+
+Why or why not?
+
+The scale of features does not affect permutation importance per se. The only reason that rescaling a feature would affect PI is indirectly, if rescaling helped or hurt the ability of the particular learning method we're using to make use of that feature. That won't happen with tree based models, like the Random Forest used here. If you are familiar with Ridge Regression, you might be able to think of how that would be affected. That said, the absolute change features are have high importance because they capture total distance traveled, which is the primary determinant of taxi fares...It is not an artifact of the feature magnitude.
+
+You've seen that the feature importance for latitudinal distance is greater than the importance of longitudinal distance. From this, can we conclude whether travelling a fixed latitudinal distance tends to be more expensive than traveling the same longitudinal distance?
+
+ We cannot tell from the permutation importance results whether traveling a fixed latitudinal distance is more or less expensive than traveling the same longitudinal distance. Possible reasons latitude feature are more important than longitude features 1. latitudinal distances in the dataset tend to be larger 2. it is more expensive to travel a fixed latitudinal distance 3. Both of the above If abs_lon_change values were very small, longitues could be less important to the model even if the cost per mile of travel in that direction were high.
