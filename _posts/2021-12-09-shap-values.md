@@ -109,7 +109,7 @@ shap.initjs()
 shap.force_plot(explainer.expected_value[1], shap_values[1], data_for_prediction)
 ```
 
-<svg data-reactroot="" style="user-select: none; display: block; font-family: arial; height: 150px; width: 234px;"><style>
+<svg data-reactroot="" style="user-select: none; display: block; font-family: arial; height: 150px; width: 100%;"><style>
           .force-bar-axis path {
             fill: none;
             opacity: 0.4;
@@ -144,7 +144,7 @@ k_shap_values = k_explainer.shap_values(data_for_prediction)
 shap.force_plot(k_explainer.expected_value[1], k_shap_values[1], data_for_prediction)
 ```
 
-<svg data-reactroot="" style="user-select: none; display: block; font-family: arial; height: 150px; width: 234px;"><style>
+<svg data-reactroot="" style="user-select: none; display: block; font-family: arial; height: 150px; width: 100%;"><style>
           .force-bar-axis path {
             fill: none;
             opacity: 0.4;
