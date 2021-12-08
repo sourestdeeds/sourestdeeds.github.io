@@ -1,8 +1,9 @@
 ---
 layout: null
 ---
-{% assign counter = 0 %}
+
 {
+  {% assign counter = 0 %}
   {% for page in site.pages %}{% if page.url contains '.xml' or page.url contains 'assets' %}{% else %}{
     "id": {{ counter }},
     "url": "{{ site.url }}{{ page.url }}",
