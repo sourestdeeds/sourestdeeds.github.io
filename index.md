@@ -22,7 +22,7 @@ accordion:
 
 {% include accordion.html %}
 
-<script src="/js/lunr.min.js"></script>
+<script src="/js/lunr.js"></script>
 
 <script>
 {% assign counter = 0 %}
