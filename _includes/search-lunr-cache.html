@@ -8,10 +8,14 @@ var idx = lunr(function () {
     this.field('body')
 
     var documents = $.getJSON('/search_data.json');
+    documents.then(function(loaded_data){
+    $.each(loaded_data, function(index, value){
+      idx.add(
+        $.extend({ "id": index }, value)
+      );
+    });
+  });
     
-    documents.forEach(function (doc) {
-        this.add(doc)
-    }, this)
 });
 function lunr_search(term) {
     document.getElementById('lunrsearchresults').innerHTML = '<ul></ul>';
