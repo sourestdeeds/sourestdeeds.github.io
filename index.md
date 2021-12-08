@@ -87,25 +87,10 @@ function lunr_search(term) {
 </style>
 
 
-<form name="myForm" id="myForm" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
+<form onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
     <p><input type="text" class="form-control" id="lunrsearch" name="q" maxlength="255" value="" placeholder="Search" /></p>
 </form>
 
-<script type="text/javascript">
-    window.onload=function(){
-        var auto = setTimeout(function(){ autoRefresh(); }, 100);
-
-        function submitform(){
-          alert('test');
-          document.forms["myForm"].submit();
-        }
-
-        function autoRefresh(){
-           clearTimeout(auto);
-           auto = setTimeout(function(){ submitform(); autoRefresh(); }, 10000);
-        }
-    }
-</script>
 
 <div id="lunrsearchresults">
     <ul></ul>
