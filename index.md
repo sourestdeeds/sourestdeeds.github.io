@@ -19,3 +19,4 @@ accordion:
 > “If it ain't broke, fix it until it is.”
 
 {% include accordion.html %}
+{% include search-lunr.html %}
