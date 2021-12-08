@@ -22,16 +22,27 @@ accordion:
 
 {% include accordion.html %}
 
-<script
-  type="text/javascript"
-  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
-  src = "https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"
-></script>
+<form action="/search.html" method="get">
+  <label for="search-box">Search</label>
+  <input type="text" id="search-box" name="query">
+  <input type="submit" value="search">
+</form>
 
-<input
-  placeholder="Search&hellip;"
-  type="search"
-  id="search"
-  class="search-input"
-/>
-<div id="results" class="all-posts results"></div>
+<ul id="search-results"></ul>
+
+<script>
+  window.store = {
+    {% for post in site.posts %}
+      "{{ post.url | slugify }}": {
+        "title": "{{ post.title | xml_escape }}",
+        "author": "{{ post.author | xml_escape }}",
+        "category": "{{ post.category | xml_escape }}",
+        "content": {{ post.content | strip_html | strip_newlines | jsonify }},
+        "url": "{{ post.url | xml_escape }}"
+      }
+      {% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  };
+</script>
+<script src="/js/lunr.min.js"></script>
+<script src="/js/search.js"></script>
