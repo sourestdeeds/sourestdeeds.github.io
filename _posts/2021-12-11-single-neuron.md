@@ -69,7 +69,7 @@ model = keras.Sequential([
 ])
 ```
 
-```
+```python
 User settings:
 
    KMP_AFFINITY=granularity=fine,verbose,compact,1,0
