@@ -37,8 +37,8 @@ Permutation importance is great because it created simple numeric measures to se
 
 But it doesn't tell you how each features matter. If a feature has medium permutation importance, that could mean it has
 
-a large effect for a few predictions, but no effect in general, or
-a medium effect for all predictions.
+- A large effect for a few predictions, but no effect in general, or
+- A medium effect for all predictions.
 SHAP summary plots give us a birds-eye view of feature importance and what is driving it. We'll walk through an example plot for the soccer data:
 
 
