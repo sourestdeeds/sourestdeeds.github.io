@@ -13,8 +13,7 @@ layout: default
 
 
   <div id="archives">
-    {% assign sorted_categories = site.categories | sort: site.categories %}
-    {% for category in sorted_categories %}
+    {% for category in site.categories %}
       <div class="archive-group">
         {% capture category_name %}{{ category | first }}{% endcapture %}
         <div id="#{{ category_name | slugize }}"></div>
