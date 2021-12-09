@@ -442,9 +442,9 @@ SVG Icons - svgicons.sparkk.fr
   margin: 1vw auto;
 }
 
-h1 {
+h6 {
   color: rgb(20, 20, 20);
-  font-size: 1em;
+  font-size: 2em;
   letter-spacing: 2px;
   font-weight: 200;
   /*Create overlap*/
@@ -453,17 +453,17 @@ h1 {
   line-height: 0;
   /*Animation*/
   
-  animation: glitch1 2.5s infinite;
+  animation: glitch1 10s infinite;
 }
 
-h1:nth-child(2) {
+h6:nth-child(2) {
   color: #67f3da;
-  animation: glitch2 2.5s infinite;
+  animation: glitch2 10s infinite;
 }
 
-h1:nth-child(3) {
+h6:nth-child(3) {
   color: #f16f6f;
-  animation: glitch3 2.5s infinite;
+  animation: glitch3 10s infinite;
 }
 /*Keyframes*/
 
