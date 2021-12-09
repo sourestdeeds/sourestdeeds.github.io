@@ -25,7 +25,7 @@ If  \\( x_1 \\)  takes the value 2, instead of a baseline value of 0, then our S
 
 These are harder to calculate with the sophisticated models we use in practice. But through some algorithmic cleverness, Shap values allow us to decompose any prediction into the sum of effects of each feature value, yielding a graph like this:
 
-
+<br>
 [![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-10-shap-values-advanced/1.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-10-shap-values-advanced/1.png)<br>
 
 
@@ -41,7 +41,7 @@ But it doesn't tell you how each features matter. If a feature has medium permut
 - A medium effect for all predictions.
 SHAP summary plots give us a birds-eye view of feature importance and what is driving it. We'll walk through an example plot for the soccer data:
 
-
+<br>
 [![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-10-shap-values-advanced/2.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-10-shap-values-advanced/2.png)<br>
 
 This plot is made of many dots. Each dot has three characteristics:
@@ -105,12 +105,14 @@ We've previously used Partial Dependence Plots to show how a single feature impa
 
 But there's a lot they don't show. For instance, what is the distribution of effects? Is the effect of having a certain value pretty constant, or does it vary a lot depending on the values of other feaures. SHAP dependence contribution plots provide a similar insight to PDP's, but they add a lot more detail.
 
+<br>
 [![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-10-shap-values-advanced/4.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-10-shap-values-advanced/4.png)<br>
 
 Start by focusing on the shape, and we'll come back to color in a minute. Each dot represents a row of the data. The horizontal location is the actual value from the dataset, and the vertical location shows what having that value did to the prediction. The fact this slopes upward says that the more you possess the ball, the higher the model's prediction is for winning the *Man of the Match* award.
 
 The spread suggests that other features must interact with Ball Possession %. For example, here we have highlighted two points with similar ball possession values. That value caused one prediction to increase, and it caused the other prediction to decrease.
 
+<br>
 [![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-10-shap-values-advanced/5.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-10-shap-values-advanced/5.png)<br>
 
 For comparison, a simple linear regression would produce plots that are perfect lines, without this spread.
@@ -119,6 +121,7 @@ This suggests we delve into the interactions, and the plots include color coding
 
 Consider the following very narrow example for concreteness.
 
+<br>
 [![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-10-shap-values-advanced/6.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-10-shap-values-advanced/6.png)<br>
 
 ### Dependence Contribution Plots in Code
@@ -138,6 +141,7 @@ shap_values = explainer.shap_values(X)
 shap.dependence_plot('Ball Possession %', shap_values[1], X, interaction_index="Goal Scored")
 ```
 
+<br>
 [![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-10-shap-values-advanced/7.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-10-shap-values-advanced/7.png)<br>
 
 
