@@ -4,7 +4,7 @@ tags: [kaggle, dropout, batch normalization, keras, deep learning, neural networ
 layout: post
 mathjax: true
 categories: [Deep Learning]
-published: false
+published: true
 ---
 
 

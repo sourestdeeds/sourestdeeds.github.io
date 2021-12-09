@@ -4,7 +4,7 @@ tags: [kaggle, deep neural networks, keras, deep learning, neural network]
 layout: post
 mathjax: true
 categories: [Deep Learning]
-published: false
+published: true
 ---
 
 We're going to see how we can build neural networks capable of learning the complex kinds of relationships deep neural nets are famous for.

@@ -4,7 +4,7 @@ tags: [kaggle, single neuron, keras, deep learning, neural network]
 layout: post
 mathjax: true
 categories: [Deep Learning]
-published: false
+published: true
 ---
 
 Using Keras and Tensorflow we'll learn how to:

@@ -4,7 +4,7 @@ tags: [kaggle, stochastic gradient descent, keras, deep learning, neural network
 layout: post
 mathjax: true
 categories: [Deep Learning]
-published: false
+published: true
 ---
 
 
