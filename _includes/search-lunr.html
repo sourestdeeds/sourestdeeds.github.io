@@ -63,8 +63,8 @@ function lunr_search(term) {
 </style>
 
 
-<form>
-    <p><input type="text" onKeyPress="return lunr_search(document.getElementById('lunrsearch').value);" class="form-control" id="lunrsearch" name="q" maxlength="255" value="" placeholder="Search" autofocus/></p>
+<form onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
+    <p><input type="text" class="form-control" id="lunrsearch" name="q" maxlength="255" value="" placeholder="Search" autofocus up-autosubmit/></p>
 </form>
 <div id="lunrsearchresults">
     <ul></ul>
