@@ -26,13 +26,13 @@ Through their power and scalability **neural networks** have become the defining
 
 So let's begin with the fundamental component of a neural network: the individual neuron. As a diagram, a **neuron** (or **unit**) with one input looks like:
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-11-single-neuron/1.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-11-single-neuron/1.png)<center><b>Figure 1:</b> The Linear Unit: \\( y = w x + b \\)</center><br> 
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-11-single-neuron/1.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-11-single-neuron/1.png)<center><b>Figure 1:</b> The Linear Unit.</center><br> 
 
 The input is \\( x \\). Its connection to the neuron has a weight which is \\( w \\). Whenever a value flows through a connection, you multiply the value by the connection's weight. For the input \\( x \\), what reaches the neuron is \\( w \times x \\). A neural network "learns" by modifying its weights.
 
 The \\( b \\) is a special kind of weight we call the bias. The bias doesn't have any input data associated with it; instead, we put a 1 in the diagram so that the value that reaches the neuron is just \\( b \\) (since \\( 1 \times b = b \\)). The bias enables the neuron to modify the output independently of its inputs.
 
-The \\( y \\) is the value the neuron ultimately outputs. To get the output, the neuron sums up all the values it receives through its connections. This neuron's activation is \\( y = w \times x + b \\).
+The \\( y \\) is the value the neuron ultimately outputs. To get the output, the neuron sums up all the values it receives through its connections. This neuron's activation is \\( y = w x + b \\).
 
 
 ### Example - The Linear Unit as a Model
