@@ -18,7 +18,7 @@ hap values show how much a given feature changed our prediction (compared to if 
 For example, consider an ultra-simple model:
 
 $$
-y = 4 \times x_1 + 2 \times x_2
+y = 4 x_1 + 2 x_2
 $$
 
 If  \\( x_1 \\)  takes the value 2, instead of a baseline value of 0, then our SHAP value for  \\( x_1 \\)  would be 8 (from 4 times 2).
