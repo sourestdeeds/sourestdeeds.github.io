@@ -4,7 +4,7 @@ tags: [kaggle, SHAP, SHAP values]
 layout: post
 mathjax: true
 categories: [Machine Learning Explainability]
-published: false
+published: true
 ---
 
 Now we'll expand on SHAP values, seeing how aggregating many SHAP values can give more detailed alternatives to permutation importance and partial dependence plots.
