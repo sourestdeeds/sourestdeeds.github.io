@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
   {% if page.mathjax  %}
     <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   {% endif %}
+
   {%- include head.html -%}
   <body>
     {%- include header.html -%}
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
         {{ content }}
-        {% for category in site.categories %}
+        {% for category in site.categories | sort: site.categories %}
           {% if category[0] == page.category %}
             <div class="related-posts">
               <h2>Related Posts</h2>
