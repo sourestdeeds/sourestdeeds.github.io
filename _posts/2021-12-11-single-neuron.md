@@ -26,7 +26,7 @@ Through their power and scalability **neural networks** have become the defining
 
 So let's begin with the fundamental component of a neural network: the individual neuron. As a diagram, a **neuron** (or **unit**) with one input looks like:
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-11-single-neuron/1.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-11-single-neuron/1.png)<center><b>Figure 1:</b> The Linear Unit: 𝑦=𝑤𝑥+𝑏</center><br> 
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-11-single-neuron/1.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-11-single-neuron/1.png)<center><b>Figure 1:</b> The Linear Unit: \\( y = w x + b \\)</center><br> 
 
 The input is \\( x \\). Its connection to the neuron has a weight which is \\( w \\). Whenever a value flows through a connection, you multiply the value by the connection's weight. For the input \\( x \\), what reaches the neuron is \\( w \times x \\). A neural network "learns" by modifying its weights.
 
