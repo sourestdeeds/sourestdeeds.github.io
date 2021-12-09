@@ -436,198 +436,47 @@ SVG Icons - svgicons.sparkk.fr
 }
 
 
-
-
-#container {
-  margin: 1.5vw auto;
-}
-
-h6 {
-  color: rgb(20, 20, 20);
-  font-size: 1em;
-  letter-spacing: 2px;
-  font-weight: 200;
-  /*Create overlap*/
-  
-  margin: 0;
-  line-height: 0;
-  /*Animation*/
-  
-  animation: glitch1 10s infinite;
-}
-
-h6:nth-child(2) {
-  color: #67f3da;
-  animation: glitch2 10s infinite;
-}
-
-h6:nth-child(3) {
-  color: #f16f6f;
-  animation: glitch3 10s infinite;
-}
-/*Keyframes*/
-
-@keyframes glitch1 {
-  0% {
-    transform: none;
-    opacity: 1;
-  }
-  7% {
-    transform: skew(-0.5deg, -0.9deg);
-    opacity: 0.75;
-  }
-  10% {
-    transform: none;
-    opacity: 1;
-  }
-  27% {
-    transform: none;
-    opacity: 1;
-  }
-  30% {
-    transform: skew(0.8deg, -0.1deg);
-    opacity: 0.75;
-  }
-  35% {
-    transform: none;
-    opacity: 1;
-  }
-  52% {
-    transform: none;
-    opacity: 1;
-  }
-  55% {
-    transform: skew(-1deg, 0.2deg);
-    opacity: 0.75;
-  }
-  50% {
-    transform: none;
-    opacity: 1;
-  }
-  72% {
-    transform: none;
-    opacity: 1;
-  }
-  75% {
-    transform: skew(0.4deg, 1deg);
-    opacity: 0.75;
-  }
-  80% {
-    transform: none;
-    opacity: 1;
-  }
-  100% {
-    transform: none;
-    opacity: 1;
+.container{
+  margin: 0 auto;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  background-color: #d1dae3;
+  .text{
+    color: transparent;
+    font-size: 1.5vw;
+    display: inline-block;
+    border-radius: 1px;
+    background-color: #1d3557;
+    position: relative;
+    -webkit-background-clip: text;
+    background-clip: text;
+    &:before{
+      content: attr(data-title);
+      background: linear-gradient(90deg, rgba(245,137,21,1) 0%, rgba(253,29,29,1) 51%, rgba(29,53,87,1) 100%);
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      background-clip: text;
+      -webkit-background-clip: text;
+      transition: all 1s ease-in-out;
+      animation: text-animation 3s infinite;
+    }
   }
 }
 
-@keyframes glitch2 {
-  0% {
-    transform: none;
-    opacity: 0.25;
+@keyframes text-animation{
+  0%{
+    width: 0;
   }
-  7% {
-    transform: translate(-2px, -3px);
-    opacity: 0.5;
+  50%{
+    width: 100%;
   }
-  10% {
-    transform: none;
-    opacity: 0.25;
-  }
-  27% {
-    transform: none;
-    opacity: 0.25;
-  }
-  30% {
-    transform: translate(-5px, -2px);
-    opacity: 0.5;
-  }
-  35% {
-    transform: none;
-    opacity: 0.25;
-  }
-  52% {
-    transform: none;
-    opacity: 0.25;
-  }
-  55% {
-    transform: translate(-5px, -1px);
-    opacity: 0.5;
-  }
-  50% {
-    transform: none;
-    opacity: 0.25;
-  }
-  72% {
-    transform: none;
-    opacity: 0.25;
-  }
-  75% {
-    transform: translate(-2px, -6px);
-    opacity: 0.5;
-  }
-  80% {
-    transform: none;
-    opacity: 0.25;
-  }
-  100% {
-    transform: none;
-    opacity: 0.25;
-  }
-}
-
-@keyframes glitch3 {
-  0% {
-    transform: none;
-    opacity: 0.25;
-  }
-  7% {
-    transform: translate(2px, 3px);
-    opacity: 0.5;
-  }
-  10% {
-    transform: none;
-    opacity: 0.25;
-  }
-  27% {
-    transform: none;
-    opacity: 0.25;
-  }
-  30% {
-    transform: translate(5px, 2px);
-    opacity: 0.5;
-  }
-  35% {
-    transform: none;
-    opacity: 0.25;
-  }
-  52% {
-    transform: none;
-    opacity: 0.25;
-  }
-  55% {
-    transform: translate(5px, 1px);
-    opacity: 0.5;
-  }
-  50% {
-    transform: none;
-    opacity: 0.25;
-  }
-  72% {
-    transform: none;
-    opacity: 0.25;
-  }
-  75% {
-    transform: translate(2px, 6px);
-    opacity: 0.5;
-  }
-  80% {
-    transform: none;
-    opacity: 0.25;
-  }
-  100% {
-    transform: none;
-    opacity: 0.25;
+  100%{
+    width: 0;
   }
 }
