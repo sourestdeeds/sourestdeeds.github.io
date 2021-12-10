@@ -224,7 +224,7 @@ The head, essentially, is an ordinary classifier like you learned about in the i
 This is one of the big advantages deep neural networks have over traditional machine learning models: given the right network structure, the deep neural net can learn how to engineer the features it needs to solve its problem.
 
 
-### Example 
+### Example - InceptionV1
 
 
 In the tutorial, we saw how to build an image classifier by attaching a head of dense layers to a pretrained base. The base we used was from a model called VGG16. We saw that the VGG16 architecture was prone to overfitting this dataset. Over this course, you'll learn a number of ways you can improve upon this initial attempt.
