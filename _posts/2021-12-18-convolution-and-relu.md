@@ -25,7 +25,7 @@ The **feature extraction** performed by the base consists of **three basic opera
 The next figure illustrates this process. You can see how these three operations are able to isolate some particular characteristic of the original image (in this case, horizontal lines).
 
 <br>
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/1.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/1.png)<center><b>Figure 1:</b> The three steps of feature extraction.</center><br> 
+[![jpeg](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/1.jpeg#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/1.jpeg)<center><b>Figure 1:</b> The three steps of feature extraction.</center><br> 
 
 Typically, the network will perform several extractions in parallel on a single image. In modern convnets, it's not uncommon for the final layer in the base to be producing over 1000 unique visual features.
 
