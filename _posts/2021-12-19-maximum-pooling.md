@@ -27,7 +27,7 @@ model = keras.Sequential([
 
 A *MaxPool2D* layer is much like a *Conv2D* layer, except that it uses a simple maximum function instead of a kernel, with the pool_size parameter analogous to kernel_size. A *MaxPool2D* layer doesn't have any trainable weights like a convolutional layer does in its kernel, however.
 
-Let's take another look at the extraction figure from the last lesson. Remember that *MaxPool2D* is the **Condense** step.
+Let's take another look at the extraction figure. Remember that *MaxPool2D* is the **Condense** step.
 
 <br>
 [![jpeg](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-19-maximum-pooling/1.jpeg#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-19-maximum-pooling/1.jpeg)<br> 
@@ -43,7 +43,7 @@ When applied after the ReLU activation, it has the effect of "intensifying" feat
 
 ### Example - Apply Maximum Pooling
 
-Let's add the "condense" step to the feature extraction we did in the example in Lesson 2. This next hidden cell will take us back to where we left off.
+Let's add the "condense" step to the feature extraction. This next hidden cell will take us back to where we left off.
 
 
 ```python
@@ -78,7 +78,6 @@ kernel = tf.reshape(kernel, [*kernel.shape, 1, 1])
 image_filter = tf.nn.conv2d(
     input=image,
     filters=kernel,
-    # we'll talk about these two in the next lesson!
     strides=1,
     padding='SAME'
 )
@@ -115,7 +114,6 @@ image_condense = tf.nn.pool(
     input=image_detect, # image in the Detect step above
     window_shape=(2, 2),
     pooling_type='MAX',
-    # we'll see what these do in the next lesson!
     strides=(2, 2),
     padding='SAME',
 )
@@ -147,7 +145,7 @@ In fact, pooling only creates translation invariance in a network over *small di
 <br>
 [![jpeg](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-19-maximum-pooling/6.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-19-maximum-pooling/6.png)<br> 
 
-This invariance to small differences in the positions of features is a nice property for an image classifier to have. Just because of differences in perspective or framing, the same kind of feature might be positioned in various parts of the original image, but we would still like for the classifier to recognize that they are the same. Because this invariance is built into the network, we can get away with using much less data for training: we no longer have to teach it to ignore that difference. This gives convolutional networks a big efficiency advantage over a network with only dense layers. (You'll see another way to get invariance for free in **Lesson 6** with **Data Augmentation**!)
+This invariance to small differences in the positions of features is a nice property for an image classifier to have. Just because of differences in perspective or framing, the same kind of feature might be positioned in various parts of the original image, but we would still like for the classifier to recognize that they are the same. Because this invariance is built into the network, we can get away with using much less data for training: we no longer have to teach it to ignore that difference. This gives convolutional networks a big efficiency advantage over a network with only dense layers. 
 
 
 ### Example - Average Pooling
@@ -406,4 +404,4 @@ Global average pooling is often used in modern convnets. One big advantage is th
 
 ### Conclusion
 
-In this lesson we explored the final operation in the feature extraction process: **condensing** with **maximum pooling**. Pooling is one of the essential features of convolutional networks and helps provide them with some of their characteristic advantages: efficiency with visual data, reduced parameter size compared to dense networks, translation invariance. We've seen that it's used not only in the base during feature extraction, but also can be used in the head during classification. Understanding it is essential to a full understanding of convnets.
+In this example we explored the final operation in the feature extraction process: **condensing** with **maximum pooling**. Pooling is one of the essential features of convolutional networks and helps provide them with some of their characteristic advantages: efficiency with visual data, reduced parameter size compared to dense networks, translation invariance. We've seen that it's used not only in the base during feature extraction, but also can be used in the head during classification. Understanding it is essential to a full understanding of convnets.
