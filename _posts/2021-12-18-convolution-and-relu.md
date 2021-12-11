@@ -57,7 +57,7 @@ A kernel operates by scanning over an image and producing a *weighted* sum of pi
 <br>
 [![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/3.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/3.png)<center><b>Figure 2:</b> A kernel acts as a kind of lens.</center><br> 
 
-Kernels define how a convolutional layer is connected to the layer that follows. The kernel above will connect each neuron in the output to nine neurons in the input. By setting the dimensions of the kernels with *kernel_size*, you are telling the convnet how to form these connections. Most often, a kernel will have odd-numbered dimensions -- like *kernel_size* \\( =(3, 3) or (5, 5) \\) -- so that a single pixel sits at the center, but this is not a requirement.
+Kernels define how a convolutional layer is connected to the layer that follows. The kernel above will connect each neuron in the output to nine neurons in the input. By setting the dimensions of the kernels with *kernel_size*, you are telling the convnet how to form these connections. Most often, a kernel will have odd-numbered dimensions -- like *kernel_size* \\( =(3, 3) \\) or \\( (5, 5) \\) -- so that a single pixel sits at the center, but this is not a requirement.
 
 The kernels in a convolutional layer determine what kinds of features it creates. During training, a convnet tries to learn what features it needs to solve the classification problem. This means finding the best values for its kernels.
 
