@@ -55,7 +55,7 @@ The **weights** a convnet learns during training are primarily contained in its 
 A kernel operates by scanning over an image and producing a *weighted* sum of pixel values. In this way, a kernel will act sort of like a polarized lens, emphasizing or deemphasizing certain patterns of information.
 
 <br>
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/3.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/3.png))<center><b>Figure 2:</b> A kernel acts as a kind of lens.</center><br> 
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/3.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/3.png)<center><b>Figure 2:</b> A kernel acts as a kind of lens.</center><br> 
 
 Kernels define how a convolutional layer is connected to the layer that follows. The kernel above will connect each neuron in the output to nine neurons in the input. By setting the dimensions of the kernels with *kernel_size*, you are telling the convnet how to form these connections. Most often, a kernel will have odd-numbered dimensions -- like *kernel_size* \\( =(3, 3) or (5, 5) \\) -- so that a single pixel sits at the center, but this is not a requirement.
 
@@ -66,7 +66,7 @@ The kernels in a convolutional layer determine what kinds of features it creates
 The **activations** in the network we call **feature maps**. They are what result when we apply a filter to an image; they contain the visual features the kernel extracts. Here are a few kernels pictured with feature maps they produced.
 
 <br>
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/4.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/4.png))<center><b>Figure 3:</b> Kernels and features.</center><br> 
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/4.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/4.png)<center><b>Figure 3:</b> Kernels and features.</center><br> 
 
 From the pattern of numbers in the kernel, you can tell the kinds of feature maps it creates. Generally, what a convolution accentuates in its inputs will match the shape of the positive numbers in the kernel. The left and middle kernels above will both filter for horizontal shapes.
 
@@ -77,7 +77,7 @@ With the *filters* parameter, you tell the convolutional layer how many feature 
 After filtering, the feature maps pass through the activation function. The rectifier function has a graph like this:
 
 <br>
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/5.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/5.png))<center><b>Figure 4:</b> The graph of the rectifier function looks like a line with the negative part "rectified" to 0.</center><br> 
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/5.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/5.png)<center><b>Figure 4:</b> The graph of the rectifier function looks like a line with the negative part "rectified" to 0.</center><br> 
 
 A neuron with a rectifier attached is called a rectified linear unit. For that reason, we might also call the rectifier function the **ReLU activation** or even the ReLU function.
 
@@ -95,7 +95,7 @@ You could think about the activation function as scoring pixel values according 
 Here is ReLU applied the feature maps above. Notice how it succeeds at isolating the features.
 
 <br>
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/6.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/6.png))<br> 
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/6.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/6.png)<br> 
 
 Like other activation functions, the ReLU function is **nonlinear**. Essentially this means that the total effect of all the layers in the network becomes different than what you would get by just adding the effects together -- which would be the same as what you could achieve with only a single layer. The nonlinearity ensures features will combine in interesting ways as they move deeper into the network. 
 
@@ -123,7 +123,7 @@ plt.axis('off')
 plt.show();
 ```
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/7.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/7.png))<br> 
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/7.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/7.png)<br> 
 
 For the filtering step, we'll define a kernel and then apply it with the convolution. The kernel in this case is an "edge detection" kernel. You can define it with **tf.constant** just like you'd define an array in Numpy with **np.array**. This creates a tensor of the sort TensorFlow uses.
 
@@ -140,7 +140,7 @@ plt.figure(figsize=(3, 3))
 show_kernel(kernel)
 ```
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/8.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/8.png))<br> 
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/8.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/8.png)<br> 
 
 TensorFlow includes many common operations performed by neural networks in its tf.nn [module](https://www.tensorflow.org/api_docs/python/tf/nn). The two that we'll use are *conv2d* and *relu*. These are simply function versions of Keras layers.
 
@@ -171,7 +171,7 @@ plt.axis('off')
 plt.show();
 ```
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/9.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/9.png))<br> 
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/9.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/9.png)<br> 
 
 Next is the detection step with the ReLU function. This function is much simpler than the convolution, as it doesn't have any parameters to set.
 
@@ -184,7 +184,7 @@ plt.axis('off')
 plt.show();
 ```
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/10.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/10.png))<br> 
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/10.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/10.png)<br> 
 
 And now we've created a feature map! Images like these are what the head uses to solve its classification problem. We can imagine that certain features might be more characteristic of Cars and others more characteristic of Trucks. The task of a convnet during training is to create kernels that can find those features.
 
@@ -238,7 +238,7 @@ for i, (kernel, name) in enumerate(zip(kernels, names)):
 plt.tight_layout()
 ```
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/11.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/11.png))<br> 
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/11.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/11.png)<br> 
 
 ### Define Kernel
 
@@ -301,7 +301,7 @@ relu_fn = tf.nn.relu
 
 The image you see below is the feature map produced by the kernel you chose. If you like, experiment with some of the other suggested kernels above, or, try to invent one that will extract a certain kind of feature.
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/12.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/12.png))<br> 
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/12.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/12.png)<br> 
 
 In the tutorial, our discussion of kernels and feature maps was mainly visual. We saw the effect of Conv2D and ReLU by observing how they transformed some example images.
 
