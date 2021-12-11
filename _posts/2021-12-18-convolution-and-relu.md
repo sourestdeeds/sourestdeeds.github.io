@@ -189,3 +189,55 @@ plt.show();
 And now we've created a feature map! Images like these are what the head uses to solve its classification problem. We can imagine that certain features might be more characteristic of Cars and others more characteristic of Trucks. The task of a convnet during training is to create kernels that can find those features.
 
 We've now seen the first two steps a convnet uses to perform feature extraction: **filter** with *Conv2D* layers and detect with **relu** activation.
+
+
+### Example
+
+We'll work on building some intuition around feature extraction. First, we'll walk through the example we did in the previous example again, but this time, with a kernel you choose yourself. We've mostly been working with images in this course, but what's behind all of the operations we're learning about is mathematics. So, we'll also take a look at how these feature maps can be represented instead as arrays of numbers and what effect convolution with a kernel will have on them.
+
+```python
+import numpy as np
+import tensorflow as tf
+import matplotlib.pyplot as plt
+
+plt.rc('figure', autolayout=True)
+plt.rc('axes', labelweight='bold', labelsize='large',
+       titleweight='bold', titlesize=18, titlepad=10)
+plt.rc('image', cmap='magma')
+
+tf.config.run_functions_eagerly(True)
+```
+
+### Apply Transformations
+
+```python
+image_path = '../input/computer-vision-resources/car_illus.jpg'
+image = tf.io.read_file(image_path)
+image = tf.io.decode_jpeg(image, channels=1)
+image = tf.image.resize(image, size=[400, 400])
+
+img = tf.squeeze(image).numpy()
+plt.figure(figsize=(6, 6))
+plt.imshow(img, cmap='gray')
+plt.axis('off')
+plt.show();
+```
+
+```python
+import learntools.computer_vision.visiontools as visiontools
+from learntools.computer_vision.visiontools import edge, bottom_sobel, emboss, sharpen
+
+kernels = [edge, bottom_sobel, emboss, sharpen]
+names = ["Edge Detect", "Bottom Sobel", "Emboss", "Sharpen"]
+
+plt.figure(figsize=(12, 12))
+for i, (kernel, name) in enumerate(zip(kernels, names)):
+    plt.subplot(1, 4, i+1)
+    visiontools.show_kernel(kernel)
+    plt.title(name)
+plt.tight_layout()
+```
+
+### Define Kernel
+
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/11.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-18-convolution-and-relu/11.png))<br> 
