@@ -30,7 +30,7 @@ A *MaxPool2D* layer is much like a *Conv2D* layer, except that it uses a simple 
 Let's take another look at the extraction figure from the last lesson. Remember that *MaxPool2D* is the **Condense** step.
 
 <br>
-[![jpeg](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-19-maximum-pooling/1.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-19-maximum-pooling/1.png)<br> 
+[![jpeg](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-19-maximum-pooling/1.jpeg#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-19-maximum-pooling/1.jpeg)<br> 
 
 Notice that after applying the ReLU function (**Detect**) the feature map ends up with a lot of "dead space," that is, large areas containing only 0's (the black areas in the image). Having to carry these 0 activations through the entire network would increase the size of the model without adding much useful information. Instead, we would like to condense the feature map to retain only the most useful part -- the feature itself.
 
