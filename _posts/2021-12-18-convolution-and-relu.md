@@ -343,6 +343,10 @@ $$
 \displaystyle \left[\begin{matrix}0 & 1 & 0 & 0 & 0 & 0\\0 & 1 & 0 & 0 & 0 & 0\\0 & 1 & 0 & 0 & 0 & 0\\0 & 1 & 0 & 0 & 0 & 0\\0 & 1 & 0 & 1 & 1 & 1\\0 & 1 & 0 & 0 & 0 & 0\end{matrix}\right]
 $$
 
+$$
+\displaystyle \left[\begin{matrix}1 & -1\\1 & -1\end{matrix}\right]
+$$
+
 ### Observe Convolution on a Numerical Matrix
 
 What do you see? The image is simply a long vertical line on the left and a short horizontal line on the lower right. What about the kernel? What effect do you think it will have on this image? After you've thought about it, run the next cell for the answer.
@@ -368,6 +372,10 @@ display(sympy.Matrix(tf.squeeze(image_detect).numpy()))
 
 $$
 \displaystyle \left[\begin{matrix}-2.0 & 2.0 & 0 & 0 & 0\\-2.0 & 2.0 & 0 & 0 & 0\\-2.0 & 2.0 & 0 & 0 & 0\\-2.0 & 2.0 & -1.0 & 0 & 0\\-2.0 & 2.0 & -1.0 & 0 & 0\end{matrix}\right]
+$$
+
+$$
+\displaystyle \left[\begin{matrix}0 & 2.0 & 0 & 0 & 0\\0 & 2.0 & 0 & 0 & 0\\0 & 2.0 & 0 & 0 & 0\\0 & 2.0 & 0 & 0 & 0\\0 & 2.0 & 0 & 0 & 0\end{matrix}\right]
 $$
 
 In this lesson, we learned about the first two operations a convolutional classifier uses for feature extraction: **filtering** an image with a **convolution** and **detecting** the feature with the **rectified linear unit**.
