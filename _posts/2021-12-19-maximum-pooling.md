@@ -280,21 +280,23 @@ for i in range(REPEATS):
 
 Suppose you had made a small shift in a different direction -- what effect would you expect that have on the resulting image? Try running the cell a few more times, if you like, to get a new random shift.
 
- In the tutorial, we talked about how maximum pooling creates **translation invariance** over small distances. This means that we would expect small shifts to disappear after repeated maximum pooling. If you run the cell multiple times, you can see the resulting image is always the same; the pooling operation destroys those small translations.
+In the tutorial, we talked about how maximum pooling creates **translation invariance** over small distances. This means that we would expect small shifts to disappear after repeated maximum pooling. If you run the cell multiple times, you can see the resulting image is always the same; the pooling operation destroys those small translations.
 
- ### Global Average Pooling
 
- We mentioned in the previous exercise that average pooling has largely been superceeded by maximum pooling within the convolutional base. There is, however, a kind of average pooling that is still widely used in the head of a convnet. This is **global average pooling**. A *GlobalAvgPool2D* layer is often used as an alternative to some or all of the hidden *Dense* layers in the head of the network, like so:
+### Global Average Pooling
 
- ```python
+
+We mentioned in the previous exercise that average pooling has largely been superceeded by maximum pooling within the convolutional base. There is, however, a kind of average pooling that is still widely used in the head of a convnet. This is **global average pooling**. A *GlobalAvgPool2D* layer is often used as an alternative to some or all of the hidden *Dense* layers in the head of the network, like so:
+
+```python
 model = keras.Sequential([
     pretrained_base,
     layers.GlobalAvgPool2D(),
     layers.Dense(1, activation='sigmoid'),
 ])
- ```
+```
 
- What is this layer doing? Notice that we no longer have the *Flatten* layer that usually comes after the base to transform the 2D feature data to 1D data needed by the classifier. Now the *GlobalAvgPool2D* layer is serving this function. But, instead of "unstacking" the feature (like *Flatten*), it simply replaces the entire feature map with its average value. Though very destructive, it often works quite well and has the advantage of reducing the number of parameters in the model.
+What is this layer doing? Notice that we no longer have the *Flatten* layer that usually comes after the base to transform the 2D feature data to 1D data needed by the classifier. Now the *GlobalAvgPool2D* layer is serving this function. But, instead of "unstacking" the feature (like *Flatten*), it simply replaces the entire feature map with its average value. Though very destructive, it often works quite well and has the advantage of reducing the number of parameters in the model.
 
 Let's look at what *GlobalAvgPool2D* does on some randomly generated feature maps. This will help us to understand how it can "flatten" the stack of feature maps produced by the base.
 
