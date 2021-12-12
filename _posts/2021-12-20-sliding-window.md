@@ -65,21 +65,77 @@ The alternative is to use *padding* = 'same'. The trick here is to **pad** the i
 <br>
 [![gif](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-20-sliding-window/3.gif#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-20-sliding-window/3.gif)<br> 
 
+The VGG model we've been looking at uses *same* padding for all of its convolutional layers. Most modern convnets will use some combination of the two. (Another parameter to tune!)
 
+### Example - Exploring Sliding Windows
 
+To better understand the effect of the sliding window parameters, it can help to observe a feature extraction on a low-resolution image so that we can see the individual pixels. Let's just look at a simple circle.
 
+```python
 
+import tensorflow as tf
+import matplotlib.pyplot as plt
 
+plt.rc('figure', autolayout=True)
+plt.rc('axes', labelweight='bold', labelsize='large',
+       titleweight='bold', titlesize=18, titlepad=10)
+plt.rc('image', cmap='magma')
 
+image = circle([64, 64], val=1.0, r_shrink=3)
+image = tf.reshape(image, [*image.shape, 1])
+# Bottom sobel
+kernel = tf.constant(
+    [[-1, -2, -1],
+     [0, 0, 0],
+     [1, 2, 1]],
+)
 
-
-
-
-
-
-
+show_kernel(kernel)
+```
 
 <br>
-[![jpeg](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-20-sliding-window/1.jpeg#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-20-sliding-window/1.jpeg)<br> 
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-20-sliding-window/4.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-20-sliding-window/4.png)<br> 
 
 
+The VGG architecture is fairly simple. It uses convolution with strides of 1 and maximum pooling with $2×2$  windows and strides of 2. We've included a function in the *visiontools* utility script that will show us all the steps.
+
+```python
+show_extraction(
+    image, kernel,
+
+    # Window parameters
+    conv_stride=1,
+    pool_size=2,
+    pool_stride=2,
+
+    subplot_shape=(1, 4),
+    figsize=(14, 6),
+)
+```
+
+<br>
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-20-sliding-window/5.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-20-sliding-window/5.png)<br> 
+
+And that works pretty well! The kernel was designed to detect horizontal lines, and we can see that in the resulting feature map the more horizontal parts of the input end up with the greatest activation.
+
+What would happen if we changed the strides of the convolution to 3?
+
+```python
+show_extraction(
+    image, kernel,
+
+    # Window parameters
+    conv_stride=3,
+    pool_size=2,
+    pool_stride=2,
+
+    subplot_shape=(1, 4),
+    figsize=(14, 6),    
+)
+```
+
+This seems to reduce the quality of the feature extracted. Our input circle is rather "finely detailed," being only 1 pixel wide. A convolution with strides of 3 is too coarse to produce a good feature map from it.
+
+Sometimes, a model will use a convolution with a larger stride in it's initial layer. This will usually be coupled with a larger kernel as well. The ResNet50 model, for instance, uses $7×7$ kernels with strides of 2 in its first layer. This seems to accelerate the production of large-scale features without the sacrifice of too much information from the input.
+
+We looked at a characteristic computation common to both convolution and pooling: the **sliding window** and the parameters affecting its behavior in these layers. This style of windowed computation contributes much of what is characteristic of convolutional networks and is an essential part of their functioning.
