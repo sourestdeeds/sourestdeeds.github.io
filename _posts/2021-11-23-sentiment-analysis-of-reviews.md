@@ -39,6 +39,7 @@ from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
 
 from tqdm import tqdm
+tqdm.pandas()
 
 from collections import Counter
 import string
@@ -94,19 +95,18 @@ Steps Taken:
 def process_text(filename):
     df = pd.read_csv(filename)
     stop_words = stopwords.words('english')
-    total_rows = len(df)
     # Remove Punctuation and Digits and make lowercase, Remove words < len(3)
     list_of_chars_and_digits = string.punctuation + string.digits
     df['remove_punc_and_digits'] = df['Review'].str.replace(f"[{list_of_chars_and_digits}]", " ", regex=True).apply(str.lower).str.findall("\w{3,}").str.join(" ")
 
     # Tokenize the words, and remove stopwords
     df['word_tokens'] = df['remove_punc_and_digits'].apply(nltk.word_tokenize)
-    df['remove_stopwords'] = [[word for word in df['word_tokens'][row] if word not in stop_words] for row in range(total_rows)]
+    df['remove_stopwords'] = df['word_tokens'].apply(lambda x: [word for word in x if word not in stop_words]) 
     df['remove_stopwords_count'] = df['remove_stopwords'].apply(Counter)
     
     # Stem the words
     ps = PorterStemmer()
-    df['stemmed'] = [[ps.stem(word) for word in df['remove_stopwords'][row]] for row in range(total_rows)]
+    df['stemmed'] = df['remove_stopwords'].apply(lambda x: [ps.stem(word) for word in x])
     df['stemmed_count'] = df['stemmed'].apply(Counter)
     
     # Final processed sentence
@@ -352,7 +352,7 @@ print(f"{df['stemmed_count'][0]}\n")
 
 ```python
 # Sentiment target, convert to 1 for pos, 0 for neg
-y = df['Sentiment'].replace('Pos', 1).replace('Neg', 0)
+y = df['Sentiment'].map({'Pos': 1, 'Neg': 0})
 # Fully processed sentence
 X = df['stemmed_sentence']
 
