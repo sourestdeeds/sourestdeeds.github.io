@@ -108,6 +108,8 @@ h1, h2, h3, h4, h5, h6 {
 
 
 
+
+
 /**
  * Links
  */
@@ -129,6 +131,29 @@ a {
 
     .username {
       text-decoration: underline;
+    }
+  }
+}
+
+
+
+a {
+  color: #0000ee;
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  &:before {
+    background-color: #0000ee;
+    content: '';
+    height: 2px;
+    position: absolute;
+    bottom: -1px;
+    transition: width 0.3s ease-in-out;
+    width: 100%;
+  }
+  &:hover {
+    &:before {
+       width: 0;
     }
   }
 }
