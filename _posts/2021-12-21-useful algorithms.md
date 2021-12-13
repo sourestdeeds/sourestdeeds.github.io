@@ -59,7 +59,7 @@ The Epsilon-Greedy Algorithm is a simple approach to the [multi-armed bandit pro
 
 The idea behind the problem is that there are k different alternatives that each return a different reward, but you don’t know the reward for any of the alternatives. And so, you start by exploring different alternatives, and as time goes by, there is a tradeoff between exploring more options and exploiting the highest paying option.
 
-With the [Epsilon-Greedy](https://www.geeksforgeeks.org/epsilon-greedy-algorithm-in-reinforcement-learning/) Algorithm, a randomly alternative is chosen a fraction, ε, of the time. For the rest of the time $(1-\epsilon)$, the alternative with the highest known payout (reward) is chosen. ε is a parameter that you have to set.
+With the [Epsilon-Greedy](https://www.geeksforgeeks.org/epsilon-greedy-algorithm-in-reinforcement-learning/) Algorithm, a randomly alternative is chosen a fraction, ε, of the time. For the rest of the time $(1-\varepsilon)$, the alternative with the highest known payout (reward) is chosen. $\varepsilon$ is a parameter that you have to set.
 
 Better solutions include the upper confidence bound solution and Bayesian Thompson sampling.
 
