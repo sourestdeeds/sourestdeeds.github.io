@@ -112,17 +112,17 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
+  
   color: $link-base-color;
+  text-decoration-skip-ink: auto;
+  text-decoration-color: #0407298a;
+  text-underline-offset: 1px;
   &:visited {
     color: $link-visited-color;
   }
 
   &:hover {
     color: $link-hover-color;
-    text-decoration-color: #0a1063;
-    text-decoration-thickness: .125em;
-    text-decoration-skip-ink: auto;
-    text-underline-offset: 0.5px;
   }
 
   .social-media-list &:hover {
