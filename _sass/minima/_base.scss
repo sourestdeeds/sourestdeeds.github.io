@@ -111,26 +111,96 @@ h1, h2, h3, h4, h5, h6 {
 /**
  * Links
  */
-a {
-  color: $link-base-color;
-  text-decoration: none;
 
-  &:visited {
-    color: $link-visited-color;
-  }
+/*
+=====
+DEPENDENCIES
+=====
+*/
 
-  &:hover {
-    color: $link-hover-color;
-    text-decoration: underline;
-  }
+.r-link{
+	display: var(--rLinkDisplay, inline-flex) !important;
+}
 
-  .social-media-list &:hover {
-    text-decoration: none;
+.r-link[href]{
+	color: var(--rLinkColor) !important;
+	text-decoration: var(--rLinkTextDecoration, none) !important;
+}
 
-    .username {
-      text-decoration: underline;
-    }
-  }
+.text-underlined{
+    --uiTextUnderlinedLineHeight: var(--textUnderlinedLineHeight, 2px); /* 1 */
+    --uiTextUnderlinedLineGap: var(--textUnderlinedLineGap, .5rem);
+    --uiTextUnderlinedPaddingBottom: calc(var(--uiTextUnderlinedLineHeight) + var(--uiTextUnderlinedLineGap));
+
+    padding-bottom: var(--uiTextUnderlinedPaddingBottom) !important;
+    position: var(--textUnderlinedPosition, relative) !important;
+		z-index: var(--textUnderlinedZindex, 1) !important;
+
+		/*
+        1. I use pixels units because others units (em, rem, vw, vh, etc) can
+        lead to the mistake of displaying a circumcised line
+    */
+}
+
+.text-underlined::after{
+    content: "";
+    width: var(--textUnderlinedLineWidht, 100%) !important;
+    height: var(--uiTextUnderlinedLineHeight) !important;
+		background-image: var(--textUnderlinedBackgroundImage, linear-gradient(to top, var(--textUnderlinedLineColor, currentColor) 30%, rgba(255, 255, 255, 0) 45%)) !important; /* 1 */
+
+    position: absolute;
+    left: var(--textUnderlinedLineLeft, 0) !important;
+    bottom: var(--textUnderlinedLineBottom, 0) !important;
+		z-index: var(--textUnderlinedLineZindex, -1) !important;
+
+	  /*
+			1. Thank you @LB Corney. rgba(0,0,0,0) works with mistakes in Safari. So I replaxed it to rgba(255, 255 ,255, 0) 
+				 https://stackoverflow.com/questions/70330170/odd-css-differences-between-chrome-and-safari-browser/
+				 https://stackoverflow.com/questions/38391457/linear-gradient-to-transparent-bug-in-latest-safari
+	  */
+}
+
+/*
+=====
+CORE
+=====
+*/
+
+.link{
+	--textUnderlinedLineHeight: 100%;
+	--textUnderlinedLineGap: 0;
+	--textUnderlinedLineColor: #fed330;
+	
+	padding-left: .75rem;
+	padding-right: .75rem;
+}
+
+.link::after{
+	will-change: width;
+	transition: width .1s ease-out;
+	transform: rotate(-2deg);
+	transform-origin: left bottom;
+}
+
+.link:hover{
+	--textUnderlinedLineWidht: 0;
+}
+
+.link:hover::after{
+	transition-duration: .15s;
+}
+
+/*
+* These styles for text decoration. The demo will be work without it
+*/
+
+.link{
+	font-weight: 700;
+}
+
+.link:focus{
+	outline: 2px solid #fed330;
+	outline-offset: .5rem;
 }
 
 
