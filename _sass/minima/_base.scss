@@ -116,7 +116,7 @@ a {
   color: $link-base-color;
   text-decoration-skip-ink: auto;
   text-decoration-color: $link-base-color;
-  text-decoration-thickness: 0.025em;
+  text-decoration-thickness: 0.05em;
   text-underline-offset: 0.75px;
   &:visited {
     color: $link-visited-color;
