@@ -110,11 +110,12 @@ h1, h2, h3, h4, h5, h6 {
 
 /**
  * Links
- 
+ */
 a {
   color: $link-base-color;
-  text-decoration: none;
-
+  text-decoration-color: #0a1063;
+  text-decoration-thickness: .125em;
+  text-underline-offset: 1.5px;
   &:visited {
     color: $link-visited-color;
   }
@@ -131,10 +132,8 @@ a {
     }
   }
 }
-*/
-a{color: #0f7afc; border-bottom-color: rgba(15, 122, 252, 0.2); text-decoration:none}
-a:hover{color:#cf0000; border-bottom-color: rgba(208, 64, 0, 0.2); text-decoration:none}
-a:visited{ color: #800080; border-bottom-color: rgba(128, 0, 128, 0.2); text-decoration:none}
+
+
 
 
 /**
