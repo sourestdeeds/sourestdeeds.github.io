@@ -7,8 +7,9 @@ categories: [Computer Vision]
 published: true
 ---
 {% assign counter = 1 %}
-{% assign link = https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/ %}
-{% assign filename = page.url | replace_first: '/', '' | replace: '/', '-'  | replace: '.html', '' %}
+{% assign link = 'https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/' %}
+{% assign filename = {{ page.date | date: "%Y-%m-%d" }}-{{ page.title | remove: " -" | replace: " ", "-" | downcase }} %}
+
 
 Now that you've seen the layers a convnet uses to extract features, it's time to put them together and build a network of your own!
 
@@ -337,3 +338,104 @@ history = model.fit(
     epochs=50,
 )
 ```
+
+    Epoch 1/50
+    80/80 [==============================] - 36s 348ms/step - loss: 0.6816 - binary_accuracy: 0.5744 - val_loss: 0.6691 - val_binary_accuracy: 0.5785
+    Epoch 2/50
+    80/80 [==============================] - 3s 43ms/step - loss: 0.6667 - binary_accuracy: 0.5787 - val_loss: 0.6601 - val_binary_accuracy: 0.5785
+    Epoch 3/50
+    80/80 [==============================] - 3s 42ms/step - loss: 0.6613 - binary_accuracy: 0.5787 - val_loss: 0.6503 - val_binary_accuracy: 0.5785
+    Epoch 4/50
+    80/80 [==============================] - 3s 42ms/step - loss: 0.6517 - binary_accuracy: 0.5787 - val_loss: 0.6447 - val_binary_accuracy: 0.5785
+    Epoch 5/50
+    80/80 [==============================] - 3s 43ms/step - loss: 0.6456 - binary_accuracy: 0.6093 - val_loss: 0.6386 - val_binary_accuracy: 0.5961
+    Epoch 6/50
+    80/80 [==============================] - 3s 42ms/step - loss: 0.6372 - binary_accuracy: 0.6330 - val_loss: 0.6354 - val_binary_accuracy: 0.5918
+    Epoch 7/50
+    80/80 [==============================] - 4s 44ms/step - loss: 0.6354 - binary_accuracy: 0.6334 - val_loss: 0.6317 - val_binary_accuracy: 0.6129
+    Epoch 8/50
+    80/80 [==============================] - 3s 42ms/step - loss: 0.6256 - binary_accuracy: 0.6529 - val_loss: 0.6207 - val_binary_accuracy: 0.6434
+    Epoch 9/50
+    80/80 [==============================] - 3s 43ms/step - loss: 0.6205 - binary_accuracy: 0.6635 - val_loss: 0.6137 - val_binary_accuracy: 0.6498
+    Epoch 10/50
+    80/80 [==============================] - 3s 42ms/step - loss: 0.6141 - binary_accuracy: 0.6729 - val_loss: 0.6074 - val_binary_accuracy: 0.6680
+    Epoch 11/50
+    80/80 [==============================] - 3s 42ms/step - loss: 0.6039 - binary_accuracy: 0.6846 - val_loss: 0.6022 - val_binary_accuracy: 0.6729
+    Epoch 12/50
+    80/80 [==============================] - 3s 42ms/step - loss: 0.5969 - binary_accuracy: 0.6998 - val_loss: 0.5973 - val_binary_accuracy: 0.6803
+    Epoch 13/50
+    80/80 [==============================] - 3s 42ms/step - loss: 0.5831 - binary_accuracy: 0.7090 - val_loss: 0.5880 - val_binary_accuracy: 0.6967
+    Epoch 14/50
+    80/80 [==============================] - 4s 45ms/step - loss: 0.5737 - binary_accuracy: 0.7211 - val_loss: 0.5825 - val_binary_accuracy: 0.7104
+    Epoch 15/50
+    80/80 [==============================] - 3s 42ms/step - loss: 0.5616 - binary_accuracy: 0.7299 - val_loss: 0.5712 - val_binary_accuracy: 0.7169
+    Epoch 16/50
+    80/80 [==============================] - 3s 43ms/step - loss: 0.5451 - binary_accuracy: 0.7497 - val_loss: 0.5718 - val_binary_accuracy: 0.7090
+    Epoch 17/50
+    80/80 [==============================] - 3s 42ms/step - loss: 0.5268 - binary_accuracy: 0.7620 - val_loss: 0.5551 - val_binary_accuracy: 0.7363
+    Epoch 18/50
+    80/80 [==============================] - 3s 42ms/step - loss: 0.5020 - binary_accuracy: 0.7880 - val_loss: 0.5333 - val_binary_accuracy: 0.7545
+    Epoch 19/50
+    80/80 [==============================] - 3s 42ms/step - loss: 0.4870 - binary_accuracy: 0.7927 - val_loss: 0.5456 - val_binary_accuracy: 0.7355
+    Epoch 20/50
+    80/80 [==============================] - 3s 42ms/step - loss: 0.4701 - binary_accuracy: 0.7983 - val_loss: 0.4908 - val_binary_accuracy: 0.7640
+    Epoch 21/50
+    80/80 [==============================] - 4s 45ms/step - loss: 0.4308 - binary_accuracy: 0.8085 - val_loss: 0.4861 - val_binary_accuracy: 0.7660
+    Epoch 22/50
+    80/80 [==============================] - 3s 42ms/step - loss: 0.3956 - binary_accuracy: 0.8317 - val_loss: 0.4404 - val_binary_accuracy: 0.7989
+    Epoch 23/50
+    80/80 [==============================] - 3s 42ms/step - loss: 0.3638 - binary_accuracy: 0.8450 - val_loss: 0.4566 - val_binary_accuracy: 0.7806
+    Epoch 24/50
+    80/80 [==============================] - 3s 42ms/step - loss: 0.3382 - binary_accuracy: 0.8607 - val_loss: 0.4534 - val_binary_accuracy: 0.7870
+    Epoch 25/50
+    80/80 [==============================] - 3s 42ms/step - loss: 0.3169 - binary_accuracy: 0.8708 - val_loss: 0.4250 - val_binary_accuracy: 0.8127
+    Epoch 26/50
+    80/80 [==============================] - 3s 42ms/step - loss: 0.2885 - binary_accuracy: 0.8849 - val_loss: 0.4289 - val_binary_accuracy: 0.8165
+    Epoch 27/50
+    80/80 [==============================] - 3s 43ms/step - loss: 0.2668 - binary_accuracy: 0.8904 - val_loss: 0.4419 - val_binary_accuracy: 0.8133
+    Epoch 28/50
+    80/80 [==============================] - 3s 42ms/step - loss: 0.2412 - binary_accuracy: 0.9025 - val_loss: 0.4628 - val_binary_accuracy: 0.8070
+    Epoch 29/50
+    80/80 [==============================] - 3s 43ms/step - loss: 0.2512 - binary_accuracy: 0.8972 - val_loss: 0.4338 - val_binary_accuracy: 0.7985
+    Epoch 30/50
+    80/80 [==============================] - 3s 42ms/step - loss: 0.2250 - binary_accuracy: 0.9150 - val_loss: 0.4218 - val_binary_accuracy: 0.8202
+    Epoch 31/50
+    80/80 [==============================] - 3s 42ms/step - loss: 0.2128 - binary_accuracy: 0.9191 - val_loss: 0.4465 - val_binary_accuracy: 0.8377
+    Epoch 32/50
+    80/80 [==============================] - 3s 42ms/step - loss: 0.1784 - binary_accuracy: 0.9361 - val_loss: 0.4509 - val_binary_accuracy: 0.8369
+    Epoch 33/50
+    80/80 [==============================] - 3s 42ms/step - loss: 0.2013 - binary_accuracy: 0.9234 - val_loss: 0.4551 - val_binary_accuracy: 0.8460
+    Epoch 34/50
+    80/80 [==============================] - 3s 42ms/step - loss: 0.1800 - binary_accuracy: 0.9349 - val_loss: 0.4936 - val_binary_accuracy: 0.8414
+    Epoch 35/50
+    80/80 [==============================] - 3s 42ms/step - loss: 0.1654 - binary_accuracy: 0.9414 - val_loss: 0.6184 - val_binary_accuracy: 0.8258
+    Epoch 36/50
+    80/80 [==============================] - 4s 44ms/step - loss: 0.1439 - binary_accuracy: 0.9478 - val_loss: 0.6884 - val_binary_accuracy: 0.8060
+    Epoch 37/50
+    80/80 [==============================] - 3s 42ms/step - loss: 0.1291 - binary_accuracy: 0.9580 - val_loss: 0.7367 - val_binary_accuracy: 0.8155
+    Epoch 38/50
+    80/80 [==============================] - 3s 42ms/step - loss: 0.1257 - binary_accuracy: 0.9582 - val_loss: 0.7216 - val_binary_accuracy: 0.8175
+    Epoch 39/50
+    80/80 [==============================] - 3s 43ms/step - loss: 0.1313 - binary_accuracy: 0.9541 - val_loss: 0.5901 - val_binary_accuracy: 0.8282
+    Epoch 40/50
+    80/80 [==============================] - 3s 42ms/step - loss: 0.1164 - binary_accuracy: 0.9580 - val_loss: 0.7537 - val_binary_accuracy: 0.8167
+    Epoch 41/50
+    80/80 [==============================] - 3s 42ms/step - loss: 0.1020 - binary_accuracy: 0.9699 - val_loss: 0.7372 - val_binary_accuracy: 0.8293
+    Epoch 42/50
+    80/80 [==============================] - 3s 42ms/step - loss: 0.0985 - binary_accuracy: 0.9687 - val_loss: 0.5475 - val_binary_accuracy: 0.8470
+    Epoch 43/50
+    80/80 [==============================] - 3s 42ms/step - loss: 0.1001 - binary_accuracy: 0.9679 - val_loss: 0.6405 - val_binary_accuracy: 0.8386
+    Epoch 44/50
+    80/80 [==============================] - 3s 44ms/step - loss: 0.1064 - binary_accuracy: 0.9613 - val_loss: 0.5989 - val_binary_accuracy: 0.8284
+    Epoch 45/50
+    80/80 [==============================] - 3s 42ms/step - loss: 0.0996 - binary_accuracy: 0.9695 - val_loss: 0.5213 - val_binary_accuracy: 0.8311
+    Epoch 46/50
+    80/80 [==============================] - 3s 42ms/step - loss: 0.0823 - binary_accuracy: 0.9740 - val_loss: 0.6159 - val_binary_accuracy: 0.8052
+    Epoch 47/50
+    80/80 [==============================] - 3s 43ms/step - loss: 0.0737 - binary_accuracy: 0.9773 - val_loss: 0.6454 - val_binary_accuracy: 0.8359
+    Epoch 48/50
+    80/80 [==============================] - 3s 42ms/step - loss: 0.0721 - binary_accuracy: 0.9791 - val_loss: 0.6538 - val_binary_accuracy: 0.8491
+    Epoch 49/50
+    80/80 [==============================] - 3s 43ms/step - loss: 0.0684 - binary_accuracy: 0.9797 - val_loss: 0.6213 - val_binary_accuracy: 0.8418
+    Epoch 50/50
+    80/80 [==============================] - 3s 42ms/step - loss: 0.0623 - binary_accuracy: 0.9803 - val_loss: 0.7014 - val_binary_accuracy: 0.8517
