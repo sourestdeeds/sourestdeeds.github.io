@@ -9,7 +9,7 @@ published: true
 {% assign counter = 1 %}
 {% assign link = "https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/" %}
 {% assign date = page.date | date: "%Y-%m-%d" %}
-{% assign filename = page.url | replace_first: '/', '' | replace: '/', '-'  | replace: '.html', '' %}
+{% assign filename = page.title | remove: " -" | replace: " ", "-" | downcase %}
 
 
 Now that you've seen the layers a convnet uses to extract features, it's time to put them together and build a network of your own!
