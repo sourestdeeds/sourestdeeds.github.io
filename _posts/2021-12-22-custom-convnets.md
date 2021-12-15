@@ -8,7 +8,8 @@ published: true
 ---
 {% assign counter = 1 %}
 {% assign link = "https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/" %}
-{% assign filename = {{ page.date | date: "%Y-%m-%d" }}-{{ page.title | remove: " -" | replace: " ", "-" | downcase }} %}
+{% assign date = page.date | date: "%Y-%m-%d" %}
+{% assign filename = page.url | replace_first: '/', '' | replace: '/', '-'  | replace: '.html', '' %}
 
 
 Now that you've seen the layers a convnet uses to extract features, it's time to put them together and build a network of your own!
@@ -19,7 +20,7 @@ In the last three lessons, we saw how convolutional networks perform **feature e
 
 
 <br>
-[![png]({{ link }}{{ filename }}/{{ counter }}.png#center)]({{ link }}{{ filename }}/{{ counter }}.png)
+[![png]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.png#center)]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.png)
 {% assign counter = counter | plus: 1 %} 
 <br>
 
