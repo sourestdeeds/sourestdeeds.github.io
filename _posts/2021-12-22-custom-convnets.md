@@ -29,12 +29,16 @@ In the last three lessons, we saw how convolutional networks perform **feature e
 It does this by passing them through long chains of **convolutional blocks** which perform this extraction.
 
 <br>
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-22-custom-convnets/2.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-22-custom-convnets/2.png)<br> 
+[![png]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.png#center)]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.png)
+{% assign counter = counter | plus: 1 %} 
+<br>
 
 These convolutional blocks are stacks of Conv2D and MaxPool2D layers.
 
 <br>
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-22-custom-convnets/3.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-22-custom-convnets/3.png)<br> 
+[![png]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.png#center)]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.png)
+{% assign counter = counter | plus: 1 %} 
+<br>
 
 Each block represents a round of extraction, and by composing these blocks the convnet can combine and recombine the features produced, growing them and shaping them to better fit the problem at hand. The deep structure of modern convnets is what allows this sophisticated feature engineering and has been largely responsible for their superior performance.
 
@@ -113,7 +117,9 @@ ds_valid = (
 Here is a diagram of the model we'll use:
 
 <br>
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-22-custom-convnets/4.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-22-custom-convnets/4.png)<br> 
+[![png]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.png#center)]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.png)
+{% assign counter = counter | plus: 1 %} 
+<br>
 
 Now we'll define the model. See how our model consists of three blocks of *Conv2D* and *MaxPool2D* layers (the base) followed by a head of *Dense* layers. We can translate this diagram more or less directly into a Keras *Sequential* model just by filling in the appropriate parameters.
 
@@ -202,7 +208,9 @@ history_frame.loc[:, ['binary_accuracy', 'val_binary_accuracy']].plot();
 ```
 
 <br>
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-22-custom-convnets/5.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-22-custom-convnets/5.png)<br> 
+[![png]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.png#center)]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.png)
+{% assign counter = counter | plus: 1 %} 
+<br>
 
 This model is much smaller than the VGG16 model from Lesson 1 -- only 3 convolutional layers versus the 16 of VGG16. It was nevertheless able to fit this dataset fairly well. We might still be able to improve this simple model by adding more convolutional layers, hoping to create features better adapted to the dataset. 
 
@@ -285,7 +293,9 @@ Let's design a convolutional network with a block architecture like we saw in th
 Let's go with the second approach. We'll keep the three block structure, but increase the number of *Conv2D* layer in the second block to two, and in the third block to three.
 
 <br>
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-22-custom-convnets/6.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-12-22-custom-convnets/6.png)<br> 
+[![png]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.png#center)]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.png)
+{% assign counter = counter | plus: 1 %} 
+<br>
 
 Given the diagram above, complete the model by defining the layers of the third block.
 
@@ -440,3 +450,17 @@ history = model.fit(
     80/80 [==============================] - 3s 43ms/step - loss: 0.0684 - binary_accuracy: 0.9797 - val_loss: 0.6213 - val_binary_accuracy: 0.8418
     Epoch 50/50
     80/80 [==============================] - 3s 42ms/step - loss: 0.0623 - binary_accuracy: 0.9803 - val_loss: 0.7014 - val_binary_accuracy: 0.8517
+
+
+<br>
+[![png]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.png#center)]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.png)
+{% assign counter = counter | plus: 1 %} 
+<br>
+
+### Train the Model
+
+How would you interpret these training curves? Did this model improve upon the model from the tutorial?
+
+The learning curves for the model from the tutorial diverged fairly rapidly. This would indicate that it was prone to overfitting and in need of some regularization. The additional layer in our new model would make it even more prone to overfitting. However, adding some regularization with the Dropout layer helped prevent this. These changes improved the validation accuracy of the model by several points.
+
+These exercises showed you how to design a custom convolutional network to solve a specific classification problem. Though most models these days will be built on top of a pretrained base, it certain circumstances a smaller custom convnet might still be preferable -- such as with a smaller or unusual dataset or when computing resources are very limited. As you saw here, for certain problems they can perform just as well as a pretrained model.
