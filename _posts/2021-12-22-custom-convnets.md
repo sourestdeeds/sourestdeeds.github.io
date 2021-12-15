@@ -7,7 +7,7 @@ categories: [Computer Vision]
 published: true
 ---
 {% assign counter = 1 %}
-{% assign link = 'https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/' %}
+{% assign link = "https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/" %}
 {% assign filename = {{ page.date | date: "%Y-%m-%d" }}-{{ page.title | remove: " -" | replace: " ", "-" | downcase }} %}
 
 
