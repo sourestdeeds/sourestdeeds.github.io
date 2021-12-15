@@ -174,7 +174,7 @@ history_frame.loc[:, ['binary_accuracy', 'val_binary_accuracy']].plot();
 {% assign counter = counter | plus: 1 %} 
 <br>
 
-
+The training and validation curves in the model from Tutorial 1 diverged fairly quickly, suggesting that it could benefit from some regularization. The learning curves for this model were able to stay closer together, and we achieved some modest improvement in validation loss and accuracy. This suggests that the dataset did indeed benefit from the augmentation.
 
 
 
