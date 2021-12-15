@@ -277,3 +277,113 @@ for i in range(16):
     plt.axis('off')
 plt.show()
 ```
+
+<br>
+[![png]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.png#center)]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.png)
+{% assign counter = counter | plus: 1 %} 
+<br>
+
+Do the transformations you chose seem reasonable for the Car or Truck dataset?
+
+In this exercise, we'll look at a few datasets and think about what kind of augmentation might be appropriate. Your reasoning might be different that what we discuss in the solution. That's okay. The point of these problems is just to think about how a transformation might interact with a classification problem -- for better or worse.
+
+The [EuroSAT](https://www.kaggle.com/ryanholbrook/eurosat) dataset consists of satellite images of the Earth classified by geographic feature. Below are a number of images from this dataset.
+
+<br>
+[![png]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.png#center)]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.png)
+{% assign counter = counter | plus: 1 %} 
+<br>
+
+### EuroSAT
+
+What kinds of transformations might be appropriate for this dataset?
+
+It seems to this author that flips and rotations would be worth trying first since there's no concept of orientation for pictures taken straight overhead. None of the transformations seem likely to confuse classes, however.
+
+The [TensorFlow Flowers](https://www.kaggle.com/ryanholbrook/tensorflow-flowers) dataset consists of photographs of flowers of several species. Below is a sample.
+
+<br>
+[![png]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.png#center)]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.png)
+{% assign counter = counter | plus: 1 %} 
+<br>
+
+### TensorFlow Flowers
+
+What kinds of transformations might be appropriate for the TensorFlow Flowers dataset?
+
+It seems to this author that horizontal flips and moderate rotations would be worth trying first. Some augmentation libraries include transformations of hue (like red to blue). Since the color of a flower seems distinctive of its class, a change of hue might be less successful. On the other hand, there is suprising variety in cultivated flowers like roses, so, depending on the dataset, this might be an improvement after all!
+
+Now you'll use data augmentation with a custom convnet similar to the one you built in Exercise 5. Since data augmentation effectively increases the size of the dataset, we can increase the capacity of the model in turn without as much risk of overfitting.
+
+### Add Preprocessing Layers
+
+```python
+from tensorflow import keras
+from tensorflow.keras import layers
+
+model = keras.Sequential([
+    layers.InputLayer(input_shape=[128, 128, 3]),
+
+    # Data Augmentation
+    preprocessing.RandomContrast(factor=0.10),
+    preprocessing.RandomFlip(mode='horizontal'),
+    preprocessing.RandomRotation(factor=0.10),
+
+    # Block One
+    layers.BatchNormalization(renorm=True),
+    layers.Conv2D(filters=64, kernel_size=3, activation='relu', padding='same'),
+    layers.MaxPool2D(),
+
+    # Block Two
+    layers.BatchNormalization(renorm=True),
+    layers.Conv2D(filters=128, kernel_size=3, activation='relu', padding='same'),
+    layers.MaxPool2D(),
+
+    # Block Three
+    layers.BatchNormalization(renorm=True),
+    layers.Conv2D(filters=256, kernel_size=3, activation='relu', padding='same'),
+    layers.Conv2D(filters=256, kernel_size=3, activation='relu', padding='same'),
+    layers.MaxPool2D(),
+
+    # Head
+    layers.BatchNormalization(renorm=True),
+    layers.Flatten(),
+    layers.Dense(8, activation='relu'),
+    layers.Dense(1, activation='sigmoid'),
+])
+```
+
+Now we'll train the model. Run the next cell to compile it with a loss and accuracy metric and fit it to the training set.
+
+```python
+optimizer = tf.keras.optimizers.Adam(epsilon=0.01)
+model.compile(
+    optimizer=optimizer,
+    loss='binary_crossentropy',
+    metrics=['binary_accuracy'],
+)
+
+history = model.fit(
+    ds_train,
+    validation_data=ds_valid,
+    epochs=50,
+)
+
+# Plot learning curves
+import pandas as pd
+history_frame = pd.DataFrame(history.history)
+history_frame.loc[:, ['loss', 'val_loss']].plot()
+history_frame.loc[:, ['binary_accuracy', 'val_binary_accuracy']].plot();
+```
+
+<br>
+[![png]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.png#center)]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.png)
+{% assign counter = counter | plus: 1 %} 
+<br>
+
+
+
+
+### Train Model
+
+Examine the training curves. What there any sign of overfitting? How does the performance of this model compare to other models you've trained in this course?
