@@ -3,7 +3,7 @@ title: 'Plotting Library Catalog Subjects'
 tags: [jupyter, project, kaggle, nlp, data visualization]
 layout: post
 mathjax: true
-categories: [Data Science]
+categories: [Natural Language Processing]
 ---
 
 

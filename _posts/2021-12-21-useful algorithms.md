@@ -3,7 +3,7 @@ title: 'Useful Algorithms'
 tags: [kaggle, algorithm, levenshtein distance, dbscan]
 layout: post
 mathjax: true
-categories: [Data Science]
+categories: [Algorithms]
 published: true
 ---
 

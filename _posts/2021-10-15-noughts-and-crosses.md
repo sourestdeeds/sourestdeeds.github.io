@@ -3,7 +3,7 @@ title: 'Noughts and Crosses'
 tags: [noughts and crosses, alpha beta pruning, minimax]
 layout: post
 mathjax: true
-categories: [Data Science]
+categories: [Algorithms]
 published: true
 ---
 

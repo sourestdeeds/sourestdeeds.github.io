@@ -3,7 +3,7 @@ title: 'Sentiment Analysis of Reviews'
 tags: [jupyter, project, sklearn, naive bayes, data visualization]
 layout: post
 mathjax: true
-categories: [Data Science]
+categories: [Natural Language Processing]
 ---
 
 

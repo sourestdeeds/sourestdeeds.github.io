@@ -3,7 +3,7 @@ title: 'Belief Propogation'
 tags: [belief propogation, bayesian]
 layout: post
 mathjax: true
-categories: [Data Science]
+categories: [Algorithms]
 ---
 
 
