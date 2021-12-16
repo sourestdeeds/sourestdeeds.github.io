@@ -43,27 +43,8 @@ galleries:
     image: /photos/UoN/50255323_2195616840654847_7000536136960451082_n_17859659776324015.jpg
     url: /photography/uon/
 permalink: /photography/
-active: photography
 ---
 
 {% include breadcrumbs.html %}
-
-<ul class="nav navbar-nav">
-        {% if page.active == "about" %}
-            <li class="active"><a href="#">About</a></li>
-        {% else %}
-            <li><a href="/">About</a></li>
-        {% endif %}
-        {% if page.active == "photography" %}
-            <li class="active"><a href="#">Photography</a></li>
-        {% else %}
-            <li><a href="/">Photography</a></li>
-        {% endif %}
-        {% if page.active == "search" %}
-            <li class="active"><a href="#">Search</a></li>
-        {% else %}
-            <li><a href="/about">Search</a></li>
-        {% endif %}
-</ul>
 
 {% if page.galleries %}{% include image-gallery-index.html %}{% endif %}
