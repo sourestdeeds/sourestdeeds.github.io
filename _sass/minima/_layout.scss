@@ -562,30 +562,6 @@ $grayLight	: #cac6c5;
 $offWhite	: #e7e7e7;
 
 
-//basic header styles
-h1 {
-	font-family: 'PT Sans', sans-serif;
-	text-transform: uppercase;
-}
-h1 {
-  font-size: 2.4em;
-  background-color: rgba(41, 41, 41, 1);
-  text-align: center;
-  padding: 20px;
-  margin: 0;
-  color: #fff;
-  
-  a {
-    display: block;
-    margin-top: 10px;
-    text-transform: none;
-    color: #aaa;
-    font-size: 16px;
-    text-decoration: none;
-  }
-}
-
-
 // Outer heading wrapper (for descriptions, not for the actual effects)
 .headingOuter {
 	background: #f1f1f1;
