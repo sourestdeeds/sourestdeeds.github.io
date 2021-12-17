@@ -12,6 +12,11 @@ show_excerpts: false # set to true to show excerpts on the homepage
 minima:
   date_format: "%b %-d, %Y"
 
+header_pages:
+  - about.md
+  - photography.md
+  - search.md
+
 linkedin_url: https://www.linkedin.com/in/stephen-charles-2b366020a/
 github_url: https://github.com/sourestdeeds
 #instagram_url: https://www.instagram.com/sourestdeeds/
