@@ -8,6 +8,7 @@ permalink: /about/
 {% include breadcrumbs.html %}
 
 #### [Curriculum Vitae](http://sourestdeeds.github.io/stephen-charles-cv.pdf) - [GitHub](https://github.com/sourestdeeds/)
+<p></p>
 
 Before I started academic study I used to run a game server for *Ultima Online*, primarily written in \\( C\texttt{++} \\). As such, the server was highly customisable, and with the source code from another server I painfully merged two incompatible SVN’s together to create one. Just by comparison alone I was able to get used to the logic and constructs that formed the language. Browsing through the many lines of code and merging was a very slow process, but it allowed me understand slightly different methods of doing things. It was almost like learning through reverse engineering. I like to follow the concept of learning by doing. Of note, I took interest in the AI constructs and pathing algorithms adopted, to try and create realistic npcs to fill the world.
 
