@@ -3,8 +3,8 @@ title: 'Project Serenity'
 tags: [regressor, firefly, spearnet, serenity, shap]
 layout: post
 mathjax: true
-categories: [Astrophysics, Data Science]
-published: false
+categories: [Astrophysics]
+published: true
 ---
 
 
