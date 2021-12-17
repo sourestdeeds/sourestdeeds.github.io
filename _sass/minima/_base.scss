@@ -138,16 +138,16 @@ a {
 }
 
 a.current {
-  color:rgba(150, 16, 16, 0.849)
+  color:rgba(150, 16, 16, 0.849);
   line-height: $base-line-height;
-    display: block;
-    padding: 5px 10px;
+  display: block;
+  padding: 5px 10px;
 
-    // Gaps between nav items, but not on the last one
-    &:not(:last-child) {
-      margin-right: 0;
-    }
-    margin-left: 20px;
+  // Gaps between nav items, but not on the last one
+  &:not(:last-child) {
+    margin-right: 0;
+  }
+  margin-left: 20px;
 }
 
 
