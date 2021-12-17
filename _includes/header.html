@@ -22,7 +22,7 @@
             {%- assign my_page = site.pages | where: "path", path | first -%}
             {%- if my_page.mainnav -%}
             <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
-            <a {% if my_page.url == page.url %} class="page-link" style="color: red;" {% else %} class="page-link" {% endif %} href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+            <a {% if my_page.url == page.url %} style="color: red !important;" {% endif %} class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
             {%- endif -%}
           {%- endfor -%}
         </div>
