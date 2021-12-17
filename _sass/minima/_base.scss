@@ -137,19 +137,6 @@ a {
   }
 }
 
-.current {
-  color:rgb(202, 20, 20);
-  line-height: $base-line-height;
-  display: block;
-  padding: 5px 10px;
-
-  // Gaps between nav items, but not on the last one
-  &:not(:last-child) {
-    margin-right: 0;
-  }
-  margin-left: 20px;
-}
-
 
 
 
