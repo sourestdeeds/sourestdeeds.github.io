@@ -23,6 +23,6 @@ accordion:
 
 > “If it ain't broke, fix it until it is.”
 
-<img src="https://sourestdeeds.github.io/photos/front.png" style="display: none;" /> 
+<img src="https://sourestdeeds.github.io/photos/front.png" style="display:none;" /> 
 
 {% include accordion.html %}
