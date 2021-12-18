@@ -4,7 +4,7 @@ tags: [kaggle, relu, keras, convolution, deep learning, neural network]
 layout: post
 mathjax: true
 categories: [Computer Vision]
-published: true
+published: false
 ---
 
 
