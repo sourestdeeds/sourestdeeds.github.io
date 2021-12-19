@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Photography
-showtitle: false
 mainnav: true
 galleries:
   - title: Abandoned
