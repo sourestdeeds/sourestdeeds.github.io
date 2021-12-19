@@ -289,12 +289,6 @@ img[src*='#center'] {
   text-indent: 2em;
 }
 
-@media screen and (min-width: $on-large) {
-  .category-head{
-    text-indent:0em;
-  }
-}
-
 .post-title,
 .post-content h1 {
   @include relative-font-size(2.625);
@@ -415,6 +409,12 @@ img[src*='#center'] {
 @media screen and (min-width: $on-large) {
   .one-half {
     width: calc(50% - (#{$spacing-unit} / 2));
+  }
+}
+
+@media screen and (min-width: $on-large) {
+  .category-head{
+    text-indent:0;
   }
 }
 
