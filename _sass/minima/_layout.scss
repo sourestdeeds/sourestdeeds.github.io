@@ -309,7 +309,7 @@ img[src*='#center'] {
 
   h2 {
     @include relative-font-size(1.75);
-
+    text-align: left;
     @media screen and (min-width: $on-large) {
       @include relative-font-size(2);
     }
@@ -317,7 +317,7 @@ img[src*='#center'] {
 
   h3 {
     @include relative-font-size(1.375);
-
+    text-align: left;
     @media screen and (min-width: $on-large) {
       @include relative-font-size(1.625);
     }
@@ -325,6 +325,7 @@ img[src*='#center'] {
 
   h4 {
     @include relative-font-size(1.25);
+    text-align: left;
   }
 
   h5 {
