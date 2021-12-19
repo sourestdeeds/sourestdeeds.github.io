@@ -2,6 +2,7 @@
 layout: page
 mainnav: true
 title: Search
+showtitle: false
 permalink: /search/
 ---
 {% include breadcrumbs.html %}

@@ -2,6 +2,7 @@
 layout: page
 mainnav: true
 title: About
+showtitle: false
 mathjax: true
 permalink: /about/
 ---

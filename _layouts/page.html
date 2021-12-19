@@ -6,10 +6,11 @@ layout: default
 {% endif %}
 <article class="post">
 
+  {% if page.showtitle %}
   <header class="post-header">
     <h3 class="post-title">{{ page.title | escape }}</h3>
   </header>
-
+  {% endif %}
   <div class="post-content">
     {{ content }}
   </div>
