@@ -86,38 +86,33 @@
     margin-left: 20px;
   }
 
-  @media screen and (min-width: 700px)  {
-    .mobile-break { display: none; }
-  }
 
   @media screen and (min-width: $on-medium) {
+    position: static;
+    float: right;
+    border: none;
+    background-color: inherit;
 
     label[for="nav-trigger"] {
-      display: block;
-      float: right;
-      width: 36px;
-      height: 36px;
-      z-index: 2;
-      cursor: pointer;
-    }
-
-    input ~ .trigger {
-      clear: both;
       display: none;
     }
 
-    .page-link {
-      color: $text-color;
-      line-height: $base-line-height;
+    .menu-icon {
+      display: none;
+    }
+
+    input ~ .trigger {
       display: block;
-      padding: 5px 10px;
-      font-size: 12px;
-  
-      // Gaps between nav items, but not on the last one
+    }
+
+    .page-link {
+      display: inline;
+      padding: 0;
+
       &:not(:last-child) {
-        margin-right: 0;
+        margin-right: 20px;
       }
-      margin-left: 20px;
+      margin-left: auto;
     }
   }
 }
@@ -445,7 +440,11 @@ SVG Icons - svgicons.sparkk.fr
 }
 
 @media screen and (max-width: 767px) {
-  .category-head {
-    text-indent: 0;
+  .category-head{
+    text-indent:0;
   }
+}
+
+@media screen and (min-width: 767px)  {
+  .mobile-break { display: none; }
 }
