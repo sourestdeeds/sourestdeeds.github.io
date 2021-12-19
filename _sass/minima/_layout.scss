@@ -412,12 +412,6 @@ img[src*='#center'] {
   }
 }
 
-@media screen and (min-width: $on-large) {
-  .category-head{
-    text-indent:0;
-  }
-}
-
 
 /* -----
 SVG Icons - svgicons.sparkk.fr
@@ -442,5 +436,11 @@ SVG Icons - svgicons.sparkk.fr
 @media screen and (max-width: 767px) {
   input, select, textarea {
     font-size: 16px !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .category-head{
+    text-indent:0;
   }
 }
