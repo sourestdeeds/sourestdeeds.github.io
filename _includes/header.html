@@ -8,7 +8,7 @@
 
     {%- if titles_size > 0 -%}
       <nav class="site-nav">
-
+        <br class="mobile-break">
         <div class="trigger">
           {%- for path in page_paths -%}
             {%- assign my_page = site.pages | where: "path", path | first -%}
