@@ -4,7 +4,7 @@ tags: [kaggle, maximum pooling, keras, deep learning, neural network]
 layout: post
 mathjax: true
 categories: [Computer Vision]
-published: false
+published: true
 ---
 
 Previously, we learned about how the first two operations in this process occur in a *Conv2D* layer with *relu* activation. Now we'll look at the third (and final) operation in this sequence: **condense** with **maximum** pooling, which in Keras is done by a *MaxPool2D* layer.
