@@ -1,5 +1,5 @@
 ---
-title: 'Noughts and Crosses'
+title: 'Minimax'
 tags: [noughts and crosses, alpha beta pruning, minimax]
 layout: post
 mathjax: true
