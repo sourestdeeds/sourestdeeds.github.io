@@ -14,7 +14,10 @@ $(document).ready(function(){
         paging: true,
         stateSave: true,
         searching: true,
-        scrollX: 5
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
     }
         );
 });
@@ -61,6 +64,26 @@ $(document).ready(function(){
 </table>
 
 ### Coupled TTV
+
+<table class="display" style="font-size:12px;">
+  {% for row in site.data.spear_ttv %}
+    {% if forloop.first %}
+    <thead>
+    <tr>
+      {% for pair in row %}
+        <th>{{ pair[0] }}</th>
+      {% endfor %}
+    </tr>
+    </thead>
+    {% endif %}
+
+    {% tablerow pair in row %}
+      {{ pair[1] }}
+    {% endtablerow %}
+  {% endfor %}
+</table>
+
+### TESS Viable Targets
 
 <table class="display" style="font-size:12px;">
   {% for row in site.data.spear_ttv %}
