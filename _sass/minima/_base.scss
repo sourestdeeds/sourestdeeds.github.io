@@ -284,6 +284,7 @@ table {
   th {
     background-color: $table-header-bg-color;
     border: 1px solid $table-header-border;
+    cursor: pointer;
   }
   td {
     border: 1px solid $table-border-color;
