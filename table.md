@@ -17,7 +17,7 @@ $(document).ready(function(){
         buttons: [
             'copy', 'csv', 'excel',
         ],
-        scrollX: 5
+        scrollX: 5,
     }
         );
     });
