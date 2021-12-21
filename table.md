@@ -12,7 +12,7 @@ datatable: true
   {% for row in site.data.spear_ttv %}
     {% if forloop.first %}
     <thead>
-    <tr>
+    <tr style="padding:3px;">
       {% for pair in row %}
         <th style="padding:3px;">{{ pair[0] }}</th>
       {% endfor %}
