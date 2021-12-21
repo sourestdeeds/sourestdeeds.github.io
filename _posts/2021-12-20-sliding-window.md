@@ -8,7 +8,7 @@ categories: [Computer Vision]
 
 In the previous two lessons, we learned about the three operations that carry out feature extraction from an image: 
 
-- *filter*with a **convolution** layer.
+- *filter* with a **convolution** layer.
 - *detect* with **ReLU** activation.
 - *condense* with a **maximum pooling** layer.
 
