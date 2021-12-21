@@ -7,7 +7,7 @@ datatable: true
 ---
 {% include breadcrumbs.html %}
 
-<div class="datatable-begin"></div>
+<div class="datatable-begin display"></div>
 
 
 |pl_name     |red_chi2          |sigma               |mean_avg_err       |fap                 |o-c_period        |faplong             |o-c_periodlong    |pl_orbper         |pl_orbpererr1|pl_tranmid        |pl_tranmiderr1        |pl_orbsmax           |pl_orbsmaxerr1        |pl_radj             |pl_radjerr1           |pl_orbincl       |pl_orbinclerr1      |pl_orbeccen         |pl_orbeccenerr1      |pl_orblper        |pl_orblpererr1    |Transits|Date                |Archive |Unbinned Sigma        |Binned Sigma          |Transit Depth         |Sensitivity        |Binned Sensitivity|Observation Depth     |Observation Sensitivity|Binned Observation Sensitivity|Total Cadences|
