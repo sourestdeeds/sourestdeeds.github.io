@@ -19,7 +19,48 @@ $(document).ready(function(){
         );
 });
 </script>
-<div class="table-wrapper" markdown="block">
+
+### Coupled 
+
+<table class="display" style="font-size:10px;">
+  {% for row in site.data.spear_coupled %}
+    {% if forloop.first %}
+    <thead>
+    <tr>
+      {% for pair in row %}
+        <th>{{ pair[0] }}</th>
+      {% endfor %}
+    </tr>
+    </thead>
+    {% endif %}
+
+    {% tablerow pair in row %}
+      {{ pair[1] }}
+    {% endtablerow %}
+  {% endfor %}
+</table>
+
+### Uncoupled
+
+<table class="display" style="font-size:10px;">
+  {% for row in site.data.spear_uncoupled %}
+    {% if forloop.first %}
+    <thead>
+    <tr>
+      {% for pair in row %}
+        <th>{{ pair[0] }}</th>
+      {% endfor %}
+    </tr>
+    </thead>
+    {% endif %}
+
+    {% tablerow pair in row %}
+      {{ pair[1] }}
+    {% endtablerow %}
+  {% endfor %}
+</table>
+
+### Coupled TTV
 
 <table class="display" style="font-size:10px;">
   {% for row in site.data.spear_ttv %}
@@ -39,5 +80,5 @@ $(document).ready(function(){
   {% endfor %}
 </table>
 
-</div>
+
 
