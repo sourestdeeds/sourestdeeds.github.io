@@ -15,7 +15,7 @@ $(document).ready(function(){
         searching: true,
         dom: 'Bfrtip',
         buttons: [
-            'copy', 'csv', 'excel', 'pdf', 'print'
+            'colvis', 'copy', 'csv', 'excel', 'pdf', 'print'
         ],
         scrollX: 5
     }
