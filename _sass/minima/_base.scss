@@ -267,12 +267,13 @@ mjx-container {
  * Tables
  */
 table {
-  margin-bottom: $spacing-unit;
+  margin-bottom: 0;
   width: 100%;
   text-align: $table-text-align;
   color: $table-text-color;
   border-collapse: collapse;
   border: 1px solid $table-border-color;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
   tr {
     &:nth-child(even) {
       background-color: $table-zebra-color;
