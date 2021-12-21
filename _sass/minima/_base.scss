@@ -267,7 +267,7 @@ mjx-container {
  * Tables
  */
 table {
-  margin-bottom: 0;
+  margin-bottom: $spacing-unit;
   width: 100%;
   text-align: $table-text-align;
   color: $table-text-color;
