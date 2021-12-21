@@ -18,6 +18,7 @@ $(document).ready(function(){
         );
 });
 </script>
+<div class="table-wrapper" markdown="block">
 
 <table class="display" style="font-size:10px;">
   {% for row in site.data.spear_ttv %}
@@ -36,4 +37,6 @@ $(document).ready(function(){
     {% endtablerow %}
   {% endfor %}
 </table>
+
+</div>
 
