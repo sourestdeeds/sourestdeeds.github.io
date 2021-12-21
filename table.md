@@ -13,7 +13,8 @@ $(document).ready(function(){
     $('table.display').DataTable( {
         paging: true,
         stateSave: true,
-        searching: true
+        searching: true,
+        scrollX: 5
     }
         );
 });
