@@ -19,12 +19,9 @@ datatable: true
     </tr>
     </thead>
     {% endif %}
-    <tbody>
-    <tr>
+
     {% tablerow pair in row %}
-      <td>{{ pair[1] }}</td>
+      {{ pair[1] }}
     {% endtablerow %}
-    </tr>
-    </tbody>
   {% endfor %}
 </table>
