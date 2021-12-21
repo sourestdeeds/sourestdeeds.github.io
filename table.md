@@ -8,13 +8,13 @@ datatable: true
 {% include breadcrumbs.html %}
 
 <div class="datatable-begin"></div>
-<table class="display" style="font-size:8px">
+<table class="display" style="font-size:10px;">
   {% for row in site.data.spear_ttv %}
     {% if forloop.first %}
     <thead>
     <tr>
       {% for pair in row %}
-        <th>{{ pair[0] }}</th>
+        <th style="padding:3px;">{{ pair[0] }}</th>
       {% endfor %}
     </tr>
     </thead>
