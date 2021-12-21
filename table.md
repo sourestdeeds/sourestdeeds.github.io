@@ -26,6 +26,8 @@ $(document).ready(function(){
 
 ### Coupled 
 
+This table contains a list of all confirmed exoplanets which have been observed by TESS, fitted with TransitFit in coupled mode.
+
 <table class="display" style="font-size:12px;">
   {% for row in site.data.spear_coupled %}
     {% if forloop.first %}
@@ -45,6 +47,8 @@ $(document).ready(function(){
 </table>
 
 ### Uncoupled
+
+This table contains a list of all confirmed exoplanets which have been observed by TESS, fitted with TransitFit in uncoupled mode.
 
 <table class="display" style="font-size:12px;">
   {% for row in site.data.spear_uncoupled %}
@@ -66,25 +70,7 @@ $(document).ready(function(){
 
 ### Coupled TTV
 
-<table class="display" style="font-size:12px;">
-  {% for row in site.data.spear_ttv %}
-    {% if forloop.first %}
-    <thead>
-    <tr>
-      {% for pair in row %}
-        <th>{{ pair[0] }}</th>
-      {% endfor %}
-    </tr>
-    </thead>
-    {% endif %}
-
-    {% tablerow pair in row %}
-      {{ pair[1] }}
-    {% endtablerow %}
-  {% endfor %}
-</table>
-
-### TESS Viable Targets
+This table contains a list of all confirmed exoplanets which have been observed by TESS, fitted with TransitFit in TTV/coupled mode.
 
 <table class="display" style="font-size:12px;">
   {% for row in site.data.spear_ttv %}
