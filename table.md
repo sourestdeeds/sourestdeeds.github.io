@@ -7,7 +7,7 @@ datatable: true
 ---
 {% include breadcrumbs.html %}
 
-<div class="datatable-begin"></div>
+
 <table class="display" style="font-size:10px;">
   {% for row in site.data.spear_ttv %}
     {% if forloop.first %}
@@ -25,4 +25,3 @@ datatable: true
     {% endtablerow %}
   {% endfor %}
 </table>
-<div class="datatable-end"></div>
