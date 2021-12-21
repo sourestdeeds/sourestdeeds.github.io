@@ -3,6 +3,7 @@ layout: page
 title: Spearnet Archive
 permalink: /spearnet/
 mainnav: false
+datatable: true
 ---
 {% include breadcrumbs.html %}
 
