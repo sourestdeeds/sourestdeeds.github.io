@@ -7,6 +7,17 @@ datatable: true
 ---
 {% include breadcrumbs.html %}
 
+<script>
+$(document).ready(function(){
+
+    $('table.display').DataTable( {
+        paging: true,
+        stateSave: true,
+        searching: true
+    }
+        );
+});
+</script>
 
 <table class="display" style="font-size:10px;">
   {% for row in site.data.spear_ttv %}
@@ -25,3 +36,4 @@ datatable: true
     {% endtablerow %}
   {% endfor %}
 </table>
+
