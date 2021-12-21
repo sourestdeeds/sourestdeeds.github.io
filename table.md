@@ -21,7 +21,3 @@ datatable: true
     {% endif %}
 </table>
 <div class="datatable-end"></div>
-
-<script>
-$('table.display').DataTable()
-</script>
