@@ -22,7 +22,7 @@ $(document).ready(function(){
 
 ### Coupled 
 
-<table class="display" style="font-size:10px;">
+<table class="display" style="font-size:12px;">
   {% for row in site.data.spear_coupled %}
     {% if forloop.first %}
     <thead>
@@ -42,7 +42,7 @@ $(document).ready(function(){
 
 ### Uncoupled
 
-<table class="display" style="font-size:10px;">
+<table class="display" style="font-size:12px;">
   {% for row in site.data.spear_uncoupled %}
     {% if forloop.first %}
     <thead>
@@ -62,7 +62,7 @@ $(document).ready(function(){
 
 ### Coupled TTV
 
-<table class="display" style="font-size:10px;">
+<table class="display" style="font-size:12px;">
   {% for row in site.data.spear_ttv %}
     {% if forloop.first %}
     <thead>
