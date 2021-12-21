@@ -19,6 +19,7 @@ datatable: true
     </tr>
     </thead>
     {% endif %}
+</table>
 <div class="datatable-end"></div>
 
 <script>
