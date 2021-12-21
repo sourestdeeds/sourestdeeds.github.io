@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Spearnet Archive
+title: Firefly Targets
 permalink: /tess-viable/
 mainnav: false
 datatable: true
