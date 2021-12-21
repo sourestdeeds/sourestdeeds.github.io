@@ -196,6 +196,7 @@ pre code{
 .highlight {
   border-radius: 3px;
   background: $code-background-color;
+  box-shadow: 0px 0px 36px 15px rgba(0, 0, 0, 0.28);
   @extend %vertical-rhythm;
 
   .highlighter-rouge & {
