@@ -9,7 +9,6 @@ datatable: true
 
 <script>
 $(document).ready(function(){
-
     $('table.display').DataTable( {
         paging: true,
         stateSave: true,
@@ -21,7 +20,7 @@ $(document).ready(function(){
         scrollX: 5
     }
         );
-});
+    });
 </script>
 
 ### NASA-TESS Viable
