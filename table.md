@@ -8,7 +8,7 @@ datatable: true
 {% include breadcrumbs.html %}
 
 <div class="datatable-begin"></div>
-<table class="display">
+<table class="display" style="font-size:8px">
   {% for row in site.data.spear_ttv %}
     {% if forloop.first %}
     <thead>
