@@ -4,7 +4,6 @@ tags: [kaggle, custom convnets, keras, deep learning, neural network]
 layout: post
 mathjax: true
 categories: [Computer Vision]
-published: true
 ---
 {% assign counter = 1 %}
 {% assign link = "https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/" %}
