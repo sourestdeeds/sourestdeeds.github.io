@@ -7,4 +7,6 @@ datatable: true
 ---
 {% include breadcrumbs.html %}
 
-{% include_relative tess_viable.html %}
+### Databases
+
+- [All Confirmed Exoplanets](https://sourestdeeds.github.io/tess_viable.html) -- A list of all the possible confirmed exoplanets observed by TESS. This includes entries with missing ephemera.
