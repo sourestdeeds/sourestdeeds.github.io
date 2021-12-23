@@ -385,7 +385,7 @@ history_frame.loc[:, ['binary_accuracy', 'val_binary_accuracy']].plot();
 
 ### Train Model
 
-Examine the training curves. What there any sign of overfitting? How does the performance of this model compare to other models you've trained in this course?
+Examine the training curves. Was there any sign of overfitting? How does the performance of this model compare to other models you've trained in this course?
 
 
 Data augmentation is a powerful and commonly-used tool to improve model training, not only for convolutional networks, but for many other kinds of neural network models as well. Whatever your problem, the principle remains the same: you can make up for an inadequacy in your data by adding in "fake" data to cover it over. Experimenting with augmentations is a great way to find out just how far your data can go!
