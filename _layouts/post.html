@@ -1,6 +1,5 @@
 ---
 layout: default
-comments: true
 ---
 
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
@@ -44,10 +43,6 @@ comments: true
       <a class="next" href="{{page.next.url}}">{{page.next.title}} &raquo;</a>
     {% endif %}
   </div>
-
-  {% if page.comments == true %}
-    {% include comments.html %}
-  {% endif %}
 
 </article>
 
