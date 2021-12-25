@@ -1,5 +1,5 @@
 ---
-title: 'Discover Pi Mensae!'
+title: 'Discover Pi Mensae'
 tags: [jupyter, project, pi mensae, TESS, astrophysics]
 layout: post
 mathjax: true
