@@ -40,7 +40,7 @@ layout: default
                               {% if tag contains 'src' %}
                               <br>
                               <a href="{{ site.baseurl }}{{ post.url }}"><img {{ tag }} style="width:75%; height:auto;"/></a>
-                              <p></p>
+            
                               {% endif %}
                             {% endfor %}
                             {% assign foundImage = 1 %}
@@ -54,6 +54,7 @@ layout: default
                   {{ post.content | markdownify | strip_html | truncatewords: 20 }}
                   
                 </div>
+                <p></p>
             </div>
           </div>
           
