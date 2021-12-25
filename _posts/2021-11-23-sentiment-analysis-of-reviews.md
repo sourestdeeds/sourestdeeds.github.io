@@ -509,7 +509,7 @@ matrix(X_train_bow, y_train, X_test_bow, y_test)
 
 
     
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-23-sentiment-analysis-of-reviews/output_13_1.png)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-23-sentiment-analysis-of-reviews/output_13_1.png)
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-23-sentiment-analysis-of-reviews/output_13_1.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-23-sentiment-analysis-of-reviews/output_13_1.png)
     
 
 
@@ -654,7 +654,7 @@ plot_error()
 
 
     
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-23-sentiment-analysis-of-reviews/output_22_0.png)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-23-sentiment-analysis-of-reviews/output_22_0.png)
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-23-sentiment-analysis-of-reviews/output_22_0.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-23-sentiment-analysis-of-reviews/output_22_0.png)
     
 
 
@@ -686,7 +686,7 @@ matrix(X_train_bow, y_train, X_test_bow, y_test, alpha=1)
 
 
     
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-23-sentiment-analysis-of-reviews/output_24_1.png)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-23-sentiment-analysis-of-reviews/output_24_1.png)
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-23-sentiment-analysis-of-reviews/output_24_1.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-23-sentiment-analysis-of-reviews/output_24_1.png)
     
 
 
@@ -783,7 +783,7 @@ plot_error()
 
 
     
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-23-sentiment-analysis-of-reviews/output_28_1.png)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-23-sentiment-analysis-of-reviews/output_28_1.png)
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-23-sentiment-analysis-of-reviews/output_28_1.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-23-sentiment-analysis-of-reviews/output_28_1.png)
     
 
 
@@ -815,7 +815,7 @@ matrix(X_train_bow, y_train, X_test_bow, y_test, alpha=10)
 
 
     
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-23-sentiment-analysis-of-reviews/output_30_1.png)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-23-sentiment-analysis-of-reviews/output_30_1.png)
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-23-sentiment-analysis-of-reviews/output_30_1.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-23-sentiment-analysis-of-reviews/output_30_1.png)
     
 
 
@@ -878,7 +878,7 @@ plot_error()
 
 
     
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-23-sentiment-analysis-of-reviews/output_32_1.png)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-23-sentiment-analysis-of-reviews/output_32_1.png)
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-23-sentiment-analysis-of-reviews/output_32_1.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-23-sentiment-analysis-of-reviews/output_32_1.png)
     
 
 
@@ -910,7 +910,7 @@ matrix(X_train_tf, y_train_tf, X_test_tf, y_test_tf, alpha=0.1)
 
 
     
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-23-sentiment-analysis-of-reviews/output_34_1.png)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-23-sentiment-analysis-of-reviews/output_34_1.png)
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-23-sentiment-analysis-of-reviews/output_34_1.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-23-sentiment-analysis-of-reviews/output_34_1.png)
     
 
 ### Using the ComplementNB() Model
@@ -986,13 +986,13 @@ matrix_comp(X_train_bow, y_train, X_test_bow, y_test)
 
 
     
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-23-sentiment-analysis-of-reviews/output_36_1.png)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-23-sentiment-analysis-of-reviews/output_36_1.png)
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-23-sentiment-analysis-of-reviews/output_36_1.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-23-sentiment-analysis-of-reviews/output_36_1.png)
     
 
 
 
     
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-23-sentiment-analysis-of-reviews/output_36_2.png)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-23-sentiment-analysis-of-reviews/output_36_2.png)
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-23-sentiment-analysis-of-reviews/output_36_2.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-23-sentiment-analysis-of-reviews/output_36_2.png)
     
 
 
@@ -1034,7 +1034,7 @@ matrix(X_train_dv, y_train_dv, X_test_dv, y_test_dv, alpha=1)
 
 
     
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-23-sentiment-analysis-of-reviews/output_38_1.png)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-23-sentiment-analysis-of-reviews/output_38_1.png)
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-23-sentiment-analysis-of-reviews/output_38_1.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-23-sentiment-analysis-of-reviews/output_38_1.png)
     
 
 

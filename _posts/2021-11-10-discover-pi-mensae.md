@@ -134,7 +134,7 @@ tpf.plot(aperture_mask=tpf.pipeline_mask);
 
 
     
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_15_0.png)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_15_0.png)
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_15_0.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_15_0.png)
     
 
 
@@ -208,7 +208,7 @@ lc.errorbar();
 
 
     
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_28_0.png)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_28_0.png)
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_28_0.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_28_0.png)
     
 
 
@@ -224,7 +224,7 @@ tpf.plot(aperture_mask=aperture_mask);
 
 
     
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_30_0.png)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_30_0.png)
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_30_0.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_30_0.png)
     
 
 
@@ -240,7 +240,7 @@ lc.errorbar();
 
 
     
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_32_0.png)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_32_0.png)
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_32_0.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_32_0.png)
     
 
 
@@ -263,7 +263,7 @@ flat_lc.errorbar();
 
 
     
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_35_0.png)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_35_0.png)
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_35_0.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_35_0.png)
     
 
 
@@ -285,7 +285,7 @@ masked_lc.errorbar();
 
 
     
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_39_0.png)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_39_0.png)
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_39_0.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_39_0.png)
     
 
 
@@ -302,7 +302,7 @@ masked_lc.errorbar(ax=ax, label='masked');
 
 
     
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_41_0.png)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_41_0.png)
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_41_0.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_41_0.png)
     
 
 
@@ -316,7 +316,7 @@ clipped_lc.errorbar();
 
 
     
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_43_0.png)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_43_0.png)
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_43_0.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_43_0.png)
     
 
 
@@ -329,7 +329,7 @@ clipped_lc.scatter(s=0.1);
 
 
     
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_45_0.png)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_45_0.png)
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_45_0.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_45_0.png)
     
 
 
@@ -343,7 +343,7 @@ clipped_lc.errorbar(ax=ax, alpha=0.2);  # alpha determines the transparency
 
 
     
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_47_0.png)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_47_0.png)
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_47_0.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_47_0.png)
     
 
 
@@ -357,7 +357,7 @@ folded_lc.errorbar();
 
 
     
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_49_0.png)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_49_0.png)
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_49_0.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_49_0.png)
     
 
 
@@ -372,7 +372,7 @@ binned_lc.errorbar();
 
 
     
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_51_0.png)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_51_0.png)
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_51_0.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_51_0.png)
     
 
 
@@ -389,7 +389,7 @@ lc.remove_outliers(sigma=6).fold(period=6.27, epoch_time=1325.504).bin(time_bin_
 
 
     
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_53_0.png)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_53_0.png)
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_53_0.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_53_0.png)
     
 
 
@@ -416,7 +416,7 @@ custom_lc.errorbar(ax=ax, label='Custom aperture');
 
 
     
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_56_0.png)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_56_0.png)
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_56_0.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-10-exoplanets-recover-first-tess-candidate/output_56_0.png)
     
 
 
