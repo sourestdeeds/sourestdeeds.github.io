@@ -27,11 +27,7 @@ layout: default
           {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
           <div class="table">
             <div class="tr">
-                <div class="d1">{{ post.date | date: date_format }}&nbsp;</div>
-                <div class="d2">
-                  <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-                  <br>
-                  {{ post.content | markdownify | strip_html | truncatewords: 15 }}
+                <div class="d1">{{ post.date | date: date_format }}&nbsp;
                   <br>
                   {% assign foundImage = 0 %}
                   {% assign images = post.content | split:"<img " %}
@@ -51,6 +47,12 @@ layout: default
                     {% endif %}
                   {% endfor %}
                   <p></p>
+                </div>
+                <div class="d2">
+                  <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+                  <br>
+                  {{ post.content | markdownify | strip_html | truncatewords: 15 }}
+                  
                 </div>
             </div>
           </div>
