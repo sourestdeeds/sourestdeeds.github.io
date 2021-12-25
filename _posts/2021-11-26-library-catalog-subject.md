@@ -14,7 +14,7 @@ Kaggle has a cool dataset of the Seattle Public Library's catalog. Each item has
 
 Using what I learned in my NLP course last semester, I used one method of building word vectors to make vectors representing library catalog subjects. When I plot them I get something like this:
 
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-26-library-catalog-subject/2018-05-16-labeled-plot.png)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-26-library-catalog-subject/2018-05-16-labeled-plot.png)
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-26-library-catalog-subject/2018-05-16-labeled-plot.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-11-26-library-catalog-subject/2018-05-16-labeled-plot.png)
 
 ### Motivation
 
