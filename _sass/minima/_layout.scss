@@ -6,7 +6,6 @@
   border-bottom: 1px solid $border-color-01;
   min-height: $spacing-unit * 1.865;
   line-height: $base-line-height * $base-font-size * 2.25;
-
   // Positioning context for the mobile navigation icon
   position: relative;
 }
@@ -17,6 +16,7 @@
   letter-spacing: -1px;
   margin-bottom: 0;
   float: left;
+  font-weight: bold;
 
   @include media-query($on-palm) {
     padding-right: 45px;
