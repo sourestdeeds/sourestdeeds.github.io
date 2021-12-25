@@ -39,7 +39,7 @@ layout: default
                             {% assign tags = html | split:" " %}
                             {% for tag in tags %}
                               {% if tag contains 'src' %}
-                              <a href="{{ site.baseurl }}{{ post.url }}"><img {{ tag }} style="width:75%; height:auto; float:right;"/>&nbsp;</a>
+                              <a href="{{ site.baseurl }}{{ post.url }}"><img {{ tag }} style="width:75%; height:auto;"/></a>
                               {% endif %}
                             {% endfor %}
                             {% assign foundImage = 1 %}
@@ -51,7 +51,7 @@ layout: default
                 <div class="d2">
                   <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
                   <br>
-                  {{ post.content | markdownify | strip_html | truncatewords: 15 }}
+                  {{ post.content | markdownify | strip_html | truncatewords: 20 }}
                   
                 </div>
             </div>
