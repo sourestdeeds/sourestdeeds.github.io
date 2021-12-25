@@ -256,9 +256,16 @@ h4{
   width:30%;
   
 }
-.d2 {
+
+.d2::first-line{
   display:table-cell;
   text-align:left;
+  width:70%;
+}
+
+.d2 {
+  display:table-cell;
+  text-align:justify;
   width:70%;
 }
 
