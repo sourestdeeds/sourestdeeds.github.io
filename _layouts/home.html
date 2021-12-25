@@ -37,7 +37,7 @@ layout: default
                             {% assign tags = html | split:" " %}
                             {% for tag in tags %}
                               {% if tag contains 'src' %}
-                                <br>
+                                <br><br>
                                 <a href="{{ site.baseurl }}{{ post.url }}"><img {{ tag }} style="width:75%; height:auto;"/></a> 
                               {% endif %}
                             {% endfor %}
