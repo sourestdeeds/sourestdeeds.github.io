@@ -48,12 +48,11 @@ layout: default
                 </div>
                 <div class="d2">
                   <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-                </div>
                 <span style="text-align:justify;">
                   <br>
                   {{ post.content | markdownify | strip_html | truncatewords: 30 }}
                 </span>  
-                
+                </div>
             </div>
           </div>
           <p></p>
