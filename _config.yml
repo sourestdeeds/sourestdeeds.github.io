@@ -61,6 +61,8 @@ github_url: https://github.com/sourestdeeds
 disqus:
   shortname: https-sourestdeeds-github-io
 
+url: https://sourestdeeds.github.io
+
 # Build settings
 theme: minima
 mathjax: true
