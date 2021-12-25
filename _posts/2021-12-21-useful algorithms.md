@@ -6,6 +6,8 @@ mathjax: true
 categories: [Algorithms]
 ---
 
+I find new and interesting algorithms and forget about them all the time! So from now on I'm going to save them all here.
+
 ### DBSCAN 
 
 [DBSCAN](https://en.wikipedia.org/wiki/DBSCAN), aka Density-based spatial clustering of applications with Noise, is a [clustering algorithm](https://www.kdnuggets.com/2020/04/dbscan-clustering-algorithm-machine-learning.html) that identifies clusters by finding regions that are densely packed together, in other words, points that have many close neighbors.
