@@ -30,7 +30,8 @@ layout: default
                 <div class="d1">{{ post.date | date: date_format }}&nbsp;</div>
                 <div class="d2">
                   <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-                  <p></p>
+                  <br>
+                  {{ post.content | strip_html | truncatewords: 50 }}
                   {% assign foundImage = 0 %}
                   {% assign images = post.content | split:"<img " %}
                   {% for image in images %}
