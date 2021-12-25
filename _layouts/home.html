@@ -28,7 +28,6 @@ layout: default
           <div class="table">
             <div class="tr">
                 <div class="d1">{{ post.date | date: date_format }}&nbsp;
-                  <br>
                   {% assign foundImage = 0 %}
                   {% assign images = post.content | split:"<img " %}
                   {% for image in images %}
@@ -39,14 +38,15 @@ layout: default
                             {% assign tags = html | split:" " %}
                             {% for tag in tags %}
                               {% if tag contains 'src' %}
+                              <br>
                               <a href="{{ site.baseurl }}{{ post.url }}"><img {{ tag }} style="width:75%; height:auto;"/></a>
+                              <p></p>
                               {% endif %}
                             {% endfor %}
                             {% assign foundImage = 1 %}
                         {% endif %}
                     {% endif %}
                   {% endfor %}
-                  <p></p>
                 </div>
                 <div class="d2">
                   <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
