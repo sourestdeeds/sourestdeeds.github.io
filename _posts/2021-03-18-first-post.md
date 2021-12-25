@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  A Blog Appears!
-categories: blog
+categories: [Data Science]
 ---
 
 If there's one thing the internet needs, it's another blog. So after messing around with Jekyll and Github Pages for way longer than is reasonable, here we are.
