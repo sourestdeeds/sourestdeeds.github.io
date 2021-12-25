@@ -39,7 +39,7 @@ layout: default
                             {% assign tags = html | split:" " %}
                             {% for tag in tags %}
                               {% if tag contains 'src' %}
-                              <a href="{{ site.baseurl }}{{ post.url }}"><img {{ tag }} style="width:75%; height:auto; float:right;"/></a>&nbsp;
+                              <a href="{{ site.baseurl }}{{ post.url }}"><img {{ tag }} style="width:75%; height:auto; float:right;"/>&nbsp;</a>
                               {% endif %}
                             {% endfor %}
                             {% assign foundImage = 1 %}
