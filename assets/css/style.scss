@@ -6,5 +6,3 @@
 @import
   "minima/skins/{{ site.minima.skin | default: 'custom' }}",
   "minima/initialize";
-
-@import "comment-styles";
