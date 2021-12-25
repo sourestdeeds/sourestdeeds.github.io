@@ -28,7 +28,27 @@ layout: default
           <div class="table">
             <div class="tr">
                 <div class="d1">{{ post.date | date: date_format }}&nbsp;</div>
-                <div class="d2"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></div>
+                <div class="d2">
+                  <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+                  <p></p>
+                  {% assign foundImage = 0 %}
+                  {% assign images = post.content | split:"<img " %}
+                  {% for image in images %}
+                    {% if image contains 'src' %}
+
+                        {% if foundImage == 0 %}
+                            {% assign html = image | split:"/>" | first %}
+                            {% assign tags = html | split:" " %}
+                            {% for tag in tags %}
+                              {% if tag contains 'src' %}
+                                <img {{ tag }} />
+                              {% endif %}
+                            {% endfor %}
+                            {% assign foundImage = 1 %}
+                        {% endif %}
+                    {% endif %}
+                  {% endfor %}
+                </div>
             </div>
           </div>
           
