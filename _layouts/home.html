@@ -32,6 +32,7 @@ layout: default
                   <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
                   <br>
                   {{ post.content | strip_html | truncatewords: 15 }}
+                  <br>
                   {% assign foundImage = 0 %}
                   {% assign images = post.content | split:"<img " %}
                   {% for image in images %}
