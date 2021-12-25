@@ -68,6 +68,7 @@ plugins:
  - jekyll-seo-tag
  - jekyll-sitemap
 
+comments: true
 # this section should be identical to the same section in staticman.yml
 reCaptcha:
   enabled: false
