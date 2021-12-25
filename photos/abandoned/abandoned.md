@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: Abandoned
 mainnav: false
 permalink: /photography/abandoned/
