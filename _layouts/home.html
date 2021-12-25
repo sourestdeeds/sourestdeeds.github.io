@@ -31,7 +31,6 @@ layout: default
                 <div class="d2">
                   <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
                   <br>
-                  {{ post.content | strip_html | truncatewords: 50 }}
                   {% assign foundImage = 0 %}
                   {% assign images = post.content | split:"<img " %}
                   {% for image in images %}
@@ -42,13 +41,15 @@ layout: default
                             {% assign tags = html | split:" " %}
                             {% for tag in tags %}
                               {% if tag contains 'src' %}
-                                <img {{ tag }} />
+                                <img {{ tag }} style="width:75%; height:auto"/>
                               {% endif %}
                             {% endfor %}
                             {% assign foundImage = 1 %}
                         {% endif %}
                     {% endif %}
                   {% endfor %}
+                  {{ post.content | strip_html | truncatewords: 50 }}
+                  <p></p>
                 </div>
             </div>
           </div>
