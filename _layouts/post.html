@@ -44,14 +44,4 @@ layout: default
     {% endif %}
   </div>
 
-  <form method="POST" action="https://staticman-sourestdeeds.herokuapp.com/v3/entry/github/sourestdeeds/sourestdeeds.github.io/main/comments">
-    <input name="options[redirect]" type="hidden" value="{{ page.url | relative_url }}">
-    <!-- e.g. "2016-01-02-this-is-a-post" -->
-    <input name="options[slug]" type="hidden" value="{{ page.slug }}">
-    <label>Name: <input name="fields[name]" type="text"></label>
-    <p></p>
-    <label>Message: <textarea name="fields[message]"></textarea></label>
-    
-    <button type="submit">Go!</button>
-  </form>
 </article>
