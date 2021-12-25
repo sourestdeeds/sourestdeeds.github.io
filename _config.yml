@@ -75,4 +75,4 @@ reCaptcha:
   siteKey: 6Lc-F8kdAAAAAIZ6URzBUu3Avn0C5DHo4xK3FT2l
   secret: 6Lc-F8kdAAAAAHxgdYIQhHA2L2Nh9fjnH_engpAJ
 
-staticman_url: https://staticman-sourestdeeds.herokuapp.com/v2/entry/sourestdeeds/sourestdeeds.github.io/main/comments
+staticman_url: https://staticman-sourestdeeds.herokuapp.com/v3/entry/sourestdeeds/sourestdeeds.github.io/main/comments
