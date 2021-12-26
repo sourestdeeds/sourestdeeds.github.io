@@ -14,3 +14,7 @@ datatable: true
 - [Coupled](https://sourestdeeds.github.io/spear_coupled.html) -- TransitFit runs fitted in *coupled* mode.
 - [Uncoupled](https://sourestdeeds.github.io/spear_uncoupled.html) -- TransitFit runs fitted in *uncoupled* mode.
 - [TTV](https://sourestdeeds.github.io/spear_ttv.html) -- TransitFit runs fitted in *TTV/coupled* mode.
+
+
+<br>
+[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/photos/WASP-33.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/photos/WASP-33.png)<center><b>Figure 1:</b> WASP-33 b.</center><br> 
