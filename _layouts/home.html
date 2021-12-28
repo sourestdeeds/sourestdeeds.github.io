@@ -10,7 +10,7 @@ layout: default
 
   {{ content }}
 
-
+  {% assign counter = 1 %}
 
   <div id="archives">
     {% assign sorted_cats = site.categories | sort %}
@@ -18,7 +18,6 @@ layout: default
       <div class="archive-group">
         {% capture category_name %}{{ category | first }}{% endcapture %}
         <div id="#{{ category_name | slugize }}"></div>
-        {% assign counter = 1 %}
     
         <h2 class="category-head">{{ category_name }}</h2>
         <a name="{{ category_name | slugize }}"></a>
