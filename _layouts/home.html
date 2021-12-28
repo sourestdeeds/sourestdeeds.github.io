@@ -37,8 +37,15 @@ layout: default
                             {% assign tags = html | split:" " %}
                             {% for tag in tags %}
                               {% if tag contains 'src' %}
-                                <br><br>
-                                <a href="{{ site.baseurl }}{{ post.url }}"><img {{ tag }} style="width:75%; height:auto;"/></a> 
+                                {% assign counter = 1 %}
+                                  {% if counter <= 5 %}
+                                    <br><br>
+                                    <a href="{{ site.baseurl }}{{ post.url }}"><img {{ tag }} style="width:75%; height:auto;"/></a> 
+                                  {% endif %}
+                                  {% if counter > 5 %}
+                                    <br><br>
+                                    <a href="{{ site.baseurl }}{{ post.url }}"><img {{ tag }} style="width:75%; height:auto;" loading:lazy;/></a> 
+                                  {% endif %}
                               {% endif %}
                             {% endfor %}
                             {% assign foundImage = 1 %}
