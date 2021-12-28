@@ -42,7 +42,7 @@ layout: default
                                   {% endif %}
                                   {% if counter > 5 %}
                                     <br><br>
-                                    <a href="{{ site.baseurl }}{{ post.url }}"><img {{ tag }} style="width:75%; height:auto;" loading:lazy/></a> 
+                                    <a href="{{ site.baseurl }}{{ post.url }}"><img {{ tag }} style="width:75%; height:auto;" loading="lazy"/></a> 
                                   {% endif %}
                                 {% assign counter = counter | plus: 1 %} 
                               {% endif %}
