@@ -18,7 +18,7 @@ layout: default
       <div class="archive-group">
         {% capture category_name %}{{ category | first }}{% endcapture %}
         <div id="#{{ category_name | slugize }}"></div>
-        
+        {% assign counter = 1 %}
     
         <h2 class="category-head">{{ category_name }}</h2>
         <a name="{{ category_name | slugize }}"></a>
@@ -37,7 +37,6 @@ layout: default
                             {% assign tags = html | split:" " %}
                             {% for tag in tags %}
                               {% if tag contains 'src' %}
-                                {% assign counter = 1 %}
                                   {% if counter <= 5 %}
                                     <br><br>
                                     <a href="{{ site.baseurl }}{{ post.url }}"><img {{ tag }} style="width:75%; height:auto;"/></a> 
