@@ -19,8 +19,8 @@ Map projections can't be 100% accurate. Each projection distorts the surface of 
 
 <br>
 <picture>
-<img src={{ link }}{{ date }}-{{ filename }}/{{ counter }}.webp#center class=lightbox/>
-<img src={{ link }}{{ date }}-{{ filename }}/{{ counter }}.png#center class=lightbox/>
+<img src="{{ link }}{{ date }}-{{ filename }}/{{ counter }}.webp#center" class=lightbox/>
+<img src="{{ link }}{{ date }}-{{ filename }}/{{ counter }}.png#center" class=lightbox/>
 </picture>
 {% assign counter = counter | plus: 1 %} 
 <br>
