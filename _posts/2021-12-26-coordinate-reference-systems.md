@@ -18,7 +18,10 @@ Map projections can't be 100% accurate. Each projection distorts the surface of 
 - The *equidistant* projections (like "Azimuthal Equidistant projection") preserve distance. This would be a good choice for calculating flight distance.
 
 <br>
+<picture>
+[![webp]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.webp#center)]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.webp)
 [![png]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.png#center)]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.png)
+</picture>
 {% assign counter = counter | plus: 1 %} 
 <br>
 
@@ -95,7 +98,10 @@ facilities.to_crs(epsg=32630).plot(markersize=1, ax=ax)
 ```
 
 <br>
+<picture>
+[![webp]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.webp#center)]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.webp)
 [![png]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.png#center)]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.png)
+</picture>
 {% assign counter = counter | plus: 1 %} 
 <br>
 
@@ -201,7 +207,10 @@ But this yields the area of Ghana as approximately 239585 square kilometers, whi
 You are a bird conservation expert and want to understand migration patterns of purple martins. In your research, you discover that these birds typically spend the summer breeding season in the eastern United States, and then migrate to South America for the winter. But since this bird is under threat of endangerment, you'd like to take a closer look at the locations that these birds are more likely to visit.
 
 <br>
+<picture>
+[![webp]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.webp#center)]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.webp)
 [![png]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.png#center)]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.png)
+</picture>
 {% assign counter = counter | plus: 1 %} 
 <br>
 
@@ -274,7 +283,10 @@ birds.plot(ax=ax, markersize=10)
 ```
 
 <br>
+<picture>
+[![webp]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.webp#center)]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.webp)
 [![png]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.png#center)]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.png)
+</picture>
 {% assign counter = counter | plus: 1 %} 
 <br>
 
@@ -336,7 +348,10 @@ end_gdf.plot(ax=ax, color='black', markersize=30)
 ```
 
 <br>
+<picture>
+[![webp]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.webp#center)]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.webp)
 [![png]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.png#center)]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.png)
+</picture>
 {% assign counter = counter | plus: 1 %} 
 <br>
 
@@ -434,6 +449,9 @@ birds[birds.geometry.y < 0].plot(ax=ax, color='red', alpha=0.6, markersize=10, z
 ```
 
 <br>
+<picture>
+[![webp]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.webp#center)]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.webp)
 [![png]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.png#center)]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.png)
+</picture>
 {% assign counter = counter | plus: 1 %} 
 <br>
