@@ -14,7 +14,7 @@ categories: [Algorithms]
 I find new and interesting algorithms and forget about them all the time! So from now on I'm going to save them all here.
 
 <br>
-[![png]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.png#center)]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.png)
+[![webp]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.webp#center)]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.webp)
 {% assign counter = counter | plus: 1 %} 
 <br>
 
