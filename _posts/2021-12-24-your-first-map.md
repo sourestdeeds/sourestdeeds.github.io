@@ -25,7 +25,7 @@ You'll also visualize crime in the city of Boston, examine health facilities in 
 
 We'll also get started with visualizing our first geospatial dataset!
 
-[![png]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.webp#center)]({{ link }}{{ date }}-{{ filename }}/front.webp){: style="display:none;"} 
+[![png]({{ link }}{{ date }}-{{ filename }}/front.webp#center)]({{ link }}{{ date }}-{{ filename }}/front.webp){: style="display:none;"} 
 
 <br>
 [![png]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.png#center)]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.png)
