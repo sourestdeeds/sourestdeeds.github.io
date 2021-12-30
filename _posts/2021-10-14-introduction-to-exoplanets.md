@@ -5,6 +5,10 @@ layout: post
 mathjax: true
 categories: Astrophysics
 ---
+{% assign counter = 1 %}
+{% assign link = "https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/" %}
+{% assign date = page.date | date: "%Y-%m-%d" %}
+{% assign filename = page.title | remove: " -" | replace: " ", "-" | downcase %}
 
 Historical records have demonstrated that the classification of the uniqueness of Earth and and the composition of the solar system were controversial. In the 3rd century BC, Epicurus (341-270 B.C.) stated that 
 
@@ -23,9 +27,10 @@ The first confirmed detections were made by Wolszczan and Frail (1992), who moni
 In recent events, further challenges to accepted theory have profoundly altered our perception of ancient planet formation. A 10 Billion year old super earth was confirmed by the Transiting Exoplanet Survey Satellite, suggesting the possibility of habitable worlds shortly after the milky way formed. Such a system, twice as old as ours, demonstrates that rocky planets have existed for the majority of the universes lifetime. TOI-561 ([Lacedelli et al., 2020](https://academic.oup.com/mnras/article/501/3/4148/6027695); [Weiss et al., 2021](https://iopscience.iop.org/article/10.3847/1538-3881/abd409)) hosts 3 confirmed planets so far, in a region called the galactic thick disk which hosts stars with low metallicity. Such regions were thought to be incapable of hosting planets.
 
 Currently, exoplanet discovery boasts the lofty figure of 4364 confirmed planets listed in the NASA exoplanet archive ([Akeson et al., 2013](https://iopscience.iop.org/article/10.1086/672273)) as of March 2021. The progress since 1995 is driven by improvements in instrumentation and observing techniques such as CCD’s, high-resolution spectroscopy, computer based image processing, and diverse ranges of exoplanet detection methods.
-<br>  
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-10-14-exoplanet-intro/2880px-TESS_test_image.jpeg#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2021-10-14-exoplanet-intro/2880px-TESS_test_image.jpeg)
-<center><b>Figure 1:</b> A TESS exposure demonstating the field of view.</center>    
+<br>
+[![webp]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.webp#center)]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.webp)
+<center><b>Figure 1:</b> A TESS exposure demonstating the field of view.</center>
+{% assign counter = counter | plus: 1 %} 
 
 ### References
 
