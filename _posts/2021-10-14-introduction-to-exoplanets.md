@@ -28,6 +28,7 @@ In recent events, further challenges to accepted theory have profoundly altered 
 
 Currently, exoplanet discovery boasts the lofty figure of 4364 confirmed planets listed in the NASA exoplanet archive ([Akeson et al., 2013](https://iopscience.iop.org/article/10.1086/672273)) as of March 2021. The progress since 1995 is driven by improvements in instrumentation and observing techniques such as CCD’s, high-resolution spectroscopy, computer based image processing, and diverse ranges of exoplanet detection methods.
 <br>
+<br>
 [![webp]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.webp#center)]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.webp)
 <center><b>Figure 1:</b> A TESS exposure demonstating the field of view.</center>
 {% assign counter = counter | plus: 1 %} 
