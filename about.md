@@ -28,9 +28,10 @@ for multi-telescope datasets and its application to WASP-127 b, WASP-91 b, and W
 {% include image-gallery-rect.html folder="certificates" %}
 
 <object data="http://sourestdeeds.github.io/stephen-charles-cv.pdf" type="application/pdf" width="100%">
+<object data="http://sourestdeeds.github.io/stephen-charles-cv2.pdf" type="application/pdf" width="100%"></object>
 <iframe src="https://docs.google.com/viewerng/viewer?url=http://sourestdeeds.github.io/stephen-charles-cv.pdf&embedded=true" width="100%" height="1037px" frameborder="0"></iframe>
 </object>
-<object data="http://sourestdeeds.github.io/stephen-charles-cv.pdf2" type="application/pdf" width="100%"></object>
+
 
 ### Instagram
 
