@@ -21,7 +21,7 @@ My most recent foray into applying programming language is in the field of *Astr
 - Author:
 - Co-Author:
 	- [Hayes, J J C, E Kerins, J S Morgan et al. (2021)](https://arxiv.org/pdf/2103.12139.pdf) “TransitFit: an exoplanet transit fitting package
-for multi-telescope datasets and its application to WASP-127 b, WASP-91 b, and WASP-126 b”, 1–14.
+for multi-telescope datasets and its application to WASP-127 b, WASP-91 b, and WASP-126 b”, *arXiv*, 1–14.
 
 ### Certificates
 
