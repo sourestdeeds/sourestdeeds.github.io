@@ -20,6 +20,7 @@ layout: default
         <div id="#{{ category_name | slugize }}"></div>
     
         <h2 class="category-head">{{ category_name }}</h2>
+        <hr>
         <a name="{{ category_name | slugize }}"></a>
         {% for post in site.categories[category_name] %}
         <article class="archive-item">
