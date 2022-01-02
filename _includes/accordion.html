@@ -10,7 +10,14 @@ ul.jekyllcodex_accordion li label::before {content: "+"; font-weight: normal; fo
 ul.jekyllcodex_accordion li input:checked + label::before {transform: rotate(-45deg);}
 </style>
 <ul class="jekyllcodex_accordion">
+    {% assign counter = 1 %}
     {% for item in page.accordion %}
+        {% if counter == 1 %}
+        <li><input id="accordion{{ forloop.index }}" type="checkbox"/><label for="accordion{{ forloop.index }}">{{ item.title }}</label><div style="display: block;">{{ item.content | markdownify }}</div></li>
+        {% endif %}
+        {% if counter > 1 %}
         <li><input id="accordion{{ forloop.index }}" type="checkbox" /><label for="accordion{{ forloop.index }}">{{ item.title }}</label><div>{{ item.content | markdownify }}</div></li>
+        {% endif %}
+        {% assign counter = counter | plus: 1 %} 
     {% endfor %}
 </ul>
