@@ -17,4 +17,4 @@ datatable: true
 
 
 <br>
-[![png](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/photos/WASP-33.png#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/photos/WASP-33.png)<center><b>Figure 1:</b> WASP-33 b.</center><br> 
+[![webp](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/photos/WASP-33.webp#center)](https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/photos/WASP-33.webp)<center><b>Figure 1:</b> WASP-33 b.</center><br> 
