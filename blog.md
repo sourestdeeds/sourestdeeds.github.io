@@ -15,6 +15,7 @@ mathjax: true
 permalink: /blog/
 title: Blog
 ---
+{% include breadcrumbs.html %}
 
 
 
