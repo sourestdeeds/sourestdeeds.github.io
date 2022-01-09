@@ -1,0 +1,72 @@
+---
+
+layout: default
+permalink: /blog/
+---
+
+<div class="home">
+  {%- if page.title -%}
+    <h5 class="page-heading">{{ page.title }}</h5>
+  {%- endif -%}
+
+  {{ content }}
+
+  {% assign counter = 1 %}
+
+  <div id="archives">
+    {% assign sorted_cats = site.categories | sort %}
+    {% for category in sorted_cats %}
+      <div class="archive-group">
+        {% capture category_name %}{{ category | first }}{% endcapture %}
+        <div id="#{{ category_name | slugize }}"></div>
+    
+        <h2 class="category-head">{{ category_name }}</h2>
+        <a name="{{ category_name | slugize }}"></a>
+        {% for post in site.categories[category_name] %}
+        <article class="archive-item">
+          {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+          <div class="table">
+            <div class="tr">
+                <div class="d1">{{ post.date | date: date_format }}&nbsp;&nbsp;
+                  {% assign foundImage = 0 %}
+                  {% assign images = post.content | split:"<img " %}
+                  {% for image in images %}
+                    {% if image contains 'src' %}
+                        {% if foundImage == 0 %}
+                            {% assign html = image | split:"/>" | first %}
+                            {% assign tags = html | split:" " %}
+                            {% for tag in tags %}
+                              {% if tag contains 'src' %}
+                                  {% if counter <= 5 %}
+                                    <br><br>
+                                    <a href="{{ site.baseurl }}{{ post.url }}"><img {{ tag }} style="width:75%; height:auto;" loading="lazy"/></a> 
+                                  {% endif %}
+                                  {% if counter > 5 %}
+                                    <br><br>
+                                    <a href="{{ site.baseurl }}{{ post.url }}"><img {{ tag }} style="width:75%; height:auto;" loading="lazy"/></a> 
+                                  {% endif %}
+                                {% assign counter = counter | plus: 1 %} 
+                              {% endif %}
+                            {% endfor %}
+                            {% assign foundImage = 1 %}
+                        {% endif %}
+                    {% endif %}
+                  {% endfor %}
+                </div>
+                <div class="d2">
+                  <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+                    <br>
+                    {{ post.content | markdownify | strip_html | truncatewords: 50 }}
+                </div>
+            </div>
+          </div>
+          <p></p>
+        </article>
+        {% endfor %}
+      </div>
+      <p></p>
+    {% endfor %}
+    <p></p>
+    </div>
+
+</div>
