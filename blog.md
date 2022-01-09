@@ -12,6 +12,7 @@
 layout: blog
 mainnav: true
 mathjax: true
+permalink: /blog/
 ---
 
 

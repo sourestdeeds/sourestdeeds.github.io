@@ -11,31 +11,21 @@ layout: default
   {{ content }}
 
   <div id="archives">
-    {% assign sorted_cats = site.categories | sort %}
-    {% for category in sorted_cats %}
-      <div class="archive-group">
-        {% capture category_name %}{{ category | first }}{% endcapture %}
-        <div id="#{{ category_name | slugize }}"></div>
     
-        <h2 class="category-head">{{ category_name }}</h2>
-        <a name="{{ category_name | slugize }}"></a>
-        {% for post in site.categories[category_name] %}
+      <div class="archive-group">
+    
+        {% for post in site.posts %}
         <article class="archive-item">
           {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
           <div class="table">
             <div class="tr">
-                <div class="d1">{{ post.date | date: date_format }}&nbsp;&nbsp;
-                </div>
-                <div class="d2">
-                  <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-                </div>
+                <div class="d1">{{ post.date | date: date_format }}&nbsp;&nbsp;</div>
+                <div class="d2"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></div>
             </div>
           </div>
         </article>
         {% endfor %}
       </div>
-      <p></p>
-    {% endfor %}
-    </div>
+  </div>
 
 </div>
