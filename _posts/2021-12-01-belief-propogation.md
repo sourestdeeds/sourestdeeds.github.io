@@ -4,6 +4,7 @@ tags: [belief propogation, bayesian]
 layout: post
 mathjax: true
 categories: [Algorithms]
+permalink: /blog/:title/
 ---
 
 

@@ -5,6 +5,7 @@ layout: post
 mathjax: true
 categories: [Feature Engineering]
 published: true
+permalink: /blog/:title/
 ---
 
 The plan is go through the feature engineering course where I'll learn how to:

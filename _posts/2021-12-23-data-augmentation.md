@@ -4,6 +4,7 @@ tags: [kaggle, data augmentation, keras, deep learning, neural network]
 layout: post
 mathjax: true
 categories: [Computer Vision]
+permalink: /blog/:title/
 ---
 {% assign counter = 1 %}
 {% assign link = "https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/" %}

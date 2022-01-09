@@ -4,6 +4,7 @@ tags: [jupyter, project, kaggle, nlp, data visualization]
 layout: post
 mathjax: true
 categories: [Natural Language Processing]
+permalink: /blog/:title/
 ---
 
 

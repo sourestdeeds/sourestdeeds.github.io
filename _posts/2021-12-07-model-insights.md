@@ -5,6 +5,7 @@ layout: post
 mathjax: true
 categories: [Machine Learning Explainability]
 published: true
+permalink: /blog/:title/
 ---
 
 Many people say machine learning models are "black boxes", in the sense that they can make good predictions but you can't understand the logic behind those predictions. This statement is true in the sense that most data scientists don't know how to extract insights from models yet.

@@ -4,6 +4,7 @@ tags: [statistics, sql, python]
 layout: post
 mathjax: true
 categories: Statistics
+permalink: /blog/:title/
 ---
 
 ### SQL for Data Science

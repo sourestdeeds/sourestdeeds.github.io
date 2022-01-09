@@ -5,6 +5,7 @@ layout: post
 mathjax: true
 categories: [Machine Learning Explainability]
 published: true
+permalink: /blog/:title/
 ---
 
 You've seen (and used) techniques to extract general insights from a machine learning model. But what if you want to break down how the model works for an individual prediction?

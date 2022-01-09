@@ -5,6 +5,7 @@ layout: post
 mathjax: true
 categories: [Feature Engineering]
 published: true
+permalink: /blog/:title/
 ---
 
 First encountering a new dataset can sometimes feel overwhelming. You might be presented with hundreds or thousands of features without even a description to go by. Where do you even begin?

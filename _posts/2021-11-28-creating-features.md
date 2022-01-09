@@ -5,6 +5,7 @@ layout: post
 mathjax: true
 categories: [Feature Engineering]
 published: true
+permalink: /blog/:title/
 ---
 
 Once you've identified a set of features with some potential, it's time to start developing them. In this lesson, you'll learn a number of common transformations you can do entirely in Pandas. 

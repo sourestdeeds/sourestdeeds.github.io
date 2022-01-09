@@ -4,6 +4,7 @@ tags: [kaggle, algorithm, levenshtein distance, dbscan]
 layout: post
 mathjax: true
 categories: [Algorithms]
+permalink: /blog/:title/
 ---
 
 {% assign counter = 1 %}

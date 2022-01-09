@@ -5,6 +5,7 @@ layout: post
 mathjax: true
 categories: [Deep Learning]
 published: true
+permalink: /blog/:title/
 ---
 
 We're going to see how we can build neural networks capable of learning the complex kinds of relationships deep neural nets are famous for.

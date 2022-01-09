@@ -5,6 +5,7 @@ layout: post
 mathjax: true
 categories: [Deep Learning]
 published: true
+permalink: /blog/:title/
 ---
 
 Using Keras and Tensorflow we'll learn how to:

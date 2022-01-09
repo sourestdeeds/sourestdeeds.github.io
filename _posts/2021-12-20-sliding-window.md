@@ -4,6 +4,7 @@ tags: [kaggle, sliding window, keras, deep learning, neural network]
 layout: post
 mathjax: true
 categories: [Computer Vision]
+permalink: /blog/:title/
 ---
 
 In the previous two lessons, we learned about the three operations that carry out feature extraction from an image: 

@@ -4,6 +4,7 @@ tags: [exoplanet, TESS, astrophysics]
 layout: post
 mathjax: true
 categories: Astrophysics
+permalink: /blog/:title/
 ---
 {% assign counter = 1 %}
 {% assign link = "https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/" %}

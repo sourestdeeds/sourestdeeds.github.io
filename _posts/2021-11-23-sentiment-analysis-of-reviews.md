@@ -4,6 +4,7 @@ tags: [jupyter, project, sklearn, naive bayes, data visualization]
 layout: post
 mathjax: true
 categories: [Natural Language Processing]
+permalink: /blog/:title/
 ---
 
 

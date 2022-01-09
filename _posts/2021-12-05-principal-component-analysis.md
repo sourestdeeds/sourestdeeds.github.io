@@ -5,6 +5,7 @@ layout: post
 mathjax: true
 categories: [Feature Engineering]
 published: true
+permalink: /blog/:title/
 ---
 
 In the previous lesson we looked at our first model-based method for feature engineering: clustering. In this lesson we look at our next: principal component analysis (PCA). Just like clustering is a partitioning of the dataset based on proximity, you could think of PCA as a partitioning of the variation in the data. PCA is a great tool to help you discover important relationships in the data and can also be used to create more informative features.

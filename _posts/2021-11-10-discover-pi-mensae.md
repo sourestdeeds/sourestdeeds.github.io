@@ -4,6 +4,7 @@ tags: [jupyter, project, pi mensae, TESS, astrophysics]
 layout: post
 mathjax: true
 categories: Astrophysics
+permalink: /blog/:title/
 ---
 
 

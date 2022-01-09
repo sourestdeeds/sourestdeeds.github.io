@@ -5,6 +5,7 @@ layout: post
 mathjax: true
 categories: [Astrophysics]
 published: false
+permalink: /blog/:title/
 ---
 
 

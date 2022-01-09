@@ -5,6 +5,7 @@ layout: post
 mathjax: true
 categories: [Feature Engineering]
 published: true
+permalink: /blog/:title/
 ---
 
 Most of the techniques we've seen in this course have been for numerical features. The technique we'll look at in this lesson, target encoding, is instead meant for categorical features. It's a method of encoding categories as numbers, like one-hot or label encoding, with the difference that it also uses the target to create the encoding. This makes it what we call a supervised feature engineering technique.

@@ -5,6 +5,7 @@ layout: post
 mathjax: true
 categories: [Machine Learning Explainability]
 published: true
+permalink: /blog/:title/
 ---
 
 Now we'll expand on SHAP values, seeing how aggregating many SHAP values can give more detailed alternatives to permutation importance and partial dependence plots.

@@ -5,6 +5,7 @@ layout: post
 mathjax: true
 categories: [Computer Vision]
 published: true
+permalink: /blog/:title/
 ---
 
 
