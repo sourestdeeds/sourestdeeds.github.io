@@ -4,6 +4,9 @@ layout: default
 ---
 
 <div class="home">
+  {%- if page.title -%}
+  <h5 class="page-heading">{{ page.title }}</h5>
+  {%- endif -%}
 
   {{ content }}
 
