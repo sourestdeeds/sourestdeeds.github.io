@@ -95,146 +95,16 @@ crimes.head()
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="table-wrapper" markdown="block">
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+|    | INCIDENT_NUMBER | OFFENSE_CODE |         OFFENSE_CODE_GROUP |                   OFFENSE_DESCRIPTION | DISTRICT | REPORTING_AREA | SHOOTING |    OCCURRED_ON_DATE | YEAR | MONTH | DAY_OF_WEEK | HOUR | UCR_PART |            STREET |       Lat |       Long |                    Location |   |
+|---:|----------------:|-------------:|---------------------------:|--------------------------------------:|---------:|---------------:|---------:|--------------------:|-----:|------:|------------:|-----:|---------:|------------------:|----------:|-----------:|----------------------------:|---|
+| 0  | I182070945      | 619          | Larceny                    | LARCENY ALL OTHERS                    | D14      | 808            | NaN      | 2018-09-02 13:00:00 | 2018 | 9     | Sunday      | 13   | Part One | LINCOLN ST        | 42.357791 | -71.139371 | (42.35779134, -71.13937053) |   |
+| 6  | I182070933      | 724          | Auto Theft                 | AUTO THEFT                            | B2       | 330            | NaN      | 2018-09-03 21:25:00 | 2018 | 9     | Monday      | 21   | Part One | NORMANDY ST       | 42.306072 | -71.082733 | (42.30607218, -71.08273260) |   |
+| 8  | I182070931      | 301          | Robbery                    | ROBBERY - STREET                      | C6       | 177            | NaN      | 2018-09-03 20:48:00 | 2018 | 9     | Monday      | 20   | Part One | MASSACHUSETTS AVE | 42.331521 | -71.070853 | (42.33152148, -71.07085307) |   |
+| 19 | I182070915      | 614          | Larceny From Motor Vehicle | LARCENY THEFT FROM MV - NON-ACCESSORY | B2       | 181            | NaN      | 2018-09-02 18:00:00 | 2018 | 9     | Sunday      | 18   | Part One | SHIRLEY ST        | 42.325695 | -71.068168 | (42.32569490, -71.06816778) |   |
+| 24 | I182070908      | 522          | Residential Burglary       | BURGLARY - RESIDENTIAL - NO FORCE     | B2       | 911            | NaN      | 2018-09-03 18:38:00 | 2018 | 9     | Monday      | 18   | Part One | ANNUNCIATION RD   | 42.335062 | -71.093168 | (42.33506218, -71.09316781) |   |
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>INCIDENT_NUMBER</th>
-      <th>OFFENSE_CODE</th>
-      <th>OFFENSE_CODE_GROUP</th>
-      <th>OFFENSE_DESCRIPTION</th>
-      <th>DISTRICT</th>
-      <th>REPORTING_AREA</th>
-      <th>SHOOTING</th>
-      <th>OCCURRED_ON_DATE</th>
-      <th>YEAR</th>
-      <th>MONTH</th>
-      <th>DAY_OF_WEEK</th>
-      <th>HOUR</th>
-      <th>UCR_PART</th>
-      <th>STREET</th>
-      <th>Lat</th>
-      <th>Long</th>
-      <th>Location</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>I182070945</td>
-      <td>619</td>
-      <td>Larceny</td>
-      <td>LARCENY ALL OTHERS</td>
-      <td>D14</td>
-      <td>808</td>
-      <td>NaN</td>
-      <td>2018-09-02 13:00:00</td>
-      <td>2018</td>
-      <td>9</td>
-      <td>Sunday</td>
-      <td>13</td>
-      <td>Part One</td>
-      <td>LINCOLN ST</td>
-      <td>42.357791</td>
-      <td>-71.139371</td>
-      <td>(42.35779134, -71.13937053)</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>I182070933</td>
-      <td>724</td>
-      <td>Auto Theft</td>
-      <td>AUTO THEFT</td>
-      <td>B2</td>
-      <td>330</td>
-      <td>NaN</td>
-      <td>2018-09-03 21:25:00</td>
-      <td>2018</td>
-      <td>9</td>
-      <td>Monday</td>
-      <td>21</td>
-      <td>Part One</td>
-      <td>NORMANDY ST</td>
-      <td>42.306072</td>
-      <td>-71.082733</td>
-      <td>(42.30607218, -71.08273260)</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>I182070931</td>
-      <td>301</td>
-      <td>Robbery</td>
-      <td>ROBBERY - STREET</td>
-      <td>C6</td>
-      <td>177</td>
-      <td>NaN</td>
-      <td>2018-09-03 20:48:00</td>
-      <td>2018</td>
-      <td>9</td>
-      <td>Monday</td>
-      <td>20</td>
-      <td>Part One</td>
-      <td>MASSACHUSETTS AVE</td>
-      <td>42.331521</td>
-      <td>-71.070853</td>
-      <td>(42.33152148, -71.07085307)</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>I182070915</td>
-      <td>614</td>
-      <td>Larceny From Motor Vehicle</td>
-      <td>LARCENY THEFT FROM MV - NON-ACCESSORY</td>
-      <td>B2</td>
-      <td>181</td>
-      <td>NaN</td>
-      <td>2018-09-02 18:00:00</td>
-      <td>2018</td>
-      <td>9</td>
-      <td>Sunday</td>
-      <td>18</td>
-      <td>Part One</td>
-      <td>SHIRLEY ST</td>
-      <td>42.325695</td>
-      <td>-71.068168</td>
-      <td>(42.32569490, -71.06816778)</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td>I182070908</td>
-      <td>522</td>
-      <td>Residential Burglary</td>
-      <td>BURGLARY - RESIDENTIAL - NO FORCE</td>
-      <td>B2</td>
-      <td>911</td>
-      <td>NaN</td>
-      <td>2018-09-03 18:38:00</td>
-      <td>2018</td>
-      <td>9</td>
-      <td>Monday</td>
-      <td>18</td>
-      <td>Part One</td>
-      <td>ANNUNCIATION RD</td>
-      <td>42.335062</td>
-      <td>-71.093168</td>
-      <td>(42.33506218, -71.09316781)</td>
-    </tr>
-  </tbody>
-</table>
 </div>
 
 
