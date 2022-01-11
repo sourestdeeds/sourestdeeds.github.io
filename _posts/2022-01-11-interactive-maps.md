@@ -51,7 +51,7 @@ embed_map(m_1, "q_1.html")
 <iframe
     width="100%"
     height="500px"
-    src="{{ link }}maps/q_{{ counter2 }}.html"
+    src="https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/maps/q_{{ counter2 }}.html"
     frameborder="0"
     allowfullscreen
 
@@ -271,7 +271,7 @@ embed_map(m_2, "q_2.html")
 <iframe
     width="100%"
     height="500px"
-    src="{{ link }}maps/q_{{ counter2 }}.html"
+    src="https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/maps/q_{{ counter2 }}.html"
     frameborder="0"
     allowfullscreen
 
@@ -307,7 +307,7 @@ embed_map(m_3, "q_3.html")
 <iframe
     width="100%"
     height="500px"
-    src="{{ link }}maps/q_{{ counter2 }}.html"
+    src="https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/maps/q_{{ counter2 }}.html"
     frameborder="0"
     allowfullscreen
 
@@ -393,7 +393,7 @@ embed_map(m_5, "q_5.html")
 <iframe
     width="100%"
     height="500px"
-    src="{{ link }}maps/q_{{ counter2 }}.html"
+    src="https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/maps/q_{{ counter2 }}.html"
     frameborder="0"
     allowfullscreen
 
