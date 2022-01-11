@@ -77,7 +77,7 @@ crimes.head()
 
 
 
-<div>
+<div class="table-wrapper">
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
