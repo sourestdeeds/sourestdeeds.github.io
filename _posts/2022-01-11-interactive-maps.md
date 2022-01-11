@@ -5,6 +5,7 @@ layout: post
 mathjax: true
 categories: [Geospatial Analysis]
 permalink: /blog/:title/
+published: false
 ---
 {% assign counter = 1 %}
 {% assign link = "https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/" %}
