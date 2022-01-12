@@ -1,5 +1,5 @@
 ---
-title: 'Interactive Maps'
+title: 'Proximity Analysis'
 tags: [kaggle, geospatial analysis, maps]
 layout: post
 mathjax: true
