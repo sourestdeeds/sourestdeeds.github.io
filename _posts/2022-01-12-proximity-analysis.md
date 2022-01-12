@@ -37,7 +37,7 @@ from folium import Choropleth, Marker
 from folium.plugins import HeatMap, MarkerCluster
 ```
 
-You'll use the `embed_map()` function to visualize your maps.
+You'll use the embed_map() function to visualize your maps.
 
 
 ```python
@@ -50,7 +50,7 @@ def embed_map(m, file_name):
 
 ### 1) Visualize the collision data.
 
-Run the code cell below to load a GeoDataFrame `collisions` tracking major motor vehicle collisions in 2013-2018.
+Run the code cell below to load a GeoDataFrame collisions tracking major motor vehicle collisions in 2013-2018.
 
 
 ```python
@@ -164,9 +164,9 @@ embed_map(m_2, "q_2.html")
 
 ### 3) When was the closest hospital more than 10 kilometers away?
 
-Create a DataFrame `outside_range` containing all rows from `collisions` with crashes that occurred more than 10 kilometers from the closest hospital.
+Create a DataFrame outside_range containing all rows from collisions with crashes that occurred more than 10 kilometers from the closest hospital.
 
-Note that both `hospitals` and `collisions` have EPSG 2263 as the coordinate reference system, and EPSG 2263 has units of meters.
+Note that both hospitals and collisions have EPSG 2263 as the coordinate reference system, and EPSG 2263 has units of meters.
 
 
 ```python
@@ -213,7 +213,7 @@ print(best_hospital(outside_range.geometry.iloc[0]))
 
 ### 5) Which hospital is under the highest demand?
 
-Considering only collisions in the `outside_range` DataFrame, which hospital is most recommended?  
+Considering only collisions in the outside_range DataFrame, which hospital is most recommended?  
 
 Your answer should be a Python string that exactly matches the name of the hospital returned by the function you created in **4)**.
 
@@ -259,7 +259,7 @@ Click anywhere on the map to see a pop-up with the corresponding location in lat
 
 The city of New York reaches out to you for help with deciding locations for two brand new hospitals.  They specifically want your help with identifying locations to bring the calculated percentage from step **3)** to less than ten percent.  Using the map (and without worrying about zoning laws or what potential buildings would have to be removed in order to build the hospitals), can you identify two locations that would help the city accomplish this goal?  
 
-Put the proposed latitude and longitude for hospital 1 in `lat_1` and `long_1`, respectively.  (Likewise for hospital 2.)
+Put the proposed latitude and longitude for hospital 1 in lat_1 and long_1, respectively.  (Likewise for hospital 2.)
 
 Then, run the rest of the cell as-is to see the effect of the new hospitals.  Your answer will be marked correct, if the two new hospitals bring the percentage to less than ten percent.
 
