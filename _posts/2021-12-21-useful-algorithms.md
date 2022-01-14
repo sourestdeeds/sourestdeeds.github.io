@@ -120,3 +120,57 @@ WHERE REVERSE(column1) LIKE REVERSE('Some_string') + '%'
 ```
 
 And boom, your query runs much, much faster!
+
+
+## Newton-Horner 
+
+Newton-Horner method in C++.
+
+```cpp
+// Horners Method
+double horner(double poly_coeff[], int poly_deg, double x)
+{
+    double b = poly_coeff[0]; // Equation (3)
+    // Compute value of defined polynomial using Horner's method
+    for (int i=1; i<=poly_deg; i++)
+    {
+        b = b*x + poly_coeff[i]; // Equation (4)
+    }
+    return b;
+}
+
+// Newton and Horners Method
+
+double *newton( double poly_coeff[], int poly_deg, int nmax, double x )
+{
+    double *p, *q; // Pointers
+    const double TOL = 10e-8;
+    double error = 1;
+    int i, iter = 0;
+    p = new double [poly_deg+1]; //Allocate memory based on user input
+    q = new double [poly_deg+1];
+
+    while( iter < nmax && error > TOL )
+    {
+        for( i=0; i<=poly_deg; i++ )
+        {
+            p[i] = poly_coeff[i] + p[i-1]*x;
+        }
+        for( i=0;  i<poly_deg; i++ )
+        {
+            q[i] = p[i] + q[i-1]*x;
+        }
+        double x_old = x; // Store previous iterate to calculate error
+        x = x_old - p[poly_deg]/q[poly_deg-1]; // Newtons method
+        error = fabs(x - x_old);
+        iter++;
+    }
+    std::cout << "The root of the polynomial = " << x << std::endl;
+    std::cout << "The process took " << iter << " iterations." << std::endl;
+    return p;
+//delete[] b; // Delete storage
+delete[] p;
+delete[] q;
+}
+```
+
