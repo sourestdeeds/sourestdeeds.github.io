@@ -30,8 +30,9 @@ layout: default
             {%- if forloop.last == false %}, {% endif -%}
         {% endfor %}
       {%- endif -%}</p>
+      {% include breadcrumbs.html %}
   </header>
-  {% include breadcrumbs.html %}
+
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
   </div>
