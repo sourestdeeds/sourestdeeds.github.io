@@ -41,7 +41,8 @@ layout: default
 
   <p></p>
   <h4>Other posts in {{ category }}:</h4>
-  {% for post in site.categories[category] %}
+  {% capture category_name %}{{ category }}{% endcapture %}
+  {% for post in site.categories[category_name] %}
     <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
   {% endfor %}
 
