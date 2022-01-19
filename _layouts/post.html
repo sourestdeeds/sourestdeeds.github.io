@@ -29,8 +29,10 @@ layout: default
             <span class="p-author h-card" itemprop="name">{{ author }}</span></span>
             {%- if forloop.last == false %}, {% endif -%}
         {% endfor %}
-      {%- endif -%}</p>
-      {% include breadcrumbs.html %}
+      {%- endif -%}
+    <br>{% include breadcrumbs.html %}
+    </p>
+      
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
