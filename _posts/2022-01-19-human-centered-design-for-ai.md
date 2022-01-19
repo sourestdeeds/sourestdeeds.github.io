@@ -103,7 +103,7 @@ Lex Fridman’s [introductory lecture](https://www.youtube.com/watch?v=bmjamLZ3v
 Google’s People + AI Research (PAIR) [Guidebook](https://pair.withgoogle.com/guidebook/)
 Stanford Human-Centered Artificial Intelligence (HAI) [research](https://hai.stanford.edu/research)
 
-### Exercise
+## Example
 
 ### 1) Reducing plastic waste
 
