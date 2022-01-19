@@ -40,7 +40,7 @@ layout: default
   {% include breadcrumbs.html %}
 
   <p></p>
-  <h4>Other posts in {{ category }}:</h4>
+  <h3>Other posts in {{ category }}:</h3>
   {% capture category_name %}{{ category }}{% endcapture %}
   {% for post in site.categories[category_name] %}
   <article class="archive-item">
