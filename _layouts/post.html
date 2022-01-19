@@ -38,7 +38,15 @@ layout: default
   
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
   {% include breadcrumbs.html %}
+
   <p></p>
+  <h4>Other posts in {{ category }}:</h4>
+  {% for post in site.categories[category] %}
+    <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+  {% endfor %}
+
+  <p></p>
+
   <div class="PageNavigation">
     {% if page.previous.url %}
       <a class="prev" href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a>
