@@ -13,7 +13,7 @@ layout: default
         {{ page.date | date: date_format }}
       </time>
       {%- assign category = page.categories -%}
-      {% assign words = include.content | strip_html | number_of_words %}
+      {% assign words = content | strip_html | number_of_words %}
       <b>{{ category }}</b> • {{ words | divided_by: 180 | plus: 1 }} min read.
       {% include breadcrumbs.html %}
     </p>
