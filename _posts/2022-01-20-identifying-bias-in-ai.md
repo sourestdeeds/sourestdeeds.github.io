@@ -171,7 +171,7 @@ coefficients.sort_values(by=['coeff']).tail(10)
 <div class="table-wrapper" markdown="block">
 
 |       |      word |    coeff |
-|------:|----------:|---------:|
+|------|----------|---------|
 | 20745 |     fools | 6.278428 |
 | 34211 |     moron | 6.332332 |
 | 16844 |      dumb | 6.359258 |
