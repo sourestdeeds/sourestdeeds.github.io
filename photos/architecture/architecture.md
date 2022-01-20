@@ -1,5 +1,6 @@
 ---
-layout: post
+layout: page
+mathjax: false
 title: Architecture
 mainnav: false
 permalink: /photography/architecture/

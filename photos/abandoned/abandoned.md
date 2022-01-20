@@ -1,5 +1,6 @@
 ---
 layout: page
+mathjax: false
 title: Abandoned
 mainnav: false
 permalink: /photography/abandoned/

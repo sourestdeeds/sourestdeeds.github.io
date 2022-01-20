@@ -1,5 +1,6 @@
 ---
-layout: post
+layout: page
+mathjax: false
 title: Landscape
 mainnav: false
 permalink: /photography/landscape/

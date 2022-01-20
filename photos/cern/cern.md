@@ -1,5 +1,6 @@
 ---
-layout: post
+layout: page
+mathjax: false
 title: CERN
 mainnav: false
 permalink: /photography/cern/

@@ -1,5 +1,6 @@
 ---
-layout: post
+layout: page
+mathjax: false
 title: Singapore
 mainnav: false
 permalink: /photography/singapore/

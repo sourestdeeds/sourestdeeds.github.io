@@ -1,5 +1,6 @@
 ---
-layout: post
+layout: page
+mathjax: false
 title: Objects
 mainnav: false
 permalink: /photography/objects/

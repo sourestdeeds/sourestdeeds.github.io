@@ -1,5 +1,6 @@
 ---
-layout: post
+layout: page
+mathjax: false
 title: Food
 mainnav: false
 permalink: /photography/food/

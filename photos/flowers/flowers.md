@@ -1,5 +1,6 @@
 ---
-layout: post
+layout: page
+mathjax: false
 title: Flowers
 mainnav: false
 permalink: /photography/flowers/

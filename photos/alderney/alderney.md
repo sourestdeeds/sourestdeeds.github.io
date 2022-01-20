@@ -1,5 +1,6 @@
 ---
-layout: post
+layout: page
+mathjax: false
 title: Alderney
 mainnav: false
 permalink: /photography/alderney/

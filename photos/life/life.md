@@ -1,5 +1,6 @@
 ---
-layout: post
+layout: page
+mathjax: false
 title: Life
 mainnav: false
 permalink: /photography/life/
