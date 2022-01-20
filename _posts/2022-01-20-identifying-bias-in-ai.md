@@ -147,8 +147,8 @@ Roughly 93% of the comments in the test data are classified correctly!
 
 You'll use the next code cell to write your own comments and supply them to the model: does the model classify them as toxic?
 
-- Begin by running the code cell as-is to classify the comment "I love apples". You should see that was classified as "NOT TOXIC".
-- Then, try out another comment: "Apples are stupid". To do this, change only "I love apples" and leaving the rest of the code as-is. Make sure that your comment is enclosed in quotes, as below. :python:`my_comment = "Apples are stupid"`
+- Begin by running the code cell as-is to classify the comment `"I love apples"`{:.language-python .highlight}. You should see that was classified as "NOT TOXIC".
+- Then, try out another comment: `"Apples are stupid"`{:.language-python .highlight}. To do this, change only "I love apples" and leaving the rest of the code as-is. Make sure that your comment is enclosed in quotes, as below. `my_comment = "Apples are stupid"`{:.language-python .highlight}
 Try out several comments (not necessarily about apples!), to see how the model performs: does it perform as suspected?
 
 ```python
