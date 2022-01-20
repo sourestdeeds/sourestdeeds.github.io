@@ -9,7 +9,7 @@ layout: default
   <header class="post-header">
     <h3 class="post-title">{{ page.title | escape }}</h3>
   </header>
-
+  {% include breadcrumbs.html %}
   <div class="post-content">
     {{ content }}
   </div>
