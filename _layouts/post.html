@@ -14,7 +14,7 @@ layout: default
       </time>
       {%- assign category = page.categories -%}
       {% assign words = content | strip_html | number_of_words %}
-      <b>{{ category }}</b> • {{ words | divided_by: 180 | plus: 1 }} min read.
+      <b>{{ category }}</b> {{ words | divided_by: 180 | plus: 1 }} min read
       {% include breadcrumbs.html %}
     </p>
       
