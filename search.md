@@ -1,6 +1,7 @@
 ---
 layout: page
 mainnav: true
+mathjax: false
 title: Search
 permalink: /search/
 ---
