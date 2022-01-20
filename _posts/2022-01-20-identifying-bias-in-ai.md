@@ -195,7 +195,62 @@ Take a look at the most toxic words from the code cell above. Are you surprised 
 
 We'll take a closer look at how the model classifies comments.
 
-- Begin by running the code cell as-is to classify the comment :python:`"I have a christian friend"`. You should see that was classified as :python:`"NOT TOXIC"`. In addition, you can see what scores were assigned to some of the individual words. Note that all words in the comment likely won't appear.
-- Next, try out another comment: :python:`"I have a muslim friend"`. To do this, change only "I have a christian friend" and leave the rest of the code as-is. Make sure that your comment is enclosed in quotes, as below. :python:`new_comment = "I have a muslim friend"`
-- Try out two more comments: "I have a white friend" and "I have a black friend" (in each case, do not add punctuation to the comment).
+- Begin by running the code cell as-is to classify the comment `"I have a christian friend"`{:.language-python .highlight}. You should see that was classified as `"NOT TOXIC"`{:.language-python .highlight}. In addition, you can see what scores were assigned to some of the individual words. Note that all words in the comment likely won't appear.
+- Next, try out another comment: `"I have a muslim friend"`{:.language-python .highlight}. To do this, change only "I have a christian friend" and leave the rest of the code as-is. Make sure that your comment is enclosed in quotes, as below. `new_comment = "I have a muslim friend"`{:.language-python .highlight}
+- Try out two more comments: `"I have a white friend"`{:.language-python .highlight} and `"I have a black friend"`{:.language-python .highlight} (in each case, do not add punctuation to the comment).
 - Feel free to try out more comments, to see how the model classifies them.
+
+```python
+# Set the value of new_comment
+new_comment = "I have a christian friend"
+
+# Do not change the code below
+classify_string(new_comment)
+coefficients[coefficients.word.isin(new_comment.split())]
+```
+
+    NOT TOXIC: I have a christian friend
+
+### 4) Identify bias
+
+Do you see any signs of potential bias in the model? In the code cell above,
+
+- How did the model classify `"I have a christian friend"`{:.language-python .highlight} and `"I have a muslim friend"`{:.language-python .highlight}?
+- How did it classify `"I have a white friend"`{:.language-python .highlight} and `"I have a black friend"`{:.language-python .highlight}?
+
+> The comment `I have a muslim friend`{:.language-python .highlight} was marked as toxic, whereas I have a christian friend was not. Likewise, `I have a black friend`{:.language-python .highlight} was marked as toxic, whereas `I have a white friend`{:.language-python .highlight} was not. None of these comments should be marked as toxic, but the model seems to erroneously associate some identities as toxic. This is a sign of bias: the model seems biased in favor of christian and against muslim, and it seems biased in favor of `white`{:.language-python .highlight} and against `black`{:.language-python .highlight}.
+
+### 5) Test your understanding
+
+We'll step away from the Jigsaw competition data and consider a similar (but hypothetical!) scenario where you're working with a dataset of online comments to train a model to classify comments as toxic.
+
+You notice that comments that refer to Islam are more likely to be toxic than comments that refer to other religions, because the online community is islamophobic. What type of bias can this introduce to your model?
+
+>  Comments that refer to Islam are more likely to be classified as toxic, because of a flawed state of the online community where the data was collected. This can introduce **historical bias**.
+
+### 6) Test your understanding, part 2
+
+We'll continue with the same hypothetical scenario, where you're trying to train a model to classify online comments as toxic.
+
+You take any comments that are not already in English and translate them to English with a separate tool. Then, you treat all posts as if they were originally expressed in English. What type of bias will your model suffer from?
+
+> By translating comments to English, we introduce additional error when classifying non-English comments. This can introduce **measurement bias**, since non-English comments will often not be translated perfectly. It could also introduce **aggregation bias**: the model would likely perform better for comments expressed in all languages, if the comments from different languages were treated differently.
+
+### 7) Test your understanding, part 3
+
+We'll continue with the same hypothetical scenario, where you're trying to train a model to classify online comments as toxic.
+
+The dataset you're using to train the model contains comments primarily from users based in the United Kingdom.
+
+After training a model, you evaluate its performance with another dataset of comments, also primarily from users based in the United Kingdom -- and it gets great performance! You deploy it for a company based in Australia, and it does not perform well, because of differences between British and Australian English. What types of bias does the model suffer from?
+
+> If the model is evaluated based on comments from users in the United Kingdom and deployed to users in Australia, this will lead to **evaluation bias** and **deployment bias**. The model will also have **representation bias**, because it was built to serve users in Australia, but was trained with data from users based in the United Kingdom.
+
+### Learn more
+
+To continue learning about bias, check out the [Jigsaw Unintended Bias in Toxicity](https://www.kaggle.com/c/jigsaw-unintended-bias-in-toxicity-classification/overview) Classification competition that was introduced in this exercise.
+
+- Kaggler [Dieter](https://www.kaggle.com/christofhenkel) has written a helpful two-part series that teaches you how to preprocess the data and train a neural network to make a competition submission. [Get started here](https://www.kaggle.com/christofhenkel/how-to-preprocessing-for-glove-part1-eda).
+- Many Kagglers have written helpful notebooks that you can use to get started. Check them out on the [competition page](https://www.kaggle.com/c/jigsaw-unintended-bias-in-toxicity-classification/notebooks?sortBy=voteCount&group=everyone&pageSize=20&competitionId=12500).
+- Another Kaggle competition that you can use to learn about bias is the [Inclusive Images Challenge](https://www.kaggle.com/c/inclusive-images-challenge), which you can read more about in this [blog post](https://ai.googleblog.com/2018/09/introducing-inclusive-images-competition.html). The competition focuses on evaluation bias in computer vision.
+
