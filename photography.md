@@ -45,6 +45,5 @@ galleries:
 permalink: /photography/
 ---
 
-{% include breadcrumbs.html %}
 
 {% if page.galleries %}{% include image-gallery-index.html %}{% endif %}
