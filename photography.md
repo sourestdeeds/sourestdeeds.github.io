@@ -2,6 +2,7 @@
 layout: page
 title: Photography
 mainnav: true
+mathjax: false
 galleries:
   - title: Abandoned
     image: /photos/abandoned/19425062_1070259006407477_8166172141956366336_n_17885303698007984.jpg
