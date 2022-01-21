@@ -466,7 +466,7 @@ SVG Icons - svgicons.sparkk.fr
 
 
 .button {
-	float: center;
+	float: left;
 	width: 60px;
 	height: 60px;
 	cursor: pointer;
@@ -487,20 +487,20 @@ SVG Icons - svgicons.sparkk.fr
 
 
 .button .icon {
-	width: 50px;
-	height: 50px;
+	width: 60px;
+	height: 60px;
 	text-align: center;
-	border-radius: 40px;
+	border-radius: 50px;
 	display: inline-block;
 	transition: all 0.3s ease-in-out;
 }
 
 .button .icon i {
-	font-size: 25px;
+	font-size: 30px;
 	line-height: 60px;
 	transition: all 0.3s ease-in-out;
 }
 
 .button:hover i {
-	color: #fff;
+	color: rgb(218, 0, 0);
 }
