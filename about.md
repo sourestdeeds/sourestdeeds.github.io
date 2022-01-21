@@ -18,7 +18,7 @@ permalink: /about/
 	});
 </script>
 
-#### [Curriculum Vitae](http://sourestdeeds.github.io/stephen-charles-cv.pdf) - [GitHub](https://github.com/sourestdeeds/) - [LinkedIn](https://www.linkedin.com/in/stephen-charles-2b366020a/)
+<span style="text-align: center;"> <h4> [Curriculum Vitae](http://sourestdeeds.github.io/stephen-charles-cv.pdf) - [GitHub](https://github.com/sourestdeeds/) - [LinkedIn](https://www.linkedin.com/in/stephen-charles-2b366020a/) </h4></span>
 <p></p>
 
 ### Certificates
