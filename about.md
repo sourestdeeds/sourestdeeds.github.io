@@ -18,29 +18,6 @@ permalink: /about/
 	});
 </script>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-<p style="align-items: center;">
-		<a href="https://www.linkedin.com/in/stephen-charles-2b366020a/">
-		<div class="button">
-			<div class="icon">
-				<i class="fa fa-linkedin"></i>
-			</div>
-			<span>LinkedIn</span>
-		</div>
-		</a>
-		<a href="https://github.com/sourestdeeds/">
-		<div class="button">
-			<div class="icon">
-				<i class="fa fa-github"></i>
-			</div>
-			<span>Github</span>
-		</div>
-		</a>
-</p>
-
-<br>
-
 ### Certificates
 
 {% include image-gallery-rect.html folder="certificates" %}
