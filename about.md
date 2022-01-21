@@ -37,7 +37,6 @@ permalink: /about/
 			<span>Github</span>
 		</div>
 		</a>
-	</div>
 </p>
 
 
