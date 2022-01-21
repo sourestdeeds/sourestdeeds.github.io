@@ -6,6 +6,16 @@ mathjax: false
 permalink: /about/
 ---
 
+<script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+<script type="text/javascript">
+	document.addEventListener("adobe_dc_view_sdk.ready", function(){ 
+		var adobeDCView = new AdobeDC.View({clientId: "75c0126e67ed437d8268ece13f6e2b7f"});
+		adobeDCView.previewFile({
+			content:{location: {url: "https://sourestdeeds.github.io/stephen-charles-cv.pdf"}},
+			metaData:{fileName: "stephen-charles-cv.pdf"}
+		}, {embedMode: "LIGHT_BOX"});
+	});
+</script>
 
 #### [Curriculum Vitae](http://sourestdeeds.github.io/stephen-charles-cv.pdf) - [GitHub](https://github.com/sourestdeeds/) - [LinkedIn](https://www.linkedin.com/in/stephen-charles-2b366020a/)
 <p></p>
@@ -31,7 +41,7 @@ for multi-telescope datasets and its application to WASP-127 b, WASP-91 b, and W
 <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
 <script type="text/javascript">
 	document.addEventListener("adobe_dc_view_sdk.ready", function(){ 
-		var adobeDCView = new AdobeDC.View({clientId: "<YOUR_CLIENT_ID>", divId: "adobe-dc-view"});
+		var adobeDCView = new AdobeDC.View({clientId: "75c0126e67ed437d8268ece13f6e2b7f", divId: "adobe-dc-view"});
 		adobeDCView.previewFile({
 			content:{location: {url: "https://sourestdeeds.github.io/stephen-charles-cv.pdf"}},
 			metaData:{fileName: "stephen-charles-cv.pdf"}
