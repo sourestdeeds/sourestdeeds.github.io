@@ -5,7 +5,7 @@
 
   <div class="wrapper">
 
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <div class="footer-col-wrapper">
         <div class="footer-col">
         
@@ -17,6 +17,20 @@
           {% if site.author.email -%}
             <li><a class="u-email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>
           {%- endif %}
+          <li>
+            <a href="https://www.linkedin.com/in/stephen-charles-2b366020a/">
+                <i class="fa fa-linkedin"></i>
+              </div>
+              <span>LinkedIn</span>
+            </div>
+            </a>
+            <a href="https://github.com/sourestdeeds/">
+                <i class="fa fa-github"></i>
+              </div>
+              <span>Github</span>
+            </div>
+            </a>
+          </li>
         </ul>
       {%- endif %}
       </div>
@@ -25,26 +39,6 @@
       </div>
     </div>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <p style="align-items: center;">
-        <a href="https://www.linkedin.com/in/stephen-charles-2b366020a/">
-        <div class="button">
-          <div class="icon">
-            <i class="fa fa-linkedin"></i>
-          </div>
-          <span>LinkedIn</span>
-        </div>
-        </a>
-        <a href="https://github.com/sourestdeeds/">
-        <div class="button">
-          <div class="icon">
-            <i class="fa fa-github"></i>
-          </div>
-          <span>Github</span>
-        </div>
-        </a>
-    </p>
     <div class="social-links">
       {%- include social.html -%}
     </div>
