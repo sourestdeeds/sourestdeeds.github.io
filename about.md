@@ -20,8 +20,8 @@ permalink: /about/
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<section style="place-items: center;">
-	<div class="wrapper">
+<section>
+	<div style="place-items: center;" class="wrapper">
 		<div class="button">
 			<div class="icon">
 				<i class="fa fa-instagram"></i>
