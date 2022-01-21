@@ -39,7 +39,7 @@ permalink: /about/
 		</a>
 </p>
 
-
+<br>
 
 ### Certificates
 
