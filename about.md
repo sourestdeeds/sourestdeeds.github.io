@@ -24,7 +24,7 @@ permalink: /about/
 	<div class="wrapper">
 		<div class="button">
 			<div class="icon">
-				<i class="fab fa-instagram"></i>
+				<i class="fa fa-instagram"></i>
 			</div>
 			<span>Instagram</span>
 		</div>
