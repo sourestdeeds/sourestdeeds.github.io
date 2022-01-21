@@ -466,7 +466,7 @@ SVG Icons - svgicons.sparkk.fr
 
 
 .button {
-	float: left;
+	float: center;
 	width: 60px;
 	height: 60px;
 	cursor: pointer;
@@ -484,29 +484,11 @@ SVG Icons - svgicons.sparkk.fr
 	margin-left: 10px;
 }
 
-.button:hover {
-	width: 200px;
-}
 
-.button:nth-child(1):hover .icon {
-	background: #0e76a8;
-}
-
-.button:nth-child(2):hover .icon {
-	background: #333;
-}
-
-.button:nth-child(1) span {
-	color: #0e76a8;
-}
-
-.button:nth-child(2) span {
-	color: #333;
-}
 
 .button .icon {
-	width: 60px;
-	height: 60px;
+	width: 50px;
+	height: 50px;
 	text-align: center;
 	border-radius: 50px;
 	display: inline-block;
