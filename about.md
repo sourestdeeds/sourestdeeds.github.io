@@ -20,20 +20,48 @@ permalink: /about/
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<section>
+<section style="place-items: center;">
 	<div class="wrapper">
 		<div class="button">
 			<div class="icon">
-				<a href="https://www.linkedin.com/in/stephen-charles-2b366020a/"><i class="fab fa-linkedin"></i></a>
+				<i class="fab fa-instagram"></i>
 			</div>
-			<span>LinkedIn</span>
+			<span>Instagram</span>
 		</div>
 		<div class="button">
 			<div class="icon">
-				<a href="https://github.com/sourestdeeds/"><i class="fab fa-github"></i></a>
+				<i class="fab fa-facebook-f"></i>
+			</div>
+			<span>Facebook</span>
+		</div>
+		<div class="button">
+			<div class="icon">
+				<i class="fab fa-twitter"></i>
+			</div>
+			<span>Twitter</span>
+		</div>
+		<a href="https://www.linkedin.com/in/stephen-charles-2b366020a/">
+		<div class="button">
+			<div class="icon">
+				<i class="fab fa-linkedin"></i>
+			</div>
+			<span>LinkedIn</span>
+		</div>
+		</a>
+		<div class="button">
+			<div class="icon">
+				<i class="fab fa-youtube"></i>
+			</div>
+			<span>YouTube</span>
+		</div>
+		<a href="https://github.com/sourestdeeds/">
+		<div class="button">
+			<div class="icon">
+				<i class="fab fa-github"></i>
 			</div>
 			<span>Github</span>
 		</div>
+		</a>
 	</div>
 </section>
 
