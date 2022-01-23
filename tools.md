@@ -17,4 +17,4 @@ permalink: /tools/
 ---
 
 
-<iframe src="https://ml-visualizer.herokuapp.com/" style="width:100%; height:1000px;"></iframe>
+<iframe src="https://ml-visualizer.herokuapp.com/" style="width:100%; height:2000px;"></iframe>
