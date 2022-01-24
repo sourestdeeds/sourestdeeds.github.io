@@ -12,9 +12,9 @@
 layout: page
 mainnav: false
 mathjax: false
-title: Tools
-permalink: /tools/
+title: Useful Links
+permalink: /links/
 ---
 
-
-<iframe src="https://ml-visualizer.herokuapp.com/" style="width:100%; height:2000px;"></iframe>
+- [ML Visualizer](https://ml-visualizer.herokuapp.com/)
+- [Maths for ML](https://sourestdeeds.github.io/pdf/math4ml.pdf)
