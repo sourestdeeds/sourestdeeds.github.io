@@ -18,3 +18,4 @@ permalink: /links/
 
 - [ML Visualizer](https://ml-visualizer.herokuapp.com/)
 - [Maths for ML](https://sourestdeeds.github.io/pdf/math4ml.pdf)
+- [Machine Learning Papers](https://sourestdeeds.github.io/pdf/finalf15-merged.pdf)
