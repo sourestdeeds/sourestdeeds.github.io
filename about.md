@@ -6,26 +6,6 @@ mathjax: false
 permalink: /about/
 ---
 
-<a href="https://www.linkedin.com/in/stephen-charles-2b366020a/">
-	<i class="fa fa-linkedin"></i>
-</a>
-<a href="https://github.com/sourestdeeds/">
-	<i class="fa fa-github"></i>
-</a>
-<a href="https://twitter.com/Stephen59832963">
-	<i class="fa fa-twitter"></i>
-</a>
-<a href="https://www.instagram.com/sourestdeeds/">
-	<i class="fa fa-instagram"></i>
-</a>
-<a href="mailto: stevemindoza@gmail.com?subject=Referred from DataSciencePortfolio&body= ">
-	<i class="fa fa-envelope-square"></i>
-</a>
-<a href="https://sourestdeeds.github.io/pdf/stephen-charles-cv.pdf">
-	<i class="fa fa-file-pdf-o"></i>
-</a>
-<br>
-
 <div id="adobe-dc-view" style="width: 100%;"></div>
 <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
 <script type="text/javascript">
