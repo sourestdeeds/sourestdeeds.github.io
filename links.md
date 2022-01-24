@@ -16,7 +16,12 @@ title: Useful Links
 permalink: /links/
 ---
 
+### Tools
+
 - [ML Visualizer](https://ml-visualizer.herokuapp.com/)
-- [Maths for ML](https://sourestdeeds.github.io/pdf/math4ml.pdf)
+
+### [Berkeley Course Notes](https://inst.eecs.berkeley.edu//classes-eecs.html)
+
+- [Maths for Machine Learning](https://sourestdeeds.github.io/pdf/math4ml.pdf)
+- [Intro to Machine Learning](https://sourestdeeds.github.io/pdf/ml-book.pdf)
 - [Machine Learning Papers](https://sourestdeeds.github.io/pdf/finalf15-merged.pdf)
-- [Berkeley Course Notes](https://inst.eecs.berkeley.edu//classes-eecs.html)
