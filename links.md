@@ -23,5 +23,15 @@ permalink: /links/
 ### [Berkeley Course Notes](https://inst.eecs.berkeley.edu//classes-eecs.html)
 
 - [Maths for Machine Learning](https://sourestdeeds.github.io/pdf/math4ml.pdf)
-- [Intro to Machine Learning](https://sourestdeeds.github.io/pdf/ml-book.pdf)
+- [Intro to Machine Learning](https://sourestdeeds.github.io/pdf/intro-to-ml-berkeley.pdf)
 - [Machine Learning Papers](https://sourestdeeds.github.io/pdf/finalf15-merged.pdf)
+
+### Other Uni Notes
+
+- [Intro to Machine Learning (Cambridge)](https://sourestdeeds.github.io/pdf/intro-to-ml-cambridge.pdf)
+- [Intro to Machine Learning (Manchester)](https://sourestdeeds.github.io/pdf/intro-to-ml-manchester.pdf)
+
+### Books
+
+- [*Bishop* Pattern Recognition and Machine Learning](https://sourestdeeds.github.io/pdf/bishop-pattern-recognition-and-ml.pdf)
+- [*Mackay* Information Theory, Inference and Learning Algorithms](https://sourestdeeds.github.io/pdf/information-theory.pdf)
