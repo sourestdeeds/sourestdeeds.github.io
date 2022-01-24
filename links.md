@@ -33,5 +33,5 @@ permalink: /links/
 
 ### Books
 
-- [*Bishop* Pattern Recognition and Machine Learning](https://sourestdeeds.github.io/pdf/bishop-pattern-recognition-and-ml.pdf)
-- [*Mackay* Information Theory, Inference and Learning Algorithms](https://sourestdeeds.github.io/pdf/information-theory.pdf)
+- [*Bishop* - Pattern Recognition and Machine Learning](https://sourestdeeds.github.io/pdf/bishop-pattern-recognition-and-ml.pdf)
+- [*Mackay* - Information Theory, Inference and Learning Algorithms](https://sourestdeeds.github.io/pdf/information-theory.pdf)
