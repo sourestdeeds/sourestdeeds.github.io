@@ -24,6 +24,7 @@ permalink: /about/
 <a href="https://sourestdeeds.github.io/pdf/stephen-charles-cv.pdf">
 	<i class="fa fa-file-pdf-o"></i>
 </a>
+<br>
 
 <div id="adobe-dc-view" style="width: 100%;"></div>
 <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
