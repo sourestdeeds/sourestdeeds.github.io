@@ -19,6 +19,7 @@ permalink: /links/
 ### Tools
 
 - [ML Visualizer](https://ml-visualizer.herokuapp.com/)
+- [NN SVG](http://alexlenail.me/NN-SVG/)
 
 ### [Berkeley Course Notes](https://inst.eecs.berkeley.edu//classes-eecs.html)
 
