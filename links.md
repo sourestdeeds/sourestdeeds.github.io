@@ -20,6 +20,7 @@ permalink: /links/
 
 - [ML Visualizer](https://ml-visualizer.herokuapp.com/)
 - [NN SVG](http://alexlenail.me/NN-SVG/)
+- [Glossary](https://developers.google.com/machine-learning/glossary)
 
 ### [Berkeley Course Notes](https://inst.eecs.berkeley.edu//classes-eecs.html)
 
