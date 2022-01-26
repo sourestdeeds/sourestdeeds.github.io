@@ -22,6 +22,10 @@ permalink: /links/
 - [NN SVG](http://alexlenail.me/NN-SVG/)
 - [Glossary](https://developers.google.com/machine-learning/glossary)
 
+### Online Courses
+
+- [Google Machine Learning Crash Course](https://developers.google.com/machine-learning/crash-course/ml-intro)
+
 ### [Berkeley Course Notes](https://inst.eecs.berkeley.edu//classes-eecs.html)
 
 - [Maths for Machine Learning](https://sourestdeeds.github.io/pdf/math4ml.pdf)
