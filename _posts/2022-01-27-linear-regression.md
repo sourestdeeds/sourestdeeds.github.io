@@ -32,6 +32,7 @@ True, the line doesn't pass through every dot, but the line does clearly show th
 
 $$
 y = mx + c
+$$
 
 where:
 
