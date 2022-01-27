@@ -44,20 +44,20 @@ where:
 By convention in machine learning, you'll write the equation for a model slightly differently:
 
 $$
-y^' = b + w_1 x_1
+y^{'} = b + w_1 x_1
 $$
 
 where:
 
-- $y^'$ is the predicted [label](https://developers.google.com/machine-learning/crash-course/framing/ml-terminology#labels) (a desired output).
+- $y^{'}$ is the predicted [label](https://developers.google.com/machine-learning/crash-course/framing/ml-terminology#labels) (a desired output).
 - $b$ is the bias (the y-intercept), sometimes referred to as $w_0$.
 - $w_1$ is the weight of feature $1$. Weight is the same concept as the "slope" $m$  in the traditional equation of a line.
 - $x_1$ is a [feature](https://developers.google.com/machine-learning/crash-course/framing/ml-terminology#features) (a known input).
 
-To **infer** (predict) the temperature $y^'$ for a new chirps-per-minute value $x_1$, just substitute the $x_1$ value into this model.
+To **infer** (predict) the temperature $y^{'}$ for a new chirps-per-minute value $x_1$, just substitute the $x_1$ value into this model.
 
 Although this model uses only one feature, a more sophisticated model might rely on multiple features, each having a separate weight ($w_1$, $w_2$, etc.). For example, a model that relies on three features might look as follows:
 
 $$
-y^' = b + w_1 x_1 + w_2 x_2 + w_3 x_3
+y^{'} = b + w_1 x_1 + w_2 x_2 + w_3 x_3
 $$
