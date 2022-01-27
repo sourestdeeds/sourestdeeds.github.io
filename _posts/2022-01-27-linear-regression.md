@@ -38,7 +38,7 @@ where:
 - $y$ is the temperature in Celsius—the value we're trying to predict.
 - $m$ is the slope of the line.
 - $x$ is the number of chirps per minute—the value of our input feature.
-= $c$ is the y-intercept.
+- $c$ is the y-intercept.
 
 By convention in machine learning, you'll write the equation for a model slightly differently:
 
