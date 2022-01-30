@@ -20,7 +20,6 @@ permalink: /about/
 
 ### Certificates
 
-- [DataCamp](https://www.datacamp.com/profile/sourestdeeds)
 
 {% include image-gallery-rect.html folder="certificates" %}
 
