@@ -20,8 +20,9 @@ permalink: /about/
 
 ### Certificates
 
+{% include image-gallery-rect.html folder="certificates/datacamp" %}
 
-{% include image-gallery-rect.html folder="certificates" %}
+{% include image-gallery-rect.html folder="certificates/kaggle" %}
 
 ### Published Papers
 
