@@ -1,5 +1,5 @@
 ---
-title: 'Google Play Store Apps and Reviews'
+title: 'Google Play Store Reviews'
 tags: [datacamp, data science]
 layout: post
 mathjax: true
