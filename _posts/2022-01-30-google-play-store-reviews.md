@@ -43,131 +43,13 @@ apps.head()
 
 
 
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table>
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Unnamed: 0</th>
-      <th>App</th>
-      <th>Category</th>
-      <th>Rating</th>
-      <th>Reviews</th>
-      <th>Size</th>
-      <th>Installs</th>
-      <th>Type</th>
-      <th>Price</th>
-      <th>Content Rating</th>
-      <th>Genres</th>
-      <th>Last Updated</th>
-      <th>Current Ver</th>
-      <th>Android Ver</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0</td>
-      <td>Photo Editor &amp; Candy Camera &amp; Grid &amp; ScrapBook</td>
-      <td>ART_AND_DESIGN</td>
-      <td>4.1</td>
-      <td>159</td>
-      <td>19.0</td>
-      <td>10,000+</td>
-      <td>Free</td>
-      <td>0</td>
-      <td>Everyone</td>
-      <td>Art &amp; Design</td>
-      <td>January 7, 2018</td>
-      <td>1.0.0</td>
-      <td>4.0.3 and up</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>Coloring book moana</td>
-      <td>ART_AND_DESIGN</td>
-      <td>3.9</td>
-      <td>967</td>
-      <td>14.0</td>
-      <td>500,000+</td>
-      <td>Free</td>
-      <td>0</td>
-      <td>Everyone</td>
-      <td>Art &amp; Design;Pretend Play</td>
-      <td>January 15, 2018</td>
-      <td>2.0.0</td>
-      <td>4.0.3 and up</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2</td>
-      <td>U Launcher Lite – FREE Live Cool Themes, Hide ...</td>
-      <td>ART_AND_DESIGN</td>
-      <td>4.7</td>
-      <td>87510</td>
-      <td>8.7</td>
-      <td>5,000,000+</td>
-      <td>Free</td>
-      <td>0</td>
-      <td>Everyone</td>
-      <td>Art &amp; Design</td>
-      <td>August 1, 2018</td>
-      <td>1.2.4</td>
-      <td>4.0.3 and up</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>3</td>
-      <td>Sketch - Draw &amp; Paint</td>
-      <td>ART_AND_DESIGN</td>
-      <td>4.5</td>
-      <td>215644</td>
-      <td>25.0</td>
-      <td>50,000,000+</td>
-      <td>Free</td>
-      <td>0</td>
-      <td>Teen</td>
-      <td>Art &amp; Design</td>
-      <td>June 8, 2018</td>
-      <td>Varies with device</td>
-      <td>4.2 and up</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>4</td>
-      <td>Pixel Draw - Number Art Coloring Book</td>
-      <td>ART_AND_DESIGN</td>
-      <td>4.3</td>
-      <td>967</td>
-      <td>2.8</td>
-      <td>100,000+</td>
-      <td>Free</td>
-      <td>0</td>
-      <td>Everyone</td>
-      <td>Art &amp; Design;Creativity</td>
-      <td>June 20, 2018</td>
-      <td>1.1</td>
-      <td>4.4 and up</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
+|   | Unnamed: 0 |                                               App |       Category | Rating | Reviews | Size |    Installs | Type | Price | Content Rating |                    Genres |     Last Updated |        Current Ver |  Android Ver |   
+|--:|-----------:|--------------------------------------------------:|---------------:|-------:|--------:|-----:|------------:|-----:|------:|---------------:|--------------------------:|-----------------:|-------------------:|-------------:|
+| 0 | 0          | Photo Editor & Candy Camera & Grid & ScrapBook    | ART_AND_DESIGN | 4.1    | 159     | 19.0 | 10,000+     | Free | 0     | Everyone       | Art & Design              | January 7, 2018  | 1.0.0              | 4.0.3 and up |   |
+| 1 | 1          | Coloring book moana                               | ART_AND_DESIGN | 3.9    | 967     | 14.0 | 500,000+    | Free | 0     | Everyone       | Art & Design;Pretend Play | January 15, 2018 | 2.0.0              | 4.0.3 and up |   |
+| 2 | 2          | U Launcher Lite – FREE Live Cool Themes, Hide ... | ART_AND_DESIGN | 4.7    | 87510   | 8.7  | 5,000,000+  | Free | 0     | Everyone       | Art & Design              | August 1, 2018   | 1.2.4              | 4.0.3 and up |   |
+| 3 | 3          | Sketch - Draw & Paint                             | ART_AND_DESIGN | 4.5    | 215644  | 25.0 | 50,000,000+ | Free | 0     | Teen           | Art & Design              | June 8, 2018     | Varies with device | 4.2 and up   |  
+| 4 | 4          | Pixel Draw - Number Art Coloring Book             | ART_AND_DESIGN | 4.3    | 967     | 2.8  | 100,000+    | Free | 0     | Everyone       | Art & Design;Creativity   | June 20, 2018    | 1.1                | 4.4 and up   |  
 
 
 
@@ -604,137 +486,25 @@ apps_above_200[['Category', 'App', 'Price']]
 
 
 
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table>
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Category</th>
-      <th>App</th>
-      <th>Price</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>3327</th>
-      <td>FAMILY</td>
-      <td>most expensive app (H)</td>
-      <td>399.99</td>
-    </tr>
-    <tr>
-      <th>3465</th>
-      <td>LIFESTYLE</td>
-      <td>💎 I'm rich</td>
-      <td>399.99</td>
-    </tr>
-    <tr>
-      <th>3469</th>
-      <td>LIFESTYLE</td>
-      <td>I'm Rich - Trump Edition</td>
-      <td>400.00</td>
-    </tr>
-    <tr>
-      <th>4396</th>
-      <td>LIFESTYLE</td>
-      <td>I am rich</td>
-      <td>399.99</td>
-    </tr>
-    <tr>
-      <th>4398</th>
-      <td>FAMILY</td>
-      <td>I am Rich Plus</td>
-      <td>399.99</td>
-    </tr>
-    <tr>
-      <th>4399</th>
-      <td>LIFESTYLE</td>
-      <td>I am rich VIP</td>
-      <td>299.99</td>
-    </tr>
-    <tr>
-      <th>4400</th>
-      <td>FINANCE</td>
-      <td>I Am Rich Premium</td>
-      <td>399.99</td>
-    </tr>
-    <tr>
-      <th>4401</th>
-      <td>LIFESTYLE</td>
-      <td>I am extremely Rich</td>
-      <td>379.99</td>
-    </tr>
-    <tr>
-      <th>4402</th>
-      <td>FINANCE</td>
-      <td>I am Rich!</td>
-      <td>399.99</td>
-    </tr>
-    <tr>
-      <th>4403</th>
-      <td>FINANCE</td>
-      <td>I am rich(premium)</td>
-      <td>399.99</td>
-    </tr>
-    <tr>
-      <th>4406</th>
-      <td>FAMILY</td>
-      <td>I Am Rich Pro</td>
-      <td>399.99</td>
-    </tr>
-    <tr>
-      <th>4408</th>
-      <td>FINANCE</td>
-      <td>I am rich (Most expensive app)</td>
-      <td>399.99</td>
-    </tr>
-    <tr>
-      <th>4410</th>
-      <td>FAMILY</td>
-      <td>I Am Rich</td>
-      <td>389.99</td>
-    </tr>
-    <tr>
-      <th>4413</th>
-      <td>FINANCE</td>
-      <td>I am Rich</td>
-      <td>399.99</td>
-    </tr>
-    <tr>
-      <th>4417</th>
-      <td>FINANCE</td>
-      <td>I AM RICH PRO PLUS</td>
-      <td>399.99</td>
-    </tr>
-    <tr>
-      <th>8763</th>
-      <td>FINANCE</td>
-      <td>Eu Sou Rico</td>
-      <td>394.99</td>
-    </tr>
-    <tr>
-      <th>8780</th>
-      <td>LIFESTYLE</td>
-      <td>I'm Rich/Eu sou Rico/أنا غني/我很有錢</td>
-      <td>399.99</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
+|      |  Category |                                   App |  Price |
+|-----:|----------:|--------------------------------------:|-------:|
+| 3327 | FAMILY    | most expensive app (H)                | 399.99 |
+| 3465 | LIFESTYLE | 💎 I'm rich                            | 399.99 |
+| 3469 | LIFESTYLE | I'm Rich - Trump Edition              | 400.00 |
+| 4396 | LIFESTYLE | I am rich                             | 399.99 |
+| 4398 | FAMILY    | I am Rich Plus                        | 399.99 |
+| 4399 | LIFESTYLE | I am rich VIP                         | 299.99 |
+| 4400 | FINANCE   | I Am Rich Premium                     | 399.99 |
+| 4401 | LIFESTYLE | I am extremely Rich                   | 379.99 |
+| 4402 | FINANCE   | I am Rich!                            | 399.99 |
+| 4403 | FINANCE   | I am rich(premium)                    | 399.99 |
+| 4406 | FAMILY    | I Am Rich Pro                         | 399.99 |
+| 4408 | FINANCE   | I am rich (Most expensive app)        | 399.99 |
+| 4410 | FAMILY    | I Am Rich                             | 389.99 |
+| 4413 | FINANCE   | I am Rich                             | 399.99 |
+| 4417 | FINANCE   | I AM RICH PRO PLUS                    | 399.99 |
+| 8763 | FINANCE   | Eu Sou Rico                           | 394.99 |
+| 8780 | LIFESTYLE | I'm Rich/Eu sou Rico/أنا غني/我很有錢 | 399.99 |
 
 
 <br>
