@@ -58,7 +58,7 @@ apps.head()
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe">
+<table>
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -619,7 +619,7 @@ apps_above_200[['Category', 'App', 'Price']]
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe">
+<table>
   <thead>
     <tr style="text-align: right;">
       <th></th>

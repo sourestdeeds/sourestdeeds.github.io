@@ -50,7 +50,7 @@ nobel.head(n=6)
         text-align: right;
     }
 </style>
-<table border="1">
+<table>
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -313,7 +313,7 @@ nobel.head()
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe">
+<table>
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -504,7 +504,7 @@ prop_usa_winners.head()
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe">
+<table>
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -696,7 +696,7 @@ nobel[nobel['sex']=="Female"].nsmallest(1, 'year')
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe">
+<table>
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -802,7 +802,7 @@ nobel.groupby('full_name').filter(lambda x: len(x) >= 2)
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe">
+<table>
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -1309,7 +1309,7 @@ nobel.nsmallest(1, 'age')
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe">
+<table>
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -1384,7 +1384,7 @@ nobel.nsmallest(1, 'age')
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe">
+<table>
   <thead>
     <tr style="text-align: right;">
       <th></th>
