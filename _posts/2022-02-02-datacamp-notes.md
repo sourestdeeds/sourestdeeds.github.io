@@ -12,6 +12,19 @@ permalink: /blog/:title/
 {% assign date = page.date | date: "%Y-%m-%d" %}
 {% assign filename = page.title | remove: " -" | replace: " ", "-" | downcase %}
 
+***
+### EDA
+
+#### Distributions
+
+```python
+pip install empiricaldist
+```
+
+- **Probability Mass Function** is the probability that you get exactly $x$. 
+- **Cumulative Distribution Function** is the probability that you get a value $<=x$.
+
+***
 ### Decorators
 
 ```python
