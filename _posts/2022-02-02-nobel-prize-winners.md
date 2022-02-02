@@ -33,7 +33,7 @@ nobel = pd.read_csv('datasets/nobel.csv')
 nobel.head(n=6)
 ```
 
-
+<div class="table-wrapper" markdown="block">
 
 
 |   | year |   category |                                          prize |                                        motivation | prize_share | laureate_id | laureate_type |                    full_name | birth_date |         birth_city |     birth_country |  sex |  organization_name | organization_city | organization_country | death_date | death_city | death_country |   |
@@ -46,7 +46,7 @@ nobel.head(n=6)
 | 5 | 1901 | Physics    | The Nobel Prize in Physics 1901                | "in recognition of the extraordinary services ... | 1/1         | 1           | Individual    | Wilhelm Conrad Röntgen       | 1845-03-27 | Lennep (Remscheid) | Prussia (Germany) | Male | Munich University  | Munich            | Germany              | 1923-02-10 | Munich     | Germany       |   |
 
 
-
+</div>
 
 ```python
 %%nose
@@ -136,7 +136,7 @@ nobel['birth_country'].value_counts().head(10)
 nobel.head()
 ```
 
-
+<div class="table-wrapper" markdown="block">
 
 |   | year |   category |                                          prize |                                        motivation | prize_share | laureate_id | laureate_type |                    full_name | birth_date |        birth_city |    birth_country |  sex |  organization_name | organization_city | organization_country | death_date | death_city | death_country |   |
 |--:|-----:|-----------:|-----------------------------------------------:|--------------------------------------------------:|------------:|------------:|--------------:|-----------------------------:|-----------:|------------------:|-----------------:|-----:|-------------------:|------------------:|---------------------:|-----------:|-----------:|--------------:|---|
@@ -146,7 +146,7 @@ nobel.head()
 | 3 | 1901 | Peace      | The Nobel Peace Prize 1901                     | NaN                                               | 1/2         | 462         | Individual    | Jean Henry Dunant            | 1828-05-08 | Geneva            | Switzerland      | Male | NaN                | NaN               | NaN                  | 1910-10-30 | Heiden     | Switzerland   |   |
 | 4 | 1901 | Peace      | The Nobel Peace Prize 1901                     | NaN                                               | 1/2         | 463         | Individual    | Frédéric Passy               | 1822-05-20 | Paris             | France           | Male | NaN                | NaN               | NaN                  | 1912-06-12 | Paris      | France        |   |
 
-
+</div>
 
 
 ```python
@@ -186,7 +186,7 @@ prop_usa_winners = nobel.groupby('decade', as_index=False)['usa_born_winner'].me
 prop_usa_winners.head()
 ```
 
-
+<div class="table-wrapper" markdown="block">
 
 |   | decade | usa_born_winner |
 |--:|-------:|----------------:|
@@ -197,7 +197,7 @@ prop_usa_winners.head()
 | 4 | 1940   | 0.302326        |
 
 
-
+</div>
 
 ```python
 %%nose
@@ -333,12 +333,13 @@ def test_x_axis():
 nobel[nobel['sex']=="Female"].nsmallest(1, 'year')
 ```
 
-
+<div class="table-wrapper" markdown="block">
 
 |    | year | category |                           prize |                                        motivation | prize_share | laureate_id | laureate_type |                   full_name | birth_date | birth_city | ... |    sex | organization_name | organization_city | organization_country | death_date | death_city | death_country | usa_born_winner | decade | female_winner |   |
 |---:|-----:|---------:|--------------------------------:|--------------------------------------------------:|------------:|------------:|--------------:|----------------------------:|-----------:|-----------:|----:|-------:|------------------:|------------------:|---------------------:|-----------:|-----------:|--------------:|----------------:|-------:|--------------:|---|
 | 19 | 1903 | Physics  | The Nobel Prize in Physics 1903 | "in recognition of the extraordinary services ... | 1/4         | 6           | Individual    | Marie Curie, née Sklodowska | 1867-11-07 | Warsaw     | ... | Female | NaN               | NaN               | NaN                  | 1934-07-04 | Sallanches | France        | False           | 1900   | True          |   |
 
+</div>
 
 ```python
 %%nose
@@ -369,6 +370,7 @@ def test_Marie_was_selected():
 nobel.groupby('full_name').filter(lambda x: len(x) >= 2)
 ```
 
+<div class="table-wrapper" markdown="block">
 
 |     | year |  category |                             prize |                                        motivation | prize_share | laureate_id | laureate_type |                                         full_name | birth_date |   birth_city | ... |    sex |                            organization_name | organization_city |     organization_country | death_date |  death_city |            death_country | usa_born_winner | decade | female_winner |   |
 |----:|-----:|----------:|----------------------------------:|--------------------------------------------------:|------------:|------------:|--------------:|--------------------------------------------------:|-----------:|-------------:|----:|-------:|---------------------------------------------:|------------------:|-------------------------:|-----------:|------------:|-------------------------:|----------------:|-------:|--------------:|---|
@@ -387,7 +389,7 @@ nobel.groupby('full_name').filter(lambda x: len(x) >= 2)
 | 523 | 1981 | Peace     | The Nobel Peace Prize 1981        | NaN                                               | 1/1         | 515         | Organization  | Office of the United Nations High Commissioner... | NaN        | NaN          | ... | NaN    | NaN                                          | NaN               | NaN                      | NaN        | NaN         | NaN                      | False           | 1980   | False         |   |
 
 
-
+</div>
 
 ```python
 %%nose
@@ -532,6 +534,9 @@ display(nobel.nlargest(1, 'age'))
 # The youngest winner of a Nobel Prize as of 2016
 nobel.nsmallest(1, 'age')
 ```
+
+<div class="table-wrapper" markdown="block">
+
 |     | year |  category |                                             prize |                                        motivation | prize_share | laureate_id | laureate_type |      full_name | birth_date | birth_city | ... |       organization_name | organization_city |     organization_country | death_date |      death_city |            death_country | usa_born_winner | decade | female_winner |  age |   |
 |----:|-----:|----------:|--------------------------------------------------:|--------------------------------------------------:|------------:|------------:|--------------:|---------------:|-----------:|-----------:|----:|------------------------:|------------------:|-------------------------:|-----------:|----------------:|-------------------------:|----------------:|-------:|--------------:|-----:|---|
 | 793 | 2007 | Economics | The Sveriges Riksbank Prize in Economic Scienc... | "for having laid the foundations of mechanism ... | 1/3         | 820         | Individual    | Leonid Hurwicz | 1917-08-21 | Moscow     | ... | University of Minnesota | Minneapolis, MN   | United States of America | 2008-06-24 | Minneapolis, MN | United States of America | False           | 2000   | False         | 90.0 |   |
@@ -540,8 +545,7 @@ nobel.nsmallest(1, 'age')
 |----:|-----:|---------:|---------------------------:|--------------------------------------------------:|------------:|------------:|--------------:|-----------------:|-----------:|-----------:|----:|------------------:|------------------:|---------------------:|-----------:|-----------:|--------------:|----------------:|-------:|--------------:|-----:|---|
 | 885 | 2014 | Peace    | The Nobel Peace Prize 2014 | "for their struggle against the suppression of... | 1/2         | 914         | Individual    | Malala Yousafzai | 1997-07-12 | Mingora    | ... | NaN               | NaN               | NaN                  | NaN        | NaN        | NaN           | False           | 2010   | True          | 17.0 |   |
 
-
-
+</div>
 
 ```python
 %%nose

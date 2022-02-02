@@ -41,6 +41,7 @@ apps.head()
     Total number of apps in the dataset =  9659
 
 
+<div class="table-wrapper" markdown="block">
 
 
 |   | Unnamed: 0 |                                               App |       Category | Rating | Reviews | Size |    Installs | Type | Price | Content Rating |                    Genres |     Last Updated |        Current Ver |  Android Ver |   
@@ -51,6 +52,7 @@ apps.head()
 | 3 | 3          | Sketch - Draw & Paint                             | ART_AND_DESIGN | 4.5    | 215644  | 25.0 | 50,000,000+ | Free | 0     | Teen           | Art & Design              | June 8, 2018     | Varies with device | 4.2 and up   |  
 | 4 | 4          | Pixel Draw - Number Art Coloring Book             | ART_AND_DESIGN | 4.3    | 967     | 2.8  | 100,000+    | Free | 0     | Everyone       | Art & Design;Creativity   | June 20, 2018    | 1.1                | 4.4 and up   |  
 
+</div>
 
 
 ```python
@@ -484,7 +486,7 @@ apps_above_200 = popular_app_cats[popular_app_cats['Price']>200]
 apps_above_200[['Category', 'App', 'Price']]
 ```
 
-
+<div class="table-wrapper" markdown="block">
 
 |      |  Category |                                   App |  Price |
 |-----:|----------:|--------------------------------------:|-------:|
@@ -506,6 +508,7 @@ apps_above_200[['Category', 'App', 'Price']]
 | 8763 | FINANCE   | Eu Sou Rico                           | 394.99 |
 | 8780 | LIFESTYLE | I'm Rich/Eu sou Rico/أنا غني/我很有錢 | 399.99 |
 
+</div>
 
 <br>
 [![webp]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.webp#center)]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.webp)
