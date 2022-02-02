@@ -50,7 +50,7 @@ nobel.head(n=6)
         text-align: right;
     }
 </style>
-<table border="1" class="dataframe">
+<table border="1">
   <thead>
     <tr style="text-align: right;">
       <th></th>
