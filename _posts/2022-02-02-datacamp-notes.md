@@ -1,5 +1,5 @@
 ---
-title: 'Functions'
+title: 'DataCamp Notes'
 tags: [datacamp, data science]
 layout: post
 mathjax: true
