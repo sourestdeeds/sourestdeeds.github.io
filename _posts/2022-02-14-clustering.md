@@ -239,8 +239,8 @@ Nevertheless, I managed to list and review all the main clustering algorithms an
 
 You may also be interested in:
 
-[Supervised Learning algorithms cheat sheet](https://towardsdatascience.com/supervised-learning-algorithms-cheat-sheet-40009e7f29f5)
-[Anomaly detection cheat sheet](https://medium.com/@andimid/anomaly-detection-cheat-sheet-5502fc4f6bea)
-[Dimensionality reduction cheat sheet](https://towardsdatascience.com/dimensionality-reduction-cheatsheet-15060fee3aa)
+- [Supervised Learning algorithms cheat sheet](https://towardsdatascience.com/supervised-learning-algorithms-cheat-sheet-40009e7f29f5)
+- [Anomaly detection cheat sheet](https://medium.com/@andimid/anomaly-detection-cheat-sheet-5502fc4f6bea)
+- [Dimensionality reduction cheat sheet](https://towardsdatascience.com/dimensionality-reduction-cheatsheet-15060fee3aa)
 
 
