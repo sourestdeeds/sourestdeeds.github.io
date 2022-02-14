@@ -13,7 +13,6 @@ permalink: /blog/:title/
 {% assign filename = page.title | remove: " -" | replace: " ", "-" | downcase %}
 
 
-### Introduction
 
 *Supervised learning* is the machine learning task of learning a function that maps an input to an output based on example input-output pairs. 
 A supervised learning algorithm analyzes the training data and produces an inferred function, which can be used later for mapping new examples.
