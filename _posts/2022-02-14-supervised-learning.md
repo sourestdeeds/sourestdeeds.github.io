@@ -44,8 +44,8 @@ Classification algorithms can be also divided by the number of classes to classi
 
 Some algorithms are designed only for binary classification problems (*SVM* for example). So, they cannot be used for multi-class classification tasks directly. 
 Instead, heuristic methods can be used to split a multi-class classification problem into multiple binary classification datasets and train a binary classification model each:
-- **OvR** (one-vs-rest) - sometimes **OvA** (one-vs-all) - you have to train N classifiers for N classes, but on full dataset.
-- **OvO** (one-vs-one) - you have to train N*(N-1)/2 classifiers for N classes, but on subsamples from your dataset. Better suited for unbalanced samples.
+- **OvR** (one-vs-rest) - sometimes **OvA** (one-vs-all) - you have to train $N$ classifiers for $N$ classes, but on the full dataset.
+- **OvO** (one-vs-one) - you have to train $\frac{N(N-1)}{2}$ classifiers for $N$ classes, but on subsamples from your dataset. Better suited for unbalanced samples.
 
 Next, the following algorithms will be reviewed or mentioned (note, that *all of them solve both classification and regression task*, except of *Linear Regression (only Regression)* and *Logistic Regression (only Classification)*):
 - *Linear Regression*
