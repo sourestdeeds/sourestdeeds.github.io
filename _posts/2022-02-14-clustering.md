@@ -38,10 +38,7 @@ K-Means algorithm is based on the *centroid* concept. *Centroid* is a geometric 
 - *Update the clusters* — for each data point assign it a cluster number with the nearest centroid, and
 - *Update the clusters' centroids* — calculate the new mean value of the cluster elements to move centroids.
 
-<br>
-[![webm]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.webm#center)]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.webm)
-{% assign counter = counter | plus: 1 %} 
-<br>
+<video autoplay loop muted playsinline><source src="https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2022-02-14-clustering/2.webm#center" type="video/webm"></video>
 
 The strengths and weaknesses of the algorithm are intuitive. It is simple and fast, but it requires initial knowledge about the number of clusters. It also does not detect clusters of complex shapes well and can result in a local solution. To choose a good number of clusters we can use a sum of squared distances from data points to cluster centroids as a metric and choose the number when this metric stops falling fast ([elbow method](https://en.wikipedia.org/wiki/Elbow_method_(clustering))). To find a globally optimal solution, you can run the algorithm several times and choose the best result (n_init parameter in sklearn).
 
