@@ -168,7 +168,7 @@ The nearest neighbor algorithm, as a representative of *metric methods*, makes t
 - Continuity hypothesis for *regression* - close objects correspond to close answers, and
 - Compactness hypothesis for *classification* - close objects correspond to the same class.
 
-For a new object we have to find k nearest neighbors. Definition of *nearest* depends on the distance metric that we want to use (Manhattan, Euclidean etc.).
+For a new object we have to find $k$ nearest neighbors. Definition of *nearest* depends on the distance metric that we want to use (Manhattan, Euclidean etc.).
 
 <br>
 [![webp]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.webp#center)]({{ link }}{{ date }}-{{ filename }}/{{ counter }}.webp)
