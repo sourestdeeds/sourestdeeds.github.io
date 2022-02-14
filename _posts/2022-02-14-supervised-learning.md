@@ -76,7 +76,7 @@ Other popular version of this algorithm is **Bayesian Linear Regression**, that 
 
 One of the most efficient way to avoid overfitting and outliers influence with regression is **regularization**. *Regularization term* is added to loss function so regression coefficients have to be as little as possible. 
 - **LASSO regression** - implements L1 regularization, + $\lvert coeff \rvert$.
-- **Ridge regression** - implements L2 regularization, + coeff${}^2$. Also known as *Tikhonov regularization*.
+- **Ridge regression** - implements L2 regularization, + ${coeff}^2$. Also known as *Tikhonov regularization*.
 - **Elastic Net regression** - implements both L1 and L2 regularization.
 
 Regularized regression can also be used like *feature selection* tool. Thanks to some properties, LASSO regression, for example, can delete insignificant features (set their coefficients to zero).
