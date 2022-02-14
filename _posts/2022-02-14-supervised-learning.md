@@ -70,12 +70,12 @@ In general, this is the problem of *minimizing the loss function*, so *the optim
 
 One of the important properties of linear regression is that optimal parameters (according to *MSE*, again, because of *maximum likelihood estimation*) can be calculated with simple **Normal Equation**. But this method does not scale well with large number of features, so any other optimization method can be applied instead.
 
-If the data dependences is more complex, than a straight line, we can add powers of each feature as new features (*PolynomialFeatures* class from *sklearn* can be used) and then train a Linear Regression model. This technique is called **Polynomial Regression**. Process of creating new features (e.g. x^n, or log(x), e^x etc.) is called *feature engineering* and can significantly increase linear model performance.
+If the data dependences is more complex, than a straight line, we can add powers of each feature as new features (*PolynomialFeatures* class from *sklearn* can be used) and then train a Linear Regression model. This technique is called **Polynomial Regression**. Process of creating new features (e.g. $x^{n}$, or $\log{x}$, $e^{x}$ etc.) is called *feature engineering* and can significantly increase linear model performance.
 
 Other popular version of this algorithm is **Bayesian Linear Regression**, that predicts not only values, but also it's probabilities, by building a *confidence interval*. This is possible thanks to *Bayes' theorem*.
 
 One of the most efficient way to avoid overfitting and outliers influence with regression is **regularization**. *Regularization term* is added to loss function so regression coefficients have to be as little as possible. 
-- **LASSO regression** - implements L1 regularization, + |coeff|.
+- **LASSO regression** - implements L1 regularization, + $|coeff|$.
 - **Ridge regression** - implements L2 regularization, + coeff^2. Also known as *Tikhonov regularization*.
 - **Elastic Net regression** - implements both L1 and L2 regularization.
 
