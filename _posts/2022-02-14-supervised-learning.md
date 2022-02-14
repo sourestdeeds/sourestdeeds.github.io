@@ -243,7 +243,7 @@ Ensemble methods (also **ensemble learning**) are techniques that create multipl
 
 **Bagging** stands for *bootstrap aggregating*.
 
-When we have a train set X_train $(N \times M) N$ data points and $M$ features then we train $n$ trees on $X$, where $X (N \times M)$ is a random subsample of $X_train$ with the same size.
+When we have a train set $X_{train}$ $(N \times M) N$ data points and $M$ features then we train $n$ trees on $X$, where $X (N \times M)$ is a random subsample of $X_{train}$ with the same size.
 When $X$ is formed **with replacement** algorithm is called **bagging**, and when $X$ is formed **without replacement** algorithm is called **pasting**.
 When this model does prediction, really, it gets $n$ predictions from $n$ different models and aggregates them.
 *Classification* is computed from a simple majority vote of the models and *regression* is computed from a mean value of the models' predictions.
@@ -284,7 +284,7 @@ If we are using bagging, there is a chance that a sample would never be selected
 
 Despite the fact that *bagging* can be applied with all types of algorithms, **bagging over decision trees** has become widespread. Since they are unstable and variable, a good result is obtained. In fact, **random forest** is **bagging over decision trees with random subspace method**.
 
-When we have train set *X_train* $N \times M$ ($N$ data points and $M$ features) then we train $n$ trees on $X$, where $X (N \times m)$ is random subsample of *X_train* with replacement, but we also take a random subset of the $m (m < M)$ features. This is called the *Random Subspace Method*.
+When we have train set $X_{train}$ $N \times M$ ($N$ data points and $M$ features) then we train $n$ trees on $X$, where $X (N \times m)$ is random subsample of $X_{train}$ with replacement, but we also take a random subset of the $m (m < M)$ features. This is called the *Random Subspace Method*.
 When this model does prediction, really, it gets $n$ predictions from $n$ different models and aggregates them.
 *Classification* is computed from a simple majority vote of the models and *regression* is computed from a mean value of the models' predictions.
 
