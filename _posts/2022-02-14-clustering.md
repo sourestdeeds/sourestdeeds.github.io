@@ -220,6 +220,7 @@ Pros:
 - Perfectly deals with datasets that were generated from a mixture of Gaussian distributions with different shapes and sizes;
 - At the same time solves density estimation and anomaly detection tasks;
 - Is a generative model, so can generate new instances.
+
 Cons:
 - Knowledge about the number of clusters is necessary and must be specified as a parameter (not in the case of Bayesian GMM);
 - Expectation Maximization algorithm can result in poor local solutions, so it needs to be run several times;
