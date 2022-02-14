@@ -1,5 +1,5 @@
 ---
-title: 'Clustering Cheat Sheet'
+title: 'Clustering'
 tags: [cheat sheet, data science]
 layout: post
 mathjax: true
