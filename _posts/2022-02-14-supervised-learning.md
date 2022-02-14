@@ -151,8 +151,8 @@ One-class SVM also can be used for the *Anomaly Detection* problem.
 
 **Main hyperparameters**:
 - kernel type
-- regularization parameter C - a penalty for each misclassified data point (usually 0.1 < C < 100)
-- regularization parameter gamma - controls regions separating different classes. Large gamma - too specific class regions (overfitting). (usually 0.0001 < gamma < 10)
+- regularization parameter $C$ - a penalty for each misclassified data point (usually 0.1 < $C$ < 100)
+- regularization parameter $\gamma$ - controls regions separating different classes. Large $\gamma$ - too specific class regions (overfitting). (usually 0.0001 < $\gamma$ < 10)
 
 **Pros**:
 + One of the most powerful and flexible models
@@ -243,9 +243,9 @@ Ensemble methods (also **ensemble learning**) are techniques that create multipl
 
 **Bagging** stands for *bootstrap aggregating*.
 
-When we have a train set `X_train (N x M) N data points and M features` then we train `n` trees on `X`, where `X (N x M)` is a random subsample of `X_train` with the same size.
-When `X` is formed **with replacement** algorithm is called **bagging**, and when `X` is formed **without replacement** algorithm is called **pasting**.
-When this model does prediction, really, it gets `n` predictions from `n` different models and aggregates them.
+When we have a train set X_train $(N x M) N$ data points and $M$ features then we train $n$ trees on $X$, where $X (N x M)$ is a random subsample of $X_train$ with the same size.
+When $X$ is formed **with replacement** algorithm is called **bagging**, and when $X$ is formed **without replacement** algorithm is called **pasting**.
+When this model does prediction, really, it gets $n$ predictions from $n$ different models and aggregates them.
 *Classification* is computed from a simple majority vote of the models and *regression* is computed from a mean value of the models' predictions.
 
 <br>
@@ -284,8 +284,8 @@ If we are using bagging, there is a chance that a sample would never be selected
 
 Despite the fact that *bagging* can be applied with all types of algorithms, **bagging over decision trees** has become widespread. Since they are unstable and variable, a good result is obtained. In fact, **random forest** is **bagging over decision trees with random subspace method**.
 
-When we have train set `X_train N x M (N data points and M features)` then we train `n` trees on `X`, where `X (N x m)` is random subsample of `X_train` with replacement, but we also take a random subset of the `m (m < M)` features. This is called the *Random Subspace Method*.
-When this model does prediction, really, it gets `n` predictions from `n` different models and aggregates them.
+When we have train set X_train $N x M$ ($N$ data points and $M$ features) then we train $n$ trees on $X$, where $X (N x m)$ is random subsample of X_train with replacement, but we also take a random subset of the $m (m < M)$ features. This is called the *Random Subspace Method*.
+When this model does prediction, really, it gets $n$ predictions from $n$ different models and aggregates them.
 *Classification* is computed from a simple majority vote of the models and *regression* is computed from a mean value of the models' predictions.
 
 This approach allows **to leave the same bias, but decrease the variance** thanks to *Central Limit Theorem*.
@@ -296,7 +296,7 @@ As known **Isolation Forest** algorithm also can be used for the *Anomaly detect
 
 **Main hyperparameters**:
 - n_estimators - the number of trees in the ensemble - the more the better
-- max_features - the number of features to draw from train set to train each base tree - `n/3` for regression and `sqrt(n)` for classification is recommended
+- max_features - the number of features to draw from train set to train each base tree - $n/3$ for regression and $\sqrt{n}$ for classification is recommended
 - max_depth - the maximum depth of the tree
 - min_sample_leaf - the minimum number of samples required to split an internal node
 
@@ -354,7 +354,7 @@ Since the main implementations of boosting still use decision trees as basic mod
 ### Stacking
 
 The architecture of a stacking model involves **two or more base models**, often referred to as *level-0 models*, and a **meta-model that combines the predictions of the base models**, referred to as a *level-1 model*.
-- *Level-0 Models (Base-Models)*: Training data is divided into `K` folds. Then `K` models train on the `K-1` folds each.
+- *Level-0 Models (Base-Models)*: Training data is divided into $K$ folds. Then $K$ models train on the K-1 folds each.
 - *Level-1 Model (Meta-Model)*: Model that learns how to combine the predictions of the base models in the best possible way.
 
 <br>
