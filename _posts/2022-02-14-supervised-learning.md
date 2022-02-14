@@ -39,8 +39,8 @@ Classification algorithms can be also divided to **hard** and **soft**:
 Classification algorithms can be also divided by the number of classes to classify:
 - **Binary classification** - only two classes.
 - **Multiclass classification** - more than two classes.
-  - **Multilabel classification** (Multilabel-multiclass) - multiple classes, but classes are binary (the presence of people in the image). Result - [0, 0, 1] or [1, 0, 1].
-  - **Multioutput classification** (Multioutput-multiclass) also known as **multitask classification** - multiple classes, but classes are not binary (predict the number of items). Result - [5, 0, 1] or [7, 0, 0].
+  - **Multilabel classification** (Multilabel-multiclass) - multiple classes, but classes are binary (the presence of people in the image). Result - $[0, 0, 1]$ or $[1, 0, 1]$.
+  - **Multioutput classification** (Multioutput-multiclass) also known as **multitask classification** - multiple classes, but classes are not binary (predict the number of items). Result - $[5, 0, 1]$ or $[7, 0, 0]$.
 
 Some algorithms are designed only for binary classification problems (*SVM* for example). So, they cannot be used for multi-class classification tasks directly. 
 Instead, heuristic methods can be used to split a multi-class classification problem into multiple binary classification datasets and train a binary classification model each:
@@ -75,7 +75,7 @@ If the data dependences is more complex, than a straight line, we can add powers
 Other popular version of this algorithm is **Bayesian Linear Regression**, that predicts not only values, but also it's probabilities, by building a *confidence interval*. This is possible thanks to *Bayes' theorem*.
 
 One of the most efficient way to avoid overfitting and outliers influence with regression is **regularization**. *Regularization term* is added to loss function so regression coefficients have to be as little as possible. 
-- **LASSO regression** - implements L1 regularization, + $|coeff|$.
+- **LASSO regression** - implements L1 regularization, + $\lvert coeff \rvert$.
 - **Ridge regression** - implements L2 regularization, + coeff${}^2$. Also known as *Tikhonov regularization*.
 - **Elastic Net regression** - implements both L1 and L2 regularization.
 
@@ -175,10 +175,10 @@ For a new object we have to find k nearest neighbors. Definition of *nearest* de
 {% assign counter = counter | plus: 1 %} 
 <br>
 
-The most important hyperparameter is number of neighbors - k. A good initial approximation of k is to set *k to square root of data points number*, but, of course, k can be found with *Cross Validation*. *Classification* then is computed from a simple majority vote of the nearest neighbors of each point, *regression* - from a mean value of the nearest neighbors of each point.
+The most important hyperparameter is number of neighbors - $k$. A good initial approximation of $k$ is to set *k to square root of data points number*, but, of course, $k$ can be found with *Cross Validation*. *Classification* then is computed from a simple majority vote of the nearest neighbors of each point, *regression* - from a mean value of the nearest neighbors of each point.
 
 **Main hyperparameters**:
-- k - number of neighbors
+- $k$ - number of neighbors
 - distance metric
 
 **Pros**:
@@ -243,7 +243,7 @@ Ensemble methods (also **ensemble learning**) are techniques that create multipl
 
 **Bagging** stands for *bootstrap aggregating*.
 
-When we have a train set X_train $(N x M) N$ data points and $M$ features then we train $n$ trees on $X$, where $X (N x M)$ is a random subsample of $X_train$ with the same size.
+When we have a train set X_train $(N \times M) N$ data points and $M$ features then we train $n$ trees on $X$, where $X (N \times M)$ is a random subsample of $X_train$ with the same size.
 When $X$ is formed **with replacement** algorithm is called **bagging**, and when $X$ is formed **without replacement** algorithm is called **pasting**.
 When this model does prediction, really, it gets $n$ predictions from $n$ different models and aggregates them.
 *Classification* is computed from a simple majority vote of the models and *regression* is computed from a mean value of the models' predictions.
@@ -263,9 +263,9 @@ If we are using bagging, there is a chance that a sample would never be selected
 
 **Main hyperparameters**:
 - type of models
-- n_estimators - the number of models in the ensemble
-- max_samples - the number of samples to take from train set to train each base model
-- max_features - the number of features to take from train set to train each base model
+- **n_estimators** - the number of models in the ensemble
+- **max_samples** - the number of samples to take from train set to train each base model
+- **max_features** - the number of features to take from train set to train each base model
 
 **Pros**:
 + Very good quality
@@ -284,7 +284,7 @@ If we are using bagging, there is a chance that a sample would never be selected
 
 Despite the fact that *bagging* can be applied with all types of algorithms, **bagging over decision trees** has become widespread. Since they are unstable and variable, a good result is obtained. In fact, **random forest** is **bagging over decision trees with random subspace method**.
 
-When we have train set X_train $N x M$ ($N$ data points and $M$ features) then we train $n$ trees on $X$, where $X (N x m)$ is random subsample of X_train with replacement, but we also take a random subset of the $m (m < M)$ features. This is called the *Random Subspace Method*.
+When we have train set *X_train* $N \times M$ ($N$ data points and $M$ features) then we train $n$ trees on $X$, where $X (N \times m)$ is random subsample of *X_train* with replacement, but we also take a random subset of the $m (m < M)$ features. This is called the *Random Subspace Method*.
 When this model does prediction, really, it gets $n$ predictions from $n$ different models and aggregates them.
 *Classification* is computed from a simple majority vote of the models and *regression* is computed from a mean value of the models' predictions.
 
@@ -295,10 +295,10 @@ As known **Isolation Forest** algorithm also can be used for the *Anomaly detect
 **Inherits the pros and cons of bagging**.
 
 **Main hyperparameters**:
-- n_estimators - the number of trees in the ensemble - the more the better
-- max_features - the number of features to draw from train set to train each base tree - $n/3$ for regression and $\sqrt{n}$ for classification is recommended
-- max_depth - the maximum depth of the tree
-- min_sample_leaf - the minimum number of samples required to split an internal node
+- **n_estimators** - the number of trees in the ensemble - the more the better
+- **max_features** - the number of features to draw from train set to train each base tree - $n/3$ for regression and $\sqrt{n}$ for classification is recommended
+- **max_depth** - the maximum depth of the tree
+- **min_sample_leaf** - the minimum number of samples required to split an internal node
 
 ### Extra Trees
 
