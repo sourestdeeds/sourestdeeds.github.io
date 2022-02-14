@@ -194,7 +194,7 @@ Gaussian Mixture Models (GMM) is a probabilistic algorithm that can solve as man
 
 This method is based on the Expectation Maximization algorithm and assumes that data points were generated from a group (mixture) of Gaussian distributions. This algorithm can result in poor local solutions, so it needs to be run several times keeping only the best solution (n_init parameter in sklearn).
 
-It is known that in the general case the Gaussian distribution has two parameters: a vector of the mean $\mu$ and a matrix of variance //(\sigma^{2}//). Then, if it is known that the data can be divided into N clusters in M-dimensional space, the task of the algorithm is to select $N\mu$ vectors (with M elements) and $N\sigma^{2}$ matrices (with MxM elements).
+It is known that in the general case the Gaussian distribution has two parameters: a vector of the mean $\mu$ and a matrix of variance $\sigma^{2}$. Then, if it is known that the data can be divided into N clusters in M-dimensional space, the task of the algorithm is to select $N\mu$ vectors (with M elements) and $N\sigma^{2}$ matrices (with MxM elements).
 
 In the case of one-dimensional space, both $\mu$ and //(\sigma^{2}//) are scalars (single numbers).
 
