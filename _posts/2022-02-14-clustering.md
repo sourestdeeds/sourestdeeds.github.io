@@ -37,10 +37,10 @@ The clustering task is probably the most important in unsupervised learning, sin
 K-Means algorithm is based on the *centroid* concept. *Centroid* is a geometric center of a cluster (mean of coordinates of all cluster points). First, centroids are initialized randomly (this is the basic option, but there are other initialization techniques). After that, we iteratively do the two following steps, while centroids are moving:
 - *Update the clusters* — for each data point assign it a cluster number with the nearest centroid, and
 - *Update the clusters' centroids* — calculate the new mean value of the cluster elements to move centroids.
-
+<br>
 <video autoplay loop muted playsinline><source src="https://raw.githubusercontent.com/sourestdeeds/sourestdeeds.github.io/main/_posts/2022-02-14-clustering/2.webm#center" type="video/webm"></video>
 {% assign counter = counter | plus: 1 %} 
-
+<br>
 The strengths and weaknesses of the algorithm are intuitive. It is simple and fast, but it requires initial knowledge about the number of clusters. It also does not detect clusters of complex shapes well and can result in a local solution. To choose a good number of clusters we can use a sum of squared distances from data points to cluster centroids as a metric and choose the number when this metric stops falling fast ([elbow method](https://en.wikipedia.org/wiki/Elbow_method_(clustering))). To find a globally optimal solution, you can run the algorithm several times and choose the best result (n_init parameter in sklearn).
 
 A speeded version of this algorithm is **Mini Batch K-Means**. In that case, we use a random subsample instead of the whole dataset for calculations. There are a lot of other modifications, and many of them are implemented in sklearn.
