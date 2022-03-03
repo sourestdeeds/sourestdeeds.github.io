@@ -41,3 +41,7 @@ permalink: /links/
 
 - [*Bishop* - Pattern Recognition and Machine Learning](https://sourestdeeds.github.io/pdf/bishop-pattern-recognition-and-ml.pdf)
 - [*Mackay* - Information Theory, Inference and Learning Algorithms](https://sourestdeeds.github.io/pdf/information-theory.pdf)
+
+### To Read
+- [Face data](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html)
+- [BLR](https://towardsdatascience.com/applied-bayesian-inference-with-pymc3-and-bambi-pt-3-d4bfb3211509)
