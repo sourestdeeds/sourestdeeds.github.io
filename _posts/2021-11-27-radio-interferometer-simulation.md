@@ -17,14 +17,14 @@ permalink: /blog/:title/
 {% assign counter = counter | plus: 1 %} 
 <br>
 
-The VLA hosts 27 antennas, with each one comprising of a 25 meter dish housing 8 receivers with a weight of 209 metric tonnes. The dishes move across three arms of a track, on an altitude-azimuth mount, in the shape of a Y configuration. Using the specially designed lifting train (Heins Train), the array can extend and contract to four different configurations throughout the course of 16 months, allowing aperture synthesis interferometry of up to \\( 351 \\) baselines.  At its maximum, the extension is akin to the optical zoom on a camera, able to resolve detail across further distance. In this configuration, the VLA lengthens each of its legs from two-thirds of a mile to 23 miles long. Configuration A is the largest, and for this project we will be working with the smallest of the list, configuration D.
+The VLA hosts 27 antennas, with each one comprising of a 25 meter dish housing 8 receivers with a weight of 209 metric tonnes. The dishes move across three arms of a track, on an altitude-azimuth mount, in the shape of a Y configuration. Using the specially designed lifting train (Heins Train), the array can extend and contract to four different configurations throughout the course of 16 months, allowing aperture synthesis interferometry of up to $ 351 $ baselines.  At its maximum, the extension is akin to the optical zoom on a camera, able to resolve detail across further distance. In this configuration, the VLA lengthens each of its legs from two-thirds of a mile to 23 miles long. Configuration A is the largest, and for this project we will be working with the smallest of the list, configuration D.
 
 ### Definitions
-The first step is to import the data for the EVLA in D-Config. The \\( x \\) and \\( y \\) coordinates are cycled through to find all unique basline pairs possible. In this case, the VLA has 27 stations which corresponds directly to \\( 351 \\) baselines. The general formula for this relationship is \\( \frac{1}{2}N(N-1) \\).
+The first step is to import the data for the EVLA in D-Config. The $ x $ and $ y $ coordinates are cycled through to find all unique basline pairs possible. In this case, the VLA has 27 stations which corresponds directly to $ 351 $ baselines. The general formula for this relationship is $ \frac{1}{2}N(N-1) $.
 
-### **Baseline Visibility**: \\( V(X,Y) \\)
+### **Baseline Visibility**: $ V(X,Y) $
 
-The baseline station coordinates \\( V(X,Y) \\) are given by the unique differences, where \\( xyz \\) in the following represents the difference in \\( x \\), \\( y \\) and \\( z \\) respectively.
+The baseline station coordinates $ V(X,Y) $ are given by the unique differences, where $ xyz $ in the following represents the difference in $ x $, $ y $ and $ z $ respectively.
 
 $$    
 \begin{equation}
@@ -38,11 +38,11 @@ xyz_{m,1} & xyz_{m,2} & xyz_{m,3} & 0
 \end{equation}
 $$
 
-\\( V(X,Y) \\) then represents a \\( 351 \times 3 \\) array containing unique cyclic pairs of the baseline coordinate differences (\\( X \\),\\( Y \\) and \\( Z \\)) derived from the differences of the antenna coordinates \\( x \\), \\( y \\) and \\( z \\).
+$ V(X,Y) $ then represents a $ 351 \times 3 $ array containing unique cyclic pairs of the baseline coordinate differences ($ X $,$ Y $ and $ Z $) derived from the differences of the antenna coordinates $ x $, $ y $ and $ z $.
 
-### **UV Visibility**: \\( V(X,Y) \to V(u,v) \\)
+### **UV Visibility**: $ V(X,Y) \to V(u,v) $
 
-The transformation to uv coordinates \\( V(u,v) \\) is given by:
+The transformation to uv coordinates $ V(u,v) $ is given by:
 
 $$
 \begin{equation}
@@ -66,9 +66,9 @@ Z
 \end{equation}
 $$
 
-### **Sampled Grid**: \\( S(u,v) \to s(l,m) \\)
+### **Sampled Grid**: $ S(u,v) \to s(l,m) $
 
-Plotting the *UV Visibilities* over the *hour angle* \\( H \\) will give the *UV Coverage* \\( V(u,v) \\) over the course of earths rotation. To create the *Dirty Beam* \\( s(l,m) \\) we then need to map this function to a *Sampled Grid*, \\( S(u,v) \\). This is achieved via a Fourier transform. The completely filled in visibility plane is obtained via:
+Plotting the *UV Visibilities* over the *hour angle* $ H $ will give the *UV Coverage* $ V(u,v) $ over the course of earths rotation. To create the *Dirty Beam* $ s(l,m) $ we then need to map this function to a *Sampled Grid*, $ S(u,v) $. This is achieved via a Fourier transform. The completely filled in visibility plane is obtained via:
 
 
 $$\begin{aligned}
@@ -76,9 +76,9 @@ S(u,v) \to s(l,m) &= \mathcal{F}\left(\sum_k A_k \delta(l-l_k,m-m_k)\right) \\ &
 \end{aligned}$$
 
 
-### **True Image**: \\( T(l,m) \\)
+### **True Image**: $ T(l,m) $
 
-The 2D Fourier transform, where \\( T(l,m) \\) is the *True Image*, is
+The 2D Fourier transform, where $ T(l,m) $ is the *True Image*, is
 
 
 $$\begin{equation}
@@ -86,7 +86,7 @@ T(l,m) = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} V(u,v) e^{2\pi i(ul+vm)
 \end{equation}$$
 
 
-With Euler's formula \\( e^{ix} = \cos x + i \sin x \\) we can expand this to, in discrete form
+With Euler's formula $ e^{ix} = \cos x + i \sin x $ we can expand this to, in discrete form
 
 
 $$\begin{aligned}
@@ -100,13 +100,13 @@ $$\begin{aligned}
 V(u,v) = \sum_{l=-1}^{1} \sum_{m=-1}^{1} T(l,m) (\cos(2\pi(ul+vm)) - &\cdots \\ \cdots - i\sin(2\pi(ul+vm))) \,\Delta l\,\Delta &m.
 \end{aligned}$$
 
-### **Convolution Theorem**: \\( s(l,m)*T(l,m) = T^{D}(l,m) \\)
+### **Convolution Theorem**: $ s(l,m)*T(l,m) = T^{D}(l,m) $
 
-The *Dirty Beam* \\( s(l,m) \\) is then convoluted with the *True Image* \\( T(l,m) \\) to create the *Dirty Image* \\( T^{D}(l,m) \\)
+The *Dirty Beam* $ s(l,m) $ is then convoluted with the *True Image* $ T(l,m) $ to create the *Dirty Image* $ T^{D}(l,m) $
 
 ### Primary Beam Width
 
-The main beam *full-width at half maximum* (FWHM) beam width \\( \theta_{PB} \\) defines the region on the sky over which the bandwidth smearing occurs. We define the *Aperture Efficiency* as \\( \eta \simeq\tfrac{1}{\sqrt{\ln{2}}} \\), where the *Primary Beam* becomes
+The main beam *full-width at half maximum* (FWHM) beam width $ \theta_{PB} $ defines the region on the sky over which the bandwidth smearing occurs. We define the *Aperture Efficiency* as $ \eta \simeq\tfrac{1}{\sqrt{\ln{2}}} $, where the *Primary Beam* becomes
 
 $$
 \begin{equation}
@@ -126,7 +126,7 @@ $$
 
 ### Fringe Period
 
-For a source at beam half power, \\( \theta = \tfrac{\lambda}{D} \\).  At that radius
+For a source at beam half power, $ \theta = \tfrac{\lambda}{D} $.  At that radius
 
 $$
 \begin{equation}
@@ -134,16 +134,16 @@ t = \frac{D}{B_{max}\omega_{E}}
 \end{equation}
 $$
 
-where \\( \omega_{E} = 7.5\times 10^{-5} \\)rads\\( ^{-1} \\).
+where $ \omega_{E} = 7.5\times 10^{-5} $rads$ ^{-1} $.
 
 
 |Variable      |        Name                                                |
 | ---          | :-                                                         |
-  |\\( \eta \\)         |       Illumination Taper Factor (Aperture Efficiency)                              |
- |\\( B_{max} \\)           |    Maximum Baseline Difference                            | 
-  |\\( D \\)           |    Antenna Diameter                            |   
-   |\\( \lambda \\)          |    Observation Wavelength                            |   
-  |\\( \omega_{E} \\)            |   Source Rotation Rate in the Sky                            |   
+  |$ \eta $         |       Illumination Taper Factor (Aperture Efficiency)                              |
+ |$ B_{max} $           |    Maximum Baseline Difference                            | 
+  |$ D $           |    Antenna Diameter                            |   
+   |$ \lambda $          |    Observation Wavelength                            |   
+  |$ \omega_{E} $            |   Source Rotation Rate in the Sky                            |   
 
 ### Global Variables and Functions
 
@@ -329,15 +329,15 @@ def import_file_VLA(file):
 
 |Variable      |        Name                                                |
 | ---          | ---                                                         |
-  | \\( xyz \\)        |       Station Coordinates                              |
- | \\( XYZ \\)           |    Baseline Coordinate Differences: \\(V(X,Y)\\)        |
- |        \\( uvw \\)          |    UV Coordinates \\( V(u,v)\\)               |
-|\\( DEC \\)            |        Declination                             |
-|\\( H\\)         |        Hour Angle Sample Array                     |       
-| \\( T\\)            |        True Image: \\(T(u,v)\\)                     |       
-|\\( S\\)             |        Sample Grid: \\(S(u,v)\\)                        |        
-|\\(s\\)             |        Fourier Transformed Sample Grid: \\(s(l,m)\\)          |     
-|\\(sT\\)           |        True Image Convolved with Sample Grid: \\(T^{D}(l,m)\\)  |         
+  | $ xyz $        |       Station Coordinates                              |
+ | $ XYZ $           |    Baseline Coordinate Differences: $V(X,Y)$        |
+ |        $ uvw $          |    UV Coordinates $ V(u,v)$               |
+|$ DEC $            |        Declination                             |
+|$ H$         |        Hour Angle Sample Array                     |       
+| $ T$            |        True Image: $T(u,v)$                     |       
+|$ S$             |        Sample Grid: $S(u,v)$                        |        
+|$s$             |        Fourier Transformed Sample Grid: $s(l,m)$          |     
+|$sT$           |        True Image Convolved with Sample Grid: $T^{D}(l,m)$  |         
 
 
 
