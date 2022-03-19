@@ -6,7 +6,6 @@ mathjax: false
 permalink: /about/
 ---
 
-
 <div id="adobe-dc-view" style="width: 100%;"></div>
 <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
 <script type="text/javascript">
@@ -15,7 +14,7 @@ permalink: /about/
 		adobeDCView.previewFile({
 			content:{location: {url: "https://sourestdeeds.github.io/pdf/stephen-charles-cv.pdf"}},
 			metaData:{fileName: "stephen-charles-cv.pdf"}
-		}, {embedMode: "IN_LINE", showDownloadPDF:True, showPrintPDF:True});
+		}, {embedMode: "IN_LINE"});
 	});
 </script>
 
