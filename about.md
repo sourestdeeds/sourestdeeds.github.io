@@ -14,7 +14,7 @@ permalink: /about/
 		adobeDCView.previewFile({
 			content:{location: {url: "https://sourestdeeds.github.io/pdf/stephen-charles-cv.pdf"}},
 			metaData:{fileName: "stephen-charles-cv.pdf"}
-		}, {embedMode: "LIGHTBOX", showPageControls:False, showPrintPDF:True, showDownloadPDF:True});
+		}, {embedMode: "LIGHT_BOX", showPageControls:False, showPrintPDF:True, showDownloadPDF:True});
 	});
 </script>
 
