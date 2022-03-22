@@ -18,6 +18,8 @@ permalink: /about/
 	});
 </script>
 
+<iframe src="https://sourestdeeds.github.io/pdf/stephen-charles-cv.pdf"></iframe>
+
 ### Certificates
 
 {% include image-gallery-rect.html folder="certificates/datacamp" %}
