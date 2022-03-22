@@ -15,9 +15,11 @@ permalink: /about/
 #}, {embedMode: "IN_LINE"});
 #});
 #</script>
+#<iframe src="https://sourestdeeds.github.io/pdf/stephen-charles-cv.pdf" width="100%" height="2100px"></iframe>
 ---
 
-<iframe src="https://sourestdeeds.github.io/pdf/stephen-charles-cv.pdf" width="100%" height="2100px"></iframe>
+![cv1](https://sourestdeeds.github.io/pdf/stephen-charles-cv-1.webp)
+![cv2](https://sourestdeeds.github.io/pdf/stephen-charles-cv-2.webp)
 
 ### Certificates
 
