@@ -21,8 +21,10 @@ permalink: /about/
 ![cv1](https://sourestdeeds.github.io/pdf/stephen-charles-cv-1.webp)
 ![cv2](https://sourestdeeds.github.io/pdf/stephen-charles-cv-2.webp)
 
+<div class="PageNavigation">
 <a class="prev" style="text-align: left;" href="https://sourestdeeds.github.io/pdf/stephen-charles-cv.pdf">&laquo; Normal</a>
 <a class="next" style="text-align: right;" href="https://sourestdeeds.github.io/pdf/stephen-charles-cv-dm.pdf">Dark &raquo;</a>
+</div>
 
 ### Certificates
 
