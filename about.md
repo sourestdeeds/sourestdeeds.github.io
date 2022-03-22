@@ -14,11 +14,11 @@ permalink: /about/
 		adobeDCView.previewFile({
 			content:{location: {url: "https://sourestdeeds.github.io/pdf/stephen-charles-cv.pdf"}},
 			metaData:{fileName: "stephen-charles-cv.pdf"}
-		}, {embedMode: "IN_LINE"});
+		}, {embedMode: "SIZED_CONTAINER"});
 	});
 </script>
 
-<iframe src="https://sourestdeeds.github.io/pdf/stephen-charles-cv.pdf" width="100%" height="1000px"></iframe>
+<iframe src="https://sourestdeeds.github.io/pdf/stephen-charles-cv.pdf" width="100%" height="2000px"></iframe>
 
 ### Certificates
 
