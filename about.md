@@ -21,7 +21,7 @@ permalink: /about/
 ![cv1](https://sourestdeeds.github.io/pdf/stephen-charles-cv-1.webp)
 ![cv2](https://sourestdeeds.github.io/pdf/stephen-charles-cv-2.webp)
 
-[Normal CV](https://sourestdeeds.github.io/pdf/stephen-charles-cv-dm.pdf)/[Dark Mode CV](https://sourestdeeds.github.io/pdf/stephen-charles-cv.pdf)
+[Normal CV](https://sourestdeeds.github.io/pdf/stephen-charles-cv.pdf)/[Dark Mode CV](https://sourestdeeds.github.io/pdf/stephen-charles-cv-dm.pdf)
 
 ### Certificates
 
