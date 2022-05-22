@@ -48,3 +48,7 @@ permalink: /photography/
 
 
 {% if page.galleries %}{% include image-gallery-index.html %}{% endif %}
+
+### Instagram
+
+{% include instagram.html username="sourestdeeds" %}
