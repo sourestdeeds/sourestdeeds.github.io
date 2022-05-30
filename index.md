@@ -25,3 +25,12 @@ accordion:
 
 {% include accordion.html %}
 
+### Rainbow DQN
+
+The first version of the Deep Q-Network by DeepMind (Huang, 2013) was capable of human-level performance on a number of classic Atari 2600 games. The algorithm used a CNN architecture which based its strategy from vision, much like a human player. Training from scratch with no prior knowledge of the environment, it discovered strategies that enabled it to exceed human benchmarks. Since then, many refinements and optimisations have been attempted, and we aim to benchmark some of the recent advancements with the MsPac-man environment from the python package Gym (Brockman et al., 2016).
+
+Deep-Q Networks (Huang, 2013) are an algorithm subset of Reinforcement Learning (Sutton and Barto, 2014). In RL, an agent is placed into an environment and seeks to maximize a pre-defined reward. An action is taken, which alters the environment and a reward is given in alignment with the altered state. The new state is then observed and a new action taken, completing the cycle until a termination condition is met inside the environment. Such a decision process is known as a Markov Decision Process.
+
+Video games such as MsPacman however, are technically partially observable MDPs, as you are forced to make choices based on the screen rather than the underlying code defining the environment itself. Games such as these are constrained by a finite amount of input actions and frame rates which allow us to map large observation spaces into more manageable discrete action spaces.
+
+<br><br><video autoplay loop muted playsinline><source src="https://sourestdeeds.github.io/photos/TESS_Staring_Contest.webm#center" type="video/webm"><source src="https://sourestdeeds.github.io/photos/TESS_Staring_Contest.mp4#center" type="video/mp4"></video><br><br><center><b>Figure 3:</b> TESS capturing the flicker of a star indicating a transit.</center>
