@@ -33,4 +33,4 @@ Deep-Q Networks (Huang, 2013) are an algorithm subset of Reinforcement Learning 
 
 Video games such as MsPacman however, are technically partially observable MDPs, as you are forced to make choices based on the screen rather than the underlying code defining the environment itself. Games such as these are constrained by a finite amount of input actions and frame rates which allow us to map large observation spaces into more manageable discrete action spaces.
 
-<br><br><video autoplay loop muted playsinline><source src="https://sourestdeeds.github.io/photos/TESS_Staring_Contest.webm#center" type="video/webm"><source src="https://sourestdeeds.github.io/photos/TESS_Staring_Contest.mp4#center" type="video/mp4"></video><br><br><center><b>Figure 3:</b> TESS capturing the flicker of a star indicating a transit.</center>
+<br><br><video autoplay loop muted playsinline><source src="https://sourestdeeds.github.io/photos/rainbow.webm#center" type="video/webm"><source src="https://sourestdeeds.github.io/photos/rainbow.mp4#center" type="video/mp4"></video><br><br><center><b>Figure 3:</b> TESS capturing the flicker of a star indicating a transit.</center>
