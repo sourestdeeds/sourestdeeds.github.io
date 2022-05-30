@@ -25,7 +25,7 @@ accordion:
 
 {% include accordion.html %}
 
-### <img src="https://www.clipartmax.com/png/small/9-93125_black-and-white-rainbow-clipart-small-rainbow-clipart.png" style="max-width:10%; box-shadow:none; border-radius:0"> Rainbow DQN - MsPacman
+### Rainbow DQN - MsPacman
 
 
 The objective in this project was to make an agent which could maximise its rewards before reaching a game over. A game over occurs when MsPac-Man has lost all 3 lives by coming into contact with a ghost 3 times. The main difficultly in this game comes from navigating each of the game’s 14 levels (4 mazes) while avoiding the ghost enemies who roam around it. Each ghost has a different AI and rewards vary for each type of action meaning there is a large amount of information for the agent to consider. Additionally once lives are lost there is no way to get them back meaning that if an agent clears a maze with only one life remaining they will still only have one life going forward into the next maze.
