@@ -18,8 +18,8 @@ permalink: /about/
 #<iframe src="https://sourestdeeds.github.io/pdf/stephen-charles-cv.pdf" width="100%" height="2100px"></iframe>
 ---
 
-![cv1](https://sourestdeeds.github.io/pdf/stephen-charles-cv-1.webp)
-![cv2](https://sourestdeeds.github.io/pdf/stephen-charles-cv-2.webp)
+![cv1](https://sourestdeeds.github.io/pdf/stephen-charles-cv-1.webp){:.lightbox}
+![cv2](https://sourestdeeds.github.io/pdf/stephen-charles-cv-2.webp){:.lightbox}
 
 <div class="PageNavigation">
 <a class="prev" style="text-align: left;" href="https://sourestdeeds.github.io/pdf/stephen-charles-cv.pdf">&laquo; Light</a>
