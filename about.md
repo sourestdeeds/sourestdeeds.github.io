@@ -16,15 +16,15 @@ permalink: /about/
 #});
 #</script>
 #<iframe src="https://sourestdeeds.github.io/pdf/stephen-charles-cv.pdf" width="100%" height="2100px"></iframe>
+#<div class="PageNavigation">
+#<a class="prev" style="text-align: left;" href="https://sourestdeeds.github.io/pdf/stephen-charles-cv.pdf">&laquo; Light</a>
+#<a class="next" style="text-align: right;" href="https://sourestdeeds.github.io/pdf/stephen-charles-cv-dm.pdf">Dark &raquo;</a>
+#</div>
 ---
 
 [![cv1](https://sourestdeeds.github.io/pdf/stephen-charles-cv-1.webp)](https://sourestdeeds.github.io/pdf/stephen-charles-cv.pdf)
 [![cv2](https://sourestdeeds.github.io/pdf/stephen-charles-cv-2.webp)](https://sourestdeeds.github.io/pdf/stephen-charles-cv.pdf)
 
-<div class="PageNavigation">
-<a class="prev" style="text-align: left;" href="https://sourestdeeds.github.io/pdf/stephen-charles-cv.pdf">&laquo; Light</a>
-<a class="next" style="text-align: right;" href="https://sourestdeeds.github.io/pdf/stephen-charles-cv-dm.pdf">Dark &raquo;</a>
-</div>
 
 ### Certificates
 
