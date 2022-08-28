@@ -4,6 +4,8 @@ mainnav: true
 title: About
 mathjax: false
 permalink: /about/
+#[![cv1](https://sourestdeeds.github.io/pdf/stephen-charles-cv-1.webp)](https://sourestdeeds.github.io/pdf/stephen-charles-cv.pdf)
+#[![cv2](https://sourestdeeds.github.io/pdf/stephen-charles-cv-2.webp)](https://sourestdeeds.github.io/pdf/stephen-charles-cv.pdf)
 #<div id="adobe-dc-view" style="width: 100%;"></div>
 #<script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
 #<script type="text/javascript">
@@ -22,8 +24,18 @@ permalink: /about/
 #</div>
 ---
 
-[![cv1](https://sourestdeeds.github.io/pdf/stephen-charles-cv-1.webp)](https://sourestdeeds.github.io/pdf/stephen-charles-cv.pdf)
-[![cv2](https://sourestdeeds.github.io/pdf/stephen-charles-cv-2.webp)](https://sourestdeeds.github.io/pdf/stephen-charles-cv.pdf)
+<div id="adobe-dc-view" style="width: 100%;"></div>
+<script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+<script type="text/javascript">
+document.addEventListener("adobe_dc_view_sdk.ready", function(){ 
+var adobeDCView = new AdobeDC.View({clientId: "75c0126e67ed437d8268ece13f6e2b7f", divId: "adobe-dc-view"});
+adobeDCView.previewFile({
+content:{location: {url: "https://sourestdeeds.github.io/pdf/stephen-charles-cv.pdf"}},
+metaData:{fileName: "stephen-charles-cv.pdf"}
+}, {embedMode: "IN_LINE"});
+});
+</script>
+
 
 
 ### Certificates
