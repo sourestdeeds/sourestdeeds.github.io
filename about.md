@@ -40,7 +40,7 @@ permalink: /about/
         adobeDCView.previewFile(
        {
           content:   {location: {url: "https://sourestdeeds.github.io/pdf/stephen-charles-cv.pdf"}},
-          metaData: {fileName: "stephen-charles-cv.pdf"}
+          metaData: {fileName: "stephen-charles-cv.pdf"}, preview_config
        });
     });
  </script>
