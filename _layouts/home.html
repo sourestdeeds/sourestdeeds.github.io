@@ -1,5 +1,21 @@
 ---
+#<div id="archives">
+    
+#  <div class="archive-group">
 
+#    {% for post in site.posts %}
+#    <article class="archive-item">
+#      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+#      <div class="table">
+#        <div class="tr">
+#            <div class="d1">{{ post.date | date: date_format }}&nbsp;&nbsp;</div>
+#            <div class="d2"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></div>
+#        </div>
+#      </div>
+#    </article>
+#    {% endfor %}
+#  </div>
+#</div>
 layout: default
 ---
 
@@ -10,22 +26,6 @@ layout: default
 
   {{ content }}
 
-  <div id="archives">
-    
-      <div class="archive-group">
-    
-        {% for post in site.posts %}
-        <article class="archive-item">
-          {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-          <div class="table">
-            <div class="tr">
-                <div class="d1">{{ post.date | date: date_format }}&nbsp;&nbsp;</div>
-                <div class="d2"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></div>
-            </div>
-          </div>
-        </article>
-        {% endfor %}
-      </div>
-  </div>
+  
 
 </div>
