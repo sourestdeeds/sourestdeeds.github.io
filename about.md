@@ -22,19 +22,28 @@ permalink: /about/
 #<a class="prev" style="text-align: left;" href="https://sourestdeeds.github.io/pdf/stephen-charles-cv.pdf">&laquo; Light</a>
 #<a class="next" style="text-align: right;" href="https://sourestdeeds.github.io/pdf/stephen-charles-cv-dm.pdf">Dark &raquo;</a>
 #</div>
+
+
 ---
 
+
+
 <div id="adobe-dc-view" style="width: 100%;"></div>
-<script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-<script type="text/javascript">
-document.addEventListener("adobe_dc_view_sdk.ready", function(){ 
-var adobeDCView = new AdobeDC.View({clientId: "75c0126e67ed437d8268ece13f6e2b7f", divId: "adobe-dc-view"});
-adobeDCView.previewFile({
-content:{location: {url: "https://sourestdeeds.github.io/pdf/stephen-charles-cv.pdf"}},
-metaData:{fileName: "stephen-charles-cv.pdf"}
-}, {embedMode: "IN_LINE"});
-});
-</script>
+ <script src="https://documentservices.adobe.com/view-sdk/viewer.js"></script>
+ <script type="text/javascript">
+	const previewConfig = {
+		embedMode: "IN_LINE"
+		}
+    document.addEventListener("adobe_dc_view_sdk.ready", function()
+    {
+        var adobeDCView = new AdobeDC.View({clientId: "75c0126e67ed437d8268ece13f6e2b7f", divId: "adobe-dc-view"});
+        adobeDCView.previewFile(
+       {
+          content:   {location: {url: "https://sourestdeeds.github.io/pdf/stephen-charles-cv.pdf"}},
+          metaData: {fileName: "stephen-charles-cv.pdf"}
+       });
+    });
+ </script>
 
 
 
