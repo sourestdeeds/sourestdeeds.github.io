@@ -24,16 +24,3 @@ accordion:
 > Persistence without insight will lead to the same outcome.
 
 {% include accordion.html %}
-
-### Rainbow DQN - MsPacman
-
-
-The objective in this project was to make an agent which could maximise its rewards before reaching a game over. A game over occurs when MsPac-Man has lost all 3 lives by coming into contact with a ghost 3 times. The main difficultly in this game comes from navigating each of the game’s 14 levels (4 mazes) while avoiding the ghost enemies who roam around it. Each ghost has a different AI and rewards vary for each type of action meaning there is a large amount of information for the agent to consider. Additionally once lives are lost there is no way to get them back meaning that if an agent clears a maze with only one life remaining they will still only have one life going forward into the next maze.
-
-The first version of the Deep Q-Network by DeepMind (Huang, 2013) was capable of human-level performance on a number of classic Atari 2600 games. The algorithm used a CNN architecture which based its strategy from vision, much like a human player. Training from scratch with no prior knowledge of the environment, it discovered strategies that enabled it to exceed human benchmarks. Since then, many refinements and optimisations have been attempted, and we aim to benchmark some of the recent advancements with the MsPac-man environment from the python package Gym (Brockman et al., 2016).
-
-Deep-Q Networks (Huang, 2013) are an algorithm subset of Reinforcement Learning (Sutton and Barto, 2014). In RL, an agent is placed into an environment and seeks to maximize a pre-defined reward. An action is taken, which alters the environment and a reward is given in alignment with the altered state. The new state is then observed and a new action taken, completing the cycle until a termination condition is met inside the environment. Such a decision process is known as a Markov Decision Process.
-
-Video games such as MsPacman however, are technically partially observable MDPs, as you are forced to make choices based on the screen rather than the underlying code defining the environment itself. Games such as these are constrained by a finite amount of input actions and frame rates which allow us to map large observation spaces into more manageable discrete action spaces.
-
-<br><video autoplay loop muted playsinline><source src="https://sourestdeeds.github.io/photos/rainbow.webm#center" type="video/webm", style="text-align:center;"><source src="https://sourestdeeds.github.io/photos/rainbow.mp4#center" type="video/mp4" style="text-align:center;"></video><br><center>The Rainbow DQN fully trained agent.</center>
