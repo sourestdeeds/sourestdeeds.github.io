@@ -37,8 +37,7 @@ permalink: /about/
     document.addEventListener("adobe_dc_view_sdk.ready", function()
     {
         var adobeDCView = new AdobeDC.View({clientId: "75c0126e67ed437d8268ece13f6e2b7f", divId: "adobe-dc-view"});
-        adobeDCView.previewFile(
-       {
+        adobeDCView.previewFile({
           content:   {location: {url: "https://sourestdeeds.github.io/pdf/stephen-charles-cv.pdf"}},
           metaData: {fileName: "stephen-charles-cv.pdf"}
        }, previewConfig);

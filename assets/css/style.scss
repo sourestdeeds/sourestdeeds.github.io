@@ -4,5 +4,5 @@
 
 
 @import
-  "minima/skins/{{ site.minima.skin | default: 'custom-dark' }}",
+  "minima/skins/{{ site.minima.skin | default: 'custom' }}",
   "minima/initialize";
